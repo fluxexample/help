@@ -1,0 +1,1407 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+      <meta name="copyright" content="(C) Copyright 2020" /><meta name="DC.rights.owner" content="(C) Copyright 2020" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="TubePoint" /><meta name="abstract" content="Tube Point" /><meta name="description" content="Tube Point" /><meta name="DC.Relation" scheme="URI" content="../../../topics/PyFlux/entities/fluxpeec_entities_c.htm" /><meta name="DC.Relation" scheme="URI" content="../../../topics/PyFlux/entities/Transf_r_4.htm" /><meta name="DC.Relation" scheme="URI" content="../../../topics/PyFlux/entities/VariationParameter_r_4.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="_TubePoint_r" /><title>TubePoint</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="_TubePoint_r-d46e25835" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="_TubePoint_r" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="PyFlux Documentation (Beta version)" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title">PyFlux Documentation (Beta version)</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="concept_a1k_sfy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">All Flux PEEC functions and entities</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="fluxpeec_entities"><span class="title"><a href="../../../topics/PyFlux/entities/fluxpeec_entities_c.htm">FluxPEEC Entities</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">List of all FluxPEEC entities</p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="_TubePoint_r"><span class="title"><a href="../../../topics/PyFlux/entities/TubePoint_r.htm">TubePoint</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Tube Point</p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../topics/PyFlux/entities/Transf_r_4.htm" title="Transf"></a></span>  
+<span class="navnext"><a class="link" href="../../../topics/PyFlux/entities/VariationParameter_r_4.htm" title="VariationParameter"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li class="has-children"><span data-tocid="concept_zmq_mfy_k2b-d46e283" data-state="not-ready" class=" topicref " data-id="concept_zmq_mfy_k2b"><span class="title"><a href="../../../topics/PyFlux/flux2d.htm">Flux 2D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_fjl_sjx_f2b-d46e7841" data-state="not-ready" class=" topicref " data-id="concept_fjl_sjx_f2b"><span class="title"><a href="../../../topics/PyFlux/flux3d.htm">Flux 3D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_ckq_5fy_k2b-d46e16409" data-state="not-ready" class=" topicref " data-id="concept_ckq_5fy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxskew.htm">Flux SKEW PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_a1k_sfy_k2b-d46e23845" data-state="not-ready" class=" topicref " data-id="concept_a1k_sfy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="PyFlux Documentation (Beta version)" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title">PyFlux Documentation (Beta version)</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="concept_zmq_mfy_k2b-d46e283" class="topicref" data-id="concept_zmq_mfy_k2b" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/flux2d.htm">Flux 2D PyFlux Documentation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">All Flux 2D functions and entities</p>
+               </span></span></span></li>
+   <li><span data-tocid="concept_fjl_sjx_f2b-d46e7841" class="topicref" data-id="concept_fjl_sjx_f2b" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/flux3d.htm">Flux 3D PyFlux Documentation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">All Flux 3D functions and entities</p>
+               </span></span></span></li>
+   <li><span data-tocid="concept_ckq_5fy_k2b-d46e16409" class="topicref" data-id="concept_ckq_5fy_k2b" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/fluxskew.htm">Flux SKEW PyFlux Documentation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">All Flux Skew functions and entities</p>
+               </span></span></span></li>
+   <li><span data-tocid="concept_a1k_sfy_k2b-d46e23845" class="topicref" data-id="concept_a1k_sfy_k2b" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">All Flux PEEC functions and entities</p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="fluxpeec_entities-d46e23861" class="topicref" data-id="fluxpeec_entities" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/fluxpeec_entities_c.htm">FluxPEEC Entities</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">List of all FluxPEEC entities</p>
+                     </span></span></span><ul class="nav nav-list">
+               
+               <li class="dots-before"><span>77 more</span></li>
+               
+               <li class="hide-before"><span data-tocid="_AdaptiveSolverOptions_r-d46e23872" class="topicref" data-id="_AdaptiveSolverOptions_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/AdaptiveSolverOptions_r_4.htm">AdaptiveSolverOptions</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Adaptive solver options</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_AidedMesh_r-d46e23883" class="topicref" data-id="_AidedMesh_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/AidedMesh_r_4.htm">AidedMesh</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Aided mesh</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_AngleUnit_r-d46e23894" class="topicref" data-id="_AngleUnit_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/AngleUnit_r_4.htm">AngleUnit</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Angle Unit (degree, radian, ... )</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Animation_r-d46e23905" class="topicref" data-id="_Animation_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Animation_r_4.htm">Animation</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Animation</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectricConduction2D_r-d46e23916" class="topicref" data-id="_ApplicationElectricConduction2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectricConduction2D_r_4.htm">ApplicationElectricConduction2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Electric Conduction 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectricConduction3D_r-d46e23927" class="topicref" data-id="_ApplicationElectricConduction3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectricConduction3D_r_4.htm">ApplicationElectricConduction3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Electric Conduction 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectricConductionThermal2D_r-d46e23938" class="topicref" data-id="_ApplicationElectricConductionThermal2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectricConductionThermal2D_r_4.htm">ApplicationElectricConductionThermal2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Electric Conduction coupled with Transient Thermal 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectricTransient2D_r-d46e23949" class="topicref" data-id="_ApplicationElectricTransient2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectricTransient2D_r_4.htm">ApplicationElectricTransient2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Transient Electric 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectricTransient3D_r-d46e23960" class="topicref" data-id="_ApplicationElectricTransient3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectricTransient3D_r_4.htm">ApplicationElectricTransient3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Transient Electric 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectroHarmonic2D_r-d46e23971" class="topicref" data-id="_ApplicationElectroHarmonic2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectroHarmonic2D_r_4.htm">ApplicationElectroHarmonic2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State AC Electric 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectroHarmonic3D_r-d46e23983" class="topicref" data-id="_ApplicationElectroHarmonic3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectroHarmonic3D_r_4.htm">ApplicationElectroHarmonic3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State AC Electric 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectroHarmonicThermal2D_r-d46e23994" class="topicref" data-id="_ApplicationElectroHarmonicThermal2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectroHarmonicThermal2D_r_4.htm">ApplicationElectroHarmonicThermal2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State AC Electric coupled with Transient Thermal 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectrolysis3D_r-d46e24005" class="topicref" data-id="_ApplicationElectrolysis3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectrolysis3D_r_4.htm">ApplicationElectrolysis3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Electrolysis 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectroStatic2D_r-d46e24016" class="topicref" data-id="_ApplicationElectroStatic2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectroStatic2D_r_4.htm">ApplicationElectroStatic2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Electro Static 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationElectroStatic3D_r-d46e24027" class="topicref" data-id="_ApplicationElectroStatic3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationElectroStatic3D_r_4.htm">ApplicationElectroStatic3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Electro Static 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationImpedanceConductorsPEEC_r-d46e24038" class="topicref" data-id="_ApplicationImpedanceConductorsPEEC_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationImpedanceConductorsPEEC_r.htm">ApplicationImpedanceConductorsPEEC</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Computation of conductor impedances</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticAC2D_r-d46e24049" class="topicref" data-id="_ApplicationMagneticAC2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticAC2D_r_4.htm">ApplicationMagneticAC2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State AC Magnetic 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticAC3D_r-d46e24060" class="topicref" data-id="_ApplicationMagneticAC3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticAC3D_r_4.htm">ApplicationMagneticAC3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State AC Magnetic 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticACThermal2D_r-d46e24071" class="topicref" data-id="_ApplicationMagneticACThermal2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticACThermal2D_r_4.htm">ApplicationMagneticACThermal2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State AC Magnetic coupled with Transient Thermal 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticACThermal3D_r-d46e24082" class="topicref" data-id="_ApplicationMagneticACThermal3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticACThermal3D_r_4.htm">ApplicationMagneticACThermal3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State AC Magnetic coupled with Transient Thermal 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticDC2D_r-d46e24093" class="topicref" data-id="_ApplicationMagneticDC2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticDC2D_r_4.htm">ApplicationMagneticDC2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Magneto Static 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticDC3D_r-d46e24105" class="topicref" data-id="_ApplicationMagneticDC3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticDC3D_r_4.htm">ApplicationMagneticDC3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Magneto Static 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticIEMDC3D_r-d46e24116" class="topicref" data-id="_ApplicationMagneticIEMDC3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticIEMDC3D_r_4.htm">ApplicationMagneticIEMDC3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Magneto Static - Integral Method</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticTransient2D_r-d46e24127" class="topicref" data-id="_ApplicationMagneticTransient2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticTransient2D_r_4.htm">ApplicationMagneticTransient2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Transient Magnetic 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationMagneticTransient3D_r-d46e24138" class="topicref" data-id="_ApplicationMagneticTransient3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationMagneticTransient3D_r_4.htm">ApplicationMagneticTransient3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Transient Magnetic 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationSkewedRotatingMachineMagneticAC_r-d46e24149" class="topicref" data-id="_ApplicationSkewedRotatingMachineMagneticAC_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationSkewedRotatingMachineMagneticAC_r_4.htm">ApplicationSkewedRotatingMachineMagneticAC</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Rotating Induction Machine (skewed model) in Steady State AC Magnetic</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationSkewedRotatingMachineMagneticDC_r-d46e24160" class="topicref" data-id="_ApplicationSkewedRotatingMachineMagneticDC_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationSkewedRotatingMachineMagneticDC_r_4.htm">ApplicationSkewedRotatingMachineMagneticDC</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Rotating Machine (skewed model) in Magneto Static</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationSkewedRotatingMachineMagneticTransient_r-d46e24171" class="topicref" data-id="_ApplicationSkewedRotatingMachineMagneticTransient_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationSkewedRotatingMachineMagneticTransient_r_4.htm">ApplicationSkewedRotatingMachineMagneticTransient</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Rotating Machine (skewed model) in Transient Magnetic</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationSuppliedConductorsPEEC_r-d46e24182" class="topicref" data-id="_ApplicationSuppliedConductorsPEEC_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationSuppliedConductorsPEEC_r.htm">ApplicationSuppliedConductorsPEEC</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Computation of current in supplied conductors</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationThermalSteady2D_r-d46e24193" class="topicref" data-id="_ApplicationThermalSteady2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationThermalSteady2D_r_4.htm">ApplicationThermalSteady2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State Thermal 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationThermalSteady3D_r-d46e24204" class="topicref" data-id="_ApplicationThermalSteady3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationThermalSteady3D_r_4.htm">ApplicationThermalSteady3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Steady State Thermal 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationThermalTransient2D_r-d46e24215" class="topicref" data-id="_ApplicationThermalTransient2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationThermalTransient2D_r_4.htm">ApplicationThermalTransient2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Transient Thermal 2D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ApplicationThermalTransient3D_r-d46e24227" class="topicref" data-id="_ApplicationThermalTransient3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ApplicationThermalTransient3D_r_4.htm">ApplicationThermalTransient3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Transient Thermal 3D</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_AuditReport_r-d46e24238" class="topicref" data-id="_AuditReport_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/AuditReport_r_4.htm">AuditReport</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Auditing a scenario</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_BrushSegment_r-d46e24249" class="topicref" data-id="_BrushSegment_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/BrushSegment_r_4.htm">BrushSegment</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Brush-segment</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_BuildCapacitiveRegions_r-d46e24260" class="topicref" data-id="_BuildCapacitiveRegions_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/BuildCapacitiveRegions_r.htm">BuildCapacitiveRegions</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Build capacitive regions</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_BuildDielectrics_r-d46e24271" class="topicref" data-id="_BuildDielectrics_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/BuildDielectrics_r.htm">BuildDielectrics</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Build dielectrics</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CapacitanceMatrix_r-d46e24282" class="topicref" data-id="_CapacitanceMatrix_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CapacitanceMatrix_r.htm">CapacitanceMatrix</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Parasitic capacitive matrix</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Capacitor_r-d46e24293" class="topicref" data-id="_Capacitor_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Capacitor_r_4.htm">Capacitor</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Capacitor</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Coil_r-d46e24304" class="topicref" data-id="_Coil_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Coil_r_4.htm">Coil</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of the coil</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CoilConductor_r-d46e24315" class="topicref" data-id="_CoilConductor_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CoilConductor_r_4.htm">CoilConductor</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Stranded coil conductor  type</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Color_r-d46e24326" class="topicref" data-id="_Color_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Color_r_4.htm">Color</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Color</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CompoundPath_r-d46e24337" class="topicref" data-id="_CompoundPath_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CompoundPath_r_4.htm">CompoundPath</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Compound path</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputePhysic_r-d46e24349" class="topicref" data-id="_ComputePhysic_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputePhysic_r_4.htm">ComputePhysic</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Compute on physic entity</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatial3DCurveOfCurrentDensity_r-d46e24360" class="topicref" data-id="_ComputeSpatial3DCurveOfCurrentDensity_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatial3DCurveOfCurrentDensity_r.htm">ComputeSpatial3DCurveOfCurrentDensity</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of current density on a 2D grid</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatial3DCurveOfInduction_r-d46e24371" class="topicref" data-id="_ComputeSpatial3DCurveOfInduction_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatial3DCurveOfInduction_r.htm">ComputeSpatial3DCurveOfInduction</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of magnetic flux density on a 2D grid</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatial3DCurveOfLaplaceForceDensity_r-d46e24382" class="topicref" data-id="_ComputeSpatial3DCurveOfLaplaceForceDensity_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatial3DCurveOfLaplaceForceDensity_r.htm">ComputeSpatial3DCurveOfLaplaceForceDensity</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of Laplace force volumic density on a 2D grid</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatial3DCurveOfLossesDensity_r-d46e24393" class="topicref" data-id="_ComputeSpatial3DCurveOfLossesDensity_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatial3DCurveOfLossesDensity_r.htm">ComputeSpatial3DCurveOfLossesDensity</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of losses density on a 2D grid</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatialVariation3DCurveOfCurrentDensity_r-d46e24404" class="topicref" data-id="_ComputeSpatialVariation3DCurveOfCurrentDensity_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatialVariation3DCurveOfCurrentDensity_r.htm">ComputeSpatialVariation3DCurveOfCurrentDensity</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of current density</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatialVariation3DCurveOfInduction_r-d46e24415" class="topicref" data-id="_ComputeSpatialVariation3DCurveOfInduction_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatialVariation3DCurveOfInduction_r.htm">ComputeSpatialVariation3DCurveOfInduction</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of magnetic flux density</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatialVariation3DCurveOfLaplaceForceDensity_r-d46e24426" class="topicref" data-id="_ComputeSpatialVariation3DCurveOfLaplaceForceDensity_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatialVariation3DCurveOfLaplaceForceDensity_r.htm">ComputeSpatialVariation3DCurveOfLaplaceForceDensity</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of Laplace force volumic density</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ComputeSpatialVariation3DCurveOfLossesDensity_r-d46e24437" class="topicref" data-id="_ComputeSpatialVariation3DCurveOfLossesDensity_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ComputeSpatialVariation3DCurveOfLossesDensity_r.htm">ComputeSpatialVariation3DCurveOfLossesDensity</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Plot curves of losses density</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ConductorBidirectional_r-d46e24448" class="topicref" data-id="_ConductorBidirectional_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ConductorBidirectional_r.htm">ConductorBidirectional</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Bidirectional Conductor</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ConductorUnidirectional_r-d46e24459" class="topicref" data-id="_ConductorUnidirectional_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ConductorUnidirectional_r.htm">ConductorUnidirectional</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of Unidirectional Conductor</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_ConnectedConductorsGroup_r-d46e24471" class="topicref" data-id="_ConnectedConductorsGroup_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ConnectedConductorsGroup_r.htm">ConnectedConductorsGroup</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Group of connected conductors </p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CoordSys_r-d46e24482" class="topicref" data-id="_CoordSys_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CoordSys_r_4.htm">CoordSys</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of Coordinate System</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_createGeomTubesFromVolumes_r-d46e24493" class="topicref" data-id="_createGeomTubesFromVolumes_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/createGeomTubesFromVolumes_r.htm">createGeomTubesFromVolumes</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Create geometric tubes from volumes</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CreateMultipointSupportFromConductors_r-d46e24504" class="topicref" data-id="_CreateMultipointSupportFromConductors_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CreateMultipointSupportFromConductors_r.htm">CreateMultipointSupportFromConductors</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Create multipoint support from conductors</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurrentSource_r-d46e24515" class="topicref" data-id="_CurrentSource_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurrentSource_r_4.htm">CurrentSource</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Current source</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Curve3dOfCurrentForUnidirectionnalConductors_r-d46e24526" class="topicref" data-id="_Curve3dOfCurrentForUnidirectionnalConductors_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Curve3dOfCurrentForUnidirectionnalConductors_r.htm">Curve3dOfCurrentForUnidirectionnalConductors</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Current in unidirectional conductors</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurveOfCurrentForUnidirectionnalConductors_r-d46e24537" class="topicref" data-id="_CurveOfCurrentForUnidirectionnalConductors_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurveOfCurrentForUnidirectionnalConductors_r.htm">CurveOfCurrentForUnidirectionnalConductors</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Current in unidirectional conductors</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurveParametrizedSpatial3D_r-d46e24548" class="topicref" data-id="_CurveParametrizedSpatial3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurveParametrizedSpatial3D_r_4.htm">CurveParametrizedSpatial3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">3D parametrized spatial curve</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Curves3dOfCurrentForComponents_r-d46e24559" class="topicref" data-id="_Curves3dOfCurrentForComponents_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Curves3dOfCurrentForComponents_r.htm">Curves3dOfCurrentForComponents</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Compute current in components</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Curves3dOfForcesForConductors_r-d46e24570" class="topicref" data-id="_Curves3dOfForcesForConductors_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Curves3dOfForcesForConductors_r.htm">Curves3dOfForcesForConductors</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Laplace forces in a list of conductors  </p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Curves3dOfImpedance_r-d46e24581" class="topicref" data-id="_Curves3dOfImpedance_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Curves3dOfImpedance_r.htm">Curves3dOfImpedance</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Compute impedance between probes</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_Curves3dOfLossesForConductors_r-d46e24593" class="topicref" data-id="_Curves3dOfLossesForConductors_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Curves3dOfLossesForConductors_r.htm">Curves3dOfLossesForConductors</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Losses in a list of conductors</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurvesOfCurrentForComponents_r-d46e24604" class="topicref" data-id="_CurvesOfCurrentForComponents_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurvesOfCurrentForComponents_r.htm">CurvesOfCurrentForComponents</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Current in components</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurvesOfForcesForConductors_r-d46e24615" class="topicref" data-id="_CurvesOfForcesForConductors_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurvesOfForcesForConductors_r.htm">CurvesOfForcesForConductors</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Laplace forces in a list of conductors  </p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurvesOfImpedance_r-d46e24626" class="topicref" data-id="_CurvesOfImpedance_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurvesOfImpedance_r.htm">CurvesOfImpedance</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Compute impedance between probes</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurvesOfLossesForConductors_r-d46e24637" class="topicref" data-id="_CurvesOfLossesForConductors_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurvesOfLossesForConductors_r.htm">CurvesOfLossesForConductors</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Losses in a list of conductors</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurveSpatial2D_r-d46e24648" class="topicref" data-id="_CurveSpatial2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurveSpatial2D_r_4.htm">CurveSpatial2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">2D spatial curve</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurveSpatial3D_r-d46e24659" class="topicref" data-id="_CurveSpatial3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurveSpatial3D_r_4.htm">CurveSpatial3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">3D spatial curve</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurveVariation2D_r-d46e24670" class="topicref" data-id="_CurveVariation2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurveVariation2D_r_4.htm">CurveVariation2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">2D variation curve</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CurveVariation3D_r-d46e24681" class="topicref" data-id="_CurveVariation3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CurveVariation3D_r_4.htm">CurveVariation3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">3D variation curve</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_CutPlane_r-d46e24692" class="topicref" data-id="_CutPlane_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/CutPlane_r_4.htm">CutPlane</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of Cut Plane</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_DEFAUT_GEOM_r-d46e24703" class="topicref" data-id="_DEFAUT_GEOM_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/DEFAUT_GEOM_r_4.htm">DEFAUT_GEOM</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Defect in geometric description</p>
+                           </span></span></span></li>
+               <li class="hide-before"><span data-tocid="_DemagnetizationRatio_r-d46e24715" class="topicref" data-id="_DemagnetizationRatio_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/DemagnetizationRatio_r_4.htm">DemagnetizationRatio</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Evaluation of the demagnetization</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Dielectric_r-d46e24726" class="topicref" data-id="_Dielectric_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Dielectric_r.htm">Dielectric</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Dielectric</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Diode_r-d46e24737" class="topicref" data-id="_Diode_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Diode_r_4.htm">Diode</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Diode</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_DomainType_r-d46e24748" class="topicref" data-id="_DomainType_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/DomainType_r_4.htm">DomainType</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">2D or 3D Domain</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_EdgeSubEntityGeometricObject_r-d46e24759" class="topicref" data-id="_EdgeSubEntityGeometricObject_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/EdgeSubEntityGeometricObject_r.htm">EdgeSubEntityGeometricObject</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Edge sub entity of geometric object</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ElectricLoopCut_r-d46e24770" class="topicref" data-id="_ElectricLoopCut_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ElectricLoopCut_r_4.htm">ElectricLoopCut</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of the electric loop cut</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ElectricTerminal_r-d46e24781" class="topicref" data-id="_ElectricTerminal_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ElectricTerminal_r_4.htm">ElectricTerminal</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of electric terminal.</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Equipotential_r-d46e24792" class="topicref" data-id="_Equipotential_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Equipotential_r_4.htm">Equipotential</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Equipotential of the electric circuit</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_exportGeomToCATIAV4_r-d46e24803" class="topicref" data-id="_exportGeomToCATIAV4_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/exportGeomToCATIAV4_r_4.htm">exportGeomToCATIAV4</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Export geometry to a CATIAV4 file</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_exportGeomToCATIAV5_r-d46e24814" class="topicref" data-id="_exportGeomToCATIAV5_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/exportGeomToCATIAV5_r_4.htm">exportGeomToCATIAV5</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Export geometry to a CATIAV5 file</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_exportGeomToIGES_r-d46e24825" class="topicref" data-id="_exportGeomToIGES_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/exportGeomToIGES_r_4.htm">exportGeomToIGES</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Export geometry to a IGES file</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_exportGeomToSAT_r-d46e24837" class="topicref" data-id="_exportGeomToSAT_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/exportGeomToSAT_r_4.htm">exportGeomToSAT</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Export geometry to a SAT file</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_exportGeomToSTEP_r-d46e24848" class="topicref" data-id="_exportGeomToSTEP_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/exportGeomToSTEP_r_4.htm">exportGeomToSTEP</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Export geometry to a STEP file</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ExportNodeCoordinatesRegion_r-d46e24859" class="topicref" data-id="_ExportNodeCoordinatesRegion_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ExportNodeCoordinatesRegion_r_4.htm">ExportNodeCoordinatesRegion</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Support for exportation</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ExportOfValuesPEEC_r-d46e24870" class="topicref" data-id="_ExportOfValuesPEEC_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ExportOfValuesPEEC_r.htm">ExportOfValuesPEEC</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Export of Values</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Face_r-d46e24881" class="topicref" data-id="_Face_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Face_r_4.htm">Face</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of face</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_FaceElement_r-d46e24892" class="topicref" data-id="_FaceElement_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/FaceElement_r_4.htm">FaceElement</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Surface finite element</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_FaceElementVisualization_r-d46e24903" class="topicref" data-id="_FaceElementVisualization_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/FaceElementVisualization_r_4.htm">FaceElementVisualization</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Surface finite element of visualization</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_FaceSubEntityGeometricObject_r-d46e24914" class="topicref" data-id="_FaceSubEntityGeometricObject_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/FaceSubEntityGeometricObject_r.htm">FaceSubEntityGeometricObject</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Face sub entity of geometric object</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_FreeMechanicalSetPosition_r-d46e24925" class="topicref" data-id="_FreeMechanicalSetPosition_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/FreeMechanicalSetPosition_r_4.htm">FreeMechanicalSetPosition</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Free mechanical set in position</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_GasBreakdownResult_r-d46e24936" class="topicref" data-id="_GasBreakdownResult_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/GasBreakdownResult_r_4.htm">GasBreakdownResult</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Gas breakdown</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_GeometricalObjectPlane_r-d46e24947" class="topicref" data-id="_GeometricalObjectPlane_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/GeometricalObjectPlane_r.htm">GeometricalObjectPlane</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Definition of the cut plane </p>
+                           </span></span></span></li>
+               <li><span data-tocid="_GeometricObject_r-d46e24959" class="topicref" data-id="_GeometricObject_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/GeometricObject_r.htm">GeometricObject</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Geometric object</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_GeomMeshOptions_r-d46e24970" class="topicref" data-id="_GeomMeshOptions_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/GeomMeshOptions_r_4.htm">GeomMeshOptions</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Geometry Mesh Options</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_GeomTube_r-d46e24981" class="topicref" data-id="_GeomTube_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/GeomTube_r.htm">GeomTube</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of geometric Tube</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Grid2D_r-d46e24992" class="topicref" data-id="_Grid2D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Grid2D_r_4.htm">Grid2D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of 2D grid</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Grid3D_r-d46e25003" class="topicref" data-id="_Grid3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Grid3D_r_4.htm">Grid3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of 3D grid</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Ground_r-d46e25014" class="topicref" data-id="_Ground_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Ground_r_4.htm">Ground</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Ground</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Groupcomponent_r-d46e25025" class="topicref" data-id="_Groupcomponent_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Groupcomponent_r_4.htm">Groupcomponent</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Components group</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Groupspatial_r-d46e25036" class="topicref" data-id="_Groupspatial_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Groupspatial_r_4.htm">Groupspatial</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Spatial group</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_GTO_r-d46e25047" class="topicref" data-id="_GTO_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/GTO_r_2.htm">GTO</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">GTO</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ImpedanceProbe_r-d46e25058" class="topicref" data-id="_ImpedanceProbe_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ImpedanceProbe_r.htm">ImpedanceProbe</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Sonde d'impédance</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Inductor_r-d46e25069" class="topicref" data-id="_Inductor_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Inductor_r_4.htm">Inductor</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Inductor</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_InfiniteBox_r-d46e25081" class="topicref" data-id="_InfiniteBox_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/InfiniteBox_r_4.htm">InfiniteBox</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of the Infinite Box</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_IronLosses_r-d46e25092" class="topicref" data-id="_IronLosses_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/IronLosses_r_4.htm">IronLosses</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Iron losses</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Layer_r-d46e25103" class="topicref" data-id="_Layer_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Layer_r.htm">Layer</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">ECAD Layer</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_LengthUnit_r-d46e25114" class="topicref" data-id="_LengthUnit_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/LengthUnit_r_4.htm">LengthUnit</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Length Unit (meter, millimeter, inch ...)</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Line_r-d46e25125" class="topicref" data-id="_Line_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Line_r_4.htm">Line</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of line</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_LineElement_r-d46e25136" class="topicref" data-id="_LineElement_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/LineElement_r_4.htm">LineElement</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Line finite element</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_LineElementVisualization_r-d46e25147" class="topicref" data-id="_LineElementVisualization_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/LineElementVisualization_r_4.htm">LineElementVisualization</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Line finite element of Visualization</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Macro_r-d46e25158" class="topicref" data-id="_Macro_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Macro_r_4.htm">Macro</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Macro command</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MagneticCircuitCut_r-d46e25169" class="topicref" data-id="_MagneticCircuitCut_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MagneticCircuitCut_r_4.htm">MagneticCircuitCut</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Magnetic circuit cut</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Material_r-d46e25180" class="topicref" data-id="_Material_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Material_r_4.htm">Material</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Physical properties of a material</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MaterialCurve_r-d46e25191" class="topicref" data-id="_MaterialCurve_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MaterialCurve_r_4.htm">MaterialCurve</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">2D material curve</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MechanicalSet_r-d46e25203" class="topicref" data-id="_MechanicalSet_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MechanicalSet_r_4.htm">MechanicalSet</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of mechanical set</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MeshDefect_r-d46e25214" class="topicref" data-id="_MeshDefect_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MeshDefect_r_4.htm">MeshDefect</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Defect in mesh</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MeshGenerator_r-d46e25225" class="topicref" data-id="_MeshGenerator_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MeshGenerator_r_4.htm">MeshGenerator</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Mesh Generator Type</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MeshLine_r-d46e25236" class="topicref" data-id="_MeshLine_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MeshLine_r_4.htm">MeshLine</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of the Mesh Line</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MeshObject_r-d46e25247" class="topicref" data-id="_MeshObject_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MeshObject_r_4.htm">MeshObject</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Mesh object</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MeshPoint_r-d46e25258" class="topicref" data-id="_MeshPoint_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MeshPoint_r_4.htm">MeshPoint</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Distance between nodes (SMALL, MEDIUM, LARGE ...)</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MultipointSupport_r-d46e25269" class="topicref" data-id="_MultipointSupport_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MultipointSupport_r_4.htm">MultipointSupport</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Multipoint support</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_MultipointSupportImportingCoordinates_r-d46e25280" class="topicref" data-id="_MultipointSupportImportingCoordinates_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/MultipointSupportImportingCoordinates_r_4.htm">MultipointSupportImportingCoordinates</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">New mutipoint support by importation of a list of points</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Node_r-d46e25291" class="topicref" data-id="_Node_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Node_r_4.htm">Node</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Discretization (mesh) nodes</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_NodeOfVisualization_r-d46e25302" class="topicref" data-id="_NodeOfVisualization_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/NodeOfVisualization_r_4.htm">NodeOfVisualization</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Node of visualization</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Overlay_r-d46e25313" class="topicref" data-id="_Overlay_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Overlay_r_4.htm">Overlay</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">User overlays</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ParameterGeom_r-d46e25325" class="topicref" data-id="_ParameterGeom_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ParameterGeom_r_4.htm">ParameterGeom</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Geometric parameter</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Periodicity_r-d46e25336" class="topicref" data-id="_Periodicity_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Periodicity_r_4.htm">Periodicity</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Geometrical type of the periodicity</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PhysCircOptions_r-d46e25347" class="topicref" data-id="_PhysCircOptions_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PhysCircOptions_r.htm">PhysCircOptions</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Physics and circuit options</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Point_r-d46e25358" class="topicref" data-id="_Point_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Point_r_4.htm">Point</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of point</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PointComputation_r-d46e25369" class="topicref" data-id="_PointComputation_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PointComputation_r_4.htm">PointComputation</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Session Quantities computation on points</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PolarizationLaw_r-d46e25380" class="topicref" data-id="_PolarizationLaw_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PolarizationLaw_r_4.htm">PolarizationLaw</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Polarization_law</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PowerBalanceSystem_r-d46e25391" class="topicref" data-id="_PowerBalanceSystem_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PowerBalanceSystem_r_4.htm">PowerBalanceSystem</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Power Balance</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Profile_r-d46e25402" class="topicref" data-id="_Profile_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Profile_r.htm">Profile</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Profile</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PropArrowContour_r-d46e25413" class="topicref" data-id="_PropArrowContour_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PropArrowContour_r_4.htm">PropArrowContour</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Arrows on boundary</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PropArrowPath_r-d46e25424" class="topicref" data-id="_PropArrowPath_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PropArrowPath_r_4.htm">PropArrowPath</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Arrows on path</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PropArrows_r-d46e25435" class="topicref" data-id="_PropArrows_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PropArrows_r_4.htm">PropArrows</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Support for arrows</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PropIsolines_r-d46e25447" class="topicref" data-id="_PropIsolines_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PropIsolines_r_4.htm">PropIsolines</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Support for isolines</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_PropIsovalues_r-d46e25458" class="topicref" data-id="_PropIsovalues_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/PropIsovalues_r_4.htm">PropIsovalues</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Support for isovalues</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RegionCapacitive_r-d46e25469" class="topicref" data-id="_RegionCapacitive_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RegionCapacitive_r.htm">RegionCapacitive</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">capacitive region</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RegionFace_r-d46e25480" class="topicref" data-id="_RegionFace_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RegionFace_r_4.htm">RegionFace</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Face region</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RegionLine_r-d46e25491" class="topicref" data-id="_RegionLine_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RegionLine_r_4.htm">RegionLine</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Line region</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RegionPoint_r-d46e25502" class="topicref" data-id="_RegionPoint_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RegionPoint_r_4.htm">RegionPoint</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Point region</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RegionVolume_r-d46e25513" class="topicref" data-id="_RegionVolume_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RegionVolume_r_4.htm">RegionVolume</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Volume Region</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RelaxFace_r-d46e25524" class="topicref" data-id="_RelaxFace_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RelaxFace_r_4.htm">RelaxFace</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Mesh relaxation on face</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RelaxLine_r-d46e25535" class="topicref" data-id="_RelaxLine_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RelaxLine_r_4.htm">RelaxLine</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Mesh relaxation on line</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RelaxVolume_r-d46e25546" class="topicref" data-id="_RelaxVolume_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RelaxVolume_r_4.htm">RelaxVolume</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Mesh relaxation on volume</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ResDedErrorCriterion_r-d46e25557" class="topicref" data-id="_ResDedErrorCriterion_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ResDedErrorCriterion_r_4.htm">ResDedErrorCriterion</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Error Criterion</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Resistor_r-d46e25569" class="topicref" data-id="_Resistor_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Resistor_r_4.htm">Resistor</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Resistor</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Result_r-d46e25580" class="topicref" data-id="_Result_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Result_r_4.htm">Result</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Result</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_RotatingMachineCurve3D_r-d46e25591" class="topicref" data-id="_RotatingMachineCurve3D_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/RotatingMachineCurve3D_r_4.htm">RotatingMachineCurve3D</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">3D curve dedicated to rotating machines</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Scenario_r-d46e25602" class="topicref" data-id="_Scenario_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Scenario_r_4.htm">Scenario</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Solving Scenario</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Sensor_r-d46e25613" class="topicref" data-id="_Sensor_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Sensor_r_4.htm">Sensor</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of sensor</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Server_r-d46e25624" class="topicref" data-id="_Server_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Server_r_4.htm">Server</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Server</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_ShadowFace_r-d46e25635" class="topicref" data-id="_ShadowFace_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/ShadowFace_r_4.htm">ShadowFace</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Shadow Face</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SketcherOption_r-d46e25646" class="topicref" data-id="_SketcherOption_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SketcherOption_r_4.htm">SketcherOption</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Sketcher 2D Options</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SolidConductor2Terminals_r-d46e25657" class="topicref" data-id="_SolidConductor2Terminals_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SolidConductor2Terminals_r_4.htm">SolidConductor2Terminals</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Solid conductor 2 terminals</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SolidConductorNTerminals_r-d46e25668" class="topicref" data-id="_SolidConductorNTerminals_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SolidConductorNTerminals_r_4.htm">SolidConductorNTerminals</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Solid conductor n terminals</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SolvingOptions_r-d46e25679" class="topicref" data-id="_SolvingOptions_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SolvingOptions_r_4.htm">SolvingOptions</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Solving process options</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SolvingOptionsPEEC_r-d46e25691" class="topicref" data-id="_SolvingOptionsPEEC_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SolvingOptionsPEEC_r.htm">SolvingOptionsPEEC</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Solving process options</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SourceField_r-d46e25702" class="topicref" data-id="_SourceField_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SourceField_r_4.htm">SourceField</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of magnetic field source</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SpatialParameter_r-d46e25713" class="topicref" data-id="_SpatialParameter_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SpatialParameter_r_4.htm">SpatialParameter</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of the spatial quantity</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SquirrelCage_r-d46e25724" class="topicref" data-id="_SquirrelCage_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SquirrelCage_r_4.htm">SquirrelCage</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Squirrel cage</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SubSystem_r-d46e25735" class="topicref" data-id="_SubSystem_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SubSystem_r_4.htm">SubSystem</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of sub-system</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_SupportTorque_r-d46e25746" class="topicref" data-id="_SupportTorque_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/SupportTorque_r_4.htm">SupportTorque</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Direction</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Switch_r-d46e25757" class="topicref" data-id="_Switch_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Switch_r_4.htm">Switch</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Switch</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Symmetry_r-d46e25768" class="topicref" data-id="_Symmetry_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Symmetry_r_4.htm">Symmetry</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Geometrical type of the symmetry</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_TermConnection_r-d46e25779" class="topicref" data-id="_TermConnection_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/TermConnection_r.htm">TermConnection</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Terminals connection</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Terminal_r-d46e25790" class="topicref" data-id="_Terminal_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Terminal_r.htm">Terminal</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Terminal</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Thyristor_r-d46e25801" class="topicref" data-id="_Thyristor_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Thyristor_r_2.htm">Thyristor</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Thyristor</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_TopSubEntityGeometricObject_r-d46e25813" class="topicref" data-id="_TopSubEntityGeometricObject_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/TopSubEntityGeometricObject_r.htm">TopSubEntityGeometricObject</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Top sub entity of geometric object</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Transf_r-d46e25824" class="topicref" data-id="_Transf_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Transf_r_4.htm">Transf</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of Geometric Transformation</p>
+                           </span></span></span></li>
+               <li class="active"><span data-tocid="_TubePoint_r-d46e25835" class="topicref" data-id="_TubePoint_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/TubePoint_r.htm">TubePoint</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Tube Point</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_VariationParameter_r-d46e25846" class="topicref" data-id="_VariationParameter_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/VariationParameter_r_4.htm">VariationParameter</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Type of Physical parameter</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_VoltageSource_r-d46e25857" class="topicref" data-id="_VoltageSource_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/VoltageSource_r_4.htm">VoltageSource</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Voltage source type</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_Volume_r-d46e25868" class="topicref" data-id="_Volume_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/Volume_r_4.htm">Volume</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Volume of the geometry defined by faces</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_VolumeElement_r-d46e25879" class="topicref" data-id="_VolumeElement_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/VolumeElement_r_4.htm">VolumeElement</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Volume finite element</p>
+                           </span></span></span></li>
+               <li><span data-tocid="_VolumeElementVisualization_r-d46e25890" class="topicref" data-id="_VolumeElementVisualization_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/entities/VolumeElementVisualization_r_4.htm">VolumeElementVisualization</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Volume finite element of Visualization</p>
+                           </span></span></span></li>
+            </ul>
+         </li>
+         <li><span data-tocid="fluxpeec_functions-d46e25901" class="topicref" data-id="fluxpeec_functions" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../topics/PyFlux/functions/fluxpeec_functions_c.htm">FluxPEEC Functions</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">List of all FluxPEEC functions</p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="PyFlux Documentation (Beta version)" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title">PyFlux Documentation (Beta version)</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="concept_a1k_sfy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">All Flux PEEC functions and entities</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="fluxpeec_entities"><span class="title"><a href="../../../topics/PyFlux/entities/fluxpeec_entities_c.htm">FluxPEEC Entities</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">List of all FluxPEEC entities</p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="_TubePoint_r"><span class="title"><a href="../../../topics/PyFlux/entities/TubePoint_r.htm">TubePoint</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Tube Point</p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../topics/PyFlux/entities/Transf_r_4.htm" title="Transf"></a></span>  
+<span class="navnext"><a class="link" href="../../../topics/PyFlux/entities/VariationParameter_r_4.htm" title="VariationParameter"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li class="has-children"><span data-tocid="concept_zmq_mfy_k2b-d46e283" data-state="not-ready" class=" topicref " data-id="concept_zmq_mfy_k2b"><span class="title"><a href="../../../topics/PyFlux/flux2d.htm">Flux 2D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_fjl_sjx_f2b-d46e7841" data-state="not-ready" class=" topicref " data-id="concept_fjl_sjx_f2b"><span class="title"><a href="../../../topics/PyFlux/flux3d.htm">Flux 3D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_ckq_5fy_k2b-d46e16409" data-state="not-ready" class=" topicref " data-id="concept_ckq_5fy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxskew.htm">Flux SKEW PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_a1k_sfy_k2b-d46e23845" data-state="not-ready" class=" topicref " data-id="concept_a1k_sfy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">TubePoint</h1>
+
+   
+   <div class="body refbody"><p class="shortdesc">Tube Point</p>
+
+      <section class="section refsyn">Abstract Class TubePoint</section>
+
+      <section class="section" id="_TubePoint_r__subtypesSection"><h2 class="title sectiontitle">SubTypes</h2>
+         
+         <ul class="ul">
+            <li class="li">
+               <a class="xref" href="PropagatedTubePoint_r.htm#_PropagatedTubePoint_r" title="Propagated from another Tube Point">PropagatedTubePoint</a>
+            </li>
+
+            <li class="li">
+               <a class="xref" href="TubePointByCoordinates_r.htm#_TubePointByCoordinates_r" title="Tube Point defined by its Parametric Coordinates">TubePointByCoordinates</a>
+            </li>
+
+         </ul>
+
+      </section>
+
+      <section class="section" id="_TubePoint_r__fieldsSummary"><h2 class="title sectiontitle">Fields Summary</h2>
+         
+         <dl class="dl table">
+            
+               <dt class="dthd"><strong>Field</strong></dt>
+
+               <dd class="ddhd"><strong>Description</strong></dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___color_field_description">color</a>
+               </dt>
+
+               <dd class="dd">Tube Point Color</dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___visibility_field_description">visibility</a>
+               </dt>
+
+               <dd class="dd">Tube Point Visibility</dd>
+
+            
+         </dl>
+
+      </section>
+
+      <section class="section" id="_TubePoint_r__methodsSummary"><h2 class="title sectiontitle">Methods Summary</h2>
+         
+         <dl class="dl table">
+            
+               <dt class="dthd"><strong>Method</strong></dt>
+
+               <dd class="ddhd"><strong>Description</strong></dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___computeTubePointDistance_method_description">computeTubePointDistance</a>
+               </dt>
+
+               <dd class="dd">Compute distance between tube points</dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___computeTubePointPosition_method_description">computeTubePointPosition</a>
+               </dt>
+
+               <dd class="dd">Compute tube point coordinates</dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___NoLinkTubePoints_method_description">NoLinkTubePoints</a>
+               </dt>
+
+               <dd class="dd">Propagate tube points - NOT related to origin ones</dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___PropagatedTubePoints_method_description">PropagatedTubePoints</a>
+               </dt>
+
+               <dd class="dd">Propagate tube points - related to origin ones</dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___setInvisible_method_description">setInvisible</a>
+               </dt>
+
+               <dd class="dd">Set invisible selected tube points</dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_TubePoint_r___setVisible_method_description">setVisible</a>
+               </dt>
+
+               <dd class="dd">Set visible selected tube points</dd>
+
+            
+         </dl>
+
+      </section>
+
+      <section class="section" id="_TubePoint_r__fieldsDetails"><h2 class="title sectiontitle">Fields Details</h2>
+         
+         <dl class="dl">
+            
+               <dt class="dt dlterm" id="_TubePoint_r___color_field_description">color</dt>
+
+               <dd class="dd">color : Tube Point Color - [1..1] <a class="xref" href="Color_r.htm#_Color_r" title="Color">Color</a>
+               </dd>
+
+            
+            
+               <dt class="dt dlterm" id="_TubePoint_r___visibility_field_description">visibility</dt>
+
+               <dd class="dd">visibility : Tube Point Visibility - [1..1] <a class="xref" href="Visibility_r.htm#_Visibility_r" title="Visible/invisible">Visibility</a>
+               </dd>
+
+            
+         </dl>
+
+      </section>
+
+      <section class="section" id="_TubePoint_r__methodsDetails"><h2 class="title sectiontitle">Method Details</h2>
+         
+         <dl class="dl">
+            
+               <dt class="dt dlterm" id="_TubePoint_r___computeTubePointDistance_method_description">computeTubePointDistance</dt>
+
+               <dd class="dd">
+                  <ul class="ul">
+                     <li class="li">
+                        <p class="p">Syntax</p>
+
+                        <p class="p">result = computeTubePointDistance(tubePoint, coordSys)</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Parameters</p>
+
+                        <ul class="ul">
+                           <li class="li">tubePoint : Second tube points for distance - [1..N] <a class="xref" href="TubePoint_r.htm#_TubePoint_r" title="Tube Point">TubePoint</a>
+                           </li>
+
+                           <li class="li">coordSys : Coordinates system for tube points distance - [0..1] <a class="xref" href="CoordSys_r.htm#_CoordSys_r" title="Type of Coordinate System">CoordSys</a>
+                           </li>
+
+                        </ul>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Returns</p>
+
+                        <ul class="ul">
+                           <li class="li">distance : distance - [0..N] Double</li>
+
+                        </ul>
+
+                     </li>
+
+                  </ul>
+
+               </dd>
+
+            
+            
+               <dt class="dt dlterm" id="_TubePoint_r___computeTubePointPosition_method_description">computeTubePointPosition</dt>
+
+               <dd class="dd">
+                  <ul class="ul">
+                     <li class="li">
+                        <p class="p">Syntax</p>
+
+                        <p class="p">result = computeTubePointPosition(coordSys)</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Parameters</p>
+
+                        <ul class="ul">
+                           <li class="li">coordSys : Coordinates system for tube points position - [0..1] <a class="xref" href="CoordSys_r.htm#_CoordSys_r" title="Type of Coordinate System">CoordSys</a>
+                           </li>
+
+                        </ul>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Returns</p>
+
+                        <ul class="ul">
+                           <li class="li">position : position - [0..N] Double</li>
+
+                        </ul>
+
+                     </li>
+
+                  </ul>
+
+               </dd>
+
+            
+            
+               <dt class="dt dlterm" id="_TubePoint_r___NoLinkTubePoints_method_description">NoLinkTubePoints</dt>
+
+               <dd class="dd">
+                  <ul class="ul">
+                     <li class="li">
+                        <p class="p">Syntax</p>
+
+                        <p class="p">result = NoLinkTubePoints(transformation, repetitionNumber)</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Parameters</p>
+
+                        <ul class="ul">
+                           <li class="li">transformation : Transformation for propagation - [1..1] <a class="xref" href="Transf_r.htm#_Transf_r" title="Type of Geometric Transformation">Transf</a>
+                           </li>
+
+                           <li class="li">repetitionNumber : Number of times to apply the transformation - [1..1] Integer</li>
+
+                        </ul>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Returns</p>
+
+                        <ul class="ul">
+                           <li class="li">tubePoints Enumeration : Tube points - [0..N] <a class="xref" href="TubePoint_r.htm#_TubePoint_r" title="Tube Point">TubePoint</a>
+                           </li>
+
+                        </ul>
+
+                     </li>
+
+                  </ul>
+
+               </dd>
+
+            
+            
+               <dt class="dt dlterm" id="_TubePoint_r___PropagatedTubePoints_method_description">PropagatedTubePoints</dt>
+
+               <dd class="dd">
+                  <ul class="ul">
+                     <li class="li">
+                        <p class="p">Syntax</p>
+
+                        <p class="p">result = PropagatedTubePoints(transformation, repetitionNumber)</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Parameters</p>
+
+                        <ul class="ul">
+                           <li class="li">transformation : Transformation for propagation - [1..1] <a class="xref" href="Transf_r.htm#_Transf_r" title="Type of Geometric Transformation">Transf</a>
+                           </li>
+
+                           <li class="li">repetitionNumber : Number of times to apply the transformation - [1..1] Integer</li>
+
+                        </ul>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Returns</p>
+
+                        <ul class="ul">
+                           <li class="li">tubePoints Enumeration : Tube points - [0..N] <a class="xref" href="TubePoint_r.htm#_TubePoint_r" title="Tube Point">TubePoint</a>
+                           </li>
+
+                        </ul>
+
+                     </li>
+
+                  </ul>
+
+               </dd>
+
+            
+            
+               <dt class="dt dlterm" id="_TubePoint_r___setInvisible_method_description">setInvisible</dt>
+
+               <dd class="dd">
+                  <ul class="ul">
+                     <li class="li">
+                        <p class="p">Syntax</p>
+
+                        <p class="p">setInvisible()</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Parameters</p>
+
+                        <p class="p">No parameter</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Returns</p>
+
+                        <p class="p">No return value</p>
+
+                     </li>
+
+                  </ul>
+
+               </dd>
+
+            
+            
+               <dt class="dt dlterm" id="_TubePoint_r___setVisible_method_description">setVisible</dt>
+
+               <dd class="dd">
+                  <ul class="ul">
+                     <li class="li">
+                        <p class="p">Syntax</p>
+
+                        <p class="p">setVisible()</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Parameters</p>
+
+                        <p class="p">No parameter</p>
+
+                     </li>
+
+                     <li class="li">
+                        <p class="p">Returns</p>
+
+                        <p class="p">No return value</p>
+
+                     </li>
+
+                  </ul>
+
+               </dd>
+
+            
+         </dl>
+
+      </section>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

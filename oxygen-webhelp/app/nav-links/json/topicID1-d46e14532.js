@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"List of macros","shortdesc":"\n            <p class=\"shortdesc\"></p>\n         ","href":"Macros\/english\/topics\/list_of_macros_contents.htm","attributes": {"data-id":"list_of_macros",},"menu": {"hasChildren":true,},"tocID":"list_of_macros-d46e14543","next":"list_of_macros-d46e14543",}]});

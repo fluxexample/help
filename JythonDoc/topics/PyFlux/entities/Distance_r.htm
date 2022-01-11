@@ -1,0 +1,312 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+      <meta name="copyright" content="(C) Copyright 2020" /><meta name="DC.rights.owner" content="(C) Copyright 2020" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="Distance" /><meta name="abstract" content="Distances applied along the direction vector" /><meta name="description" content="Distances applied along the direction vector" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="_Distance_r" /><title>Distance</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="_Distance_r" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="PyFlux Documentation (Beta version)" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title">PyFlux Documentation (Beta version)</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader"></span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li class="has-children"><span data-tocid="concept_zmq_mfy_k2b-d46e283" data-state="not-ready" class=" topicref " data-id="concept_zmq_mfy_k2b"><span class="title"><a href="../../../topics/PyFlux/flux2d.htm">Flux 2D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_fjl_sjx_f2b-d46e7841" data-state="not-ready" class=" topicref " data-id="concept_fjl_sjx_f2b"><span class="title"><a href="../../../topics/PyFlux/flux3d.htm">Flux 3D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_ckq_5fy_k2b-d46e16409" data-state="not-ready" class=" topicref " data-id="concept_ckq_5fy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxskew.htm">Flux SKEW PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_a1k_sfy_k2b-d46e23845" data-state="not-ready" class=" topicref " data-id="concept_a1k_sfy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="PyFlux Documentation (Beta version)" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title">PyFlux Documentation (Beta version)</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader"></span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li class="has-children"><span data-tocid="concept_zmq_mfy_k2b-d46e283" data-state="not-ready" class=" topicref " data-id="concept_zmq_mfy_k2b"><span class="title"><a href="../../../topics/PyFlux/flux2d.htm">Flux 2D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_fjl_sjx_f2b-d46e7841" data-state="not-ready" class=" topicref " data-id="concept_fjl_sjx_f2b"><span class="title"><a href="../../../topics/PyFlux/flux3d.htm">Flux 3D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_ckq_5fy_k2b-d46e16409" data-state="not-ready" class=" topicref " data-id="concept_ckq_5fy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxskew.htm">Flux SKEW PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_a1k_sfy_k2b-d46e23845" data-state="not-ready" class=" topicref " data-id="concept_a1k_sfy_k2b"><span class="title"><a href="../../../topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Distance</h1>
+
+   
+   <div class="body refbody"><p class="shortdesc">Distances applied along the direction vector</p>
+
+      <section class="section refsyn">Class Distance extends <a class="xref" href="distanceType_r.htm#_distanceType">distanceType</a>
+      </section>
+
+      <section class="section" id="_Distance_r__constructors"><h2 class="title sectiontitle">Constructors</h2>
+         
+         <ul class="ul">
+            <li class="li">Distance(firstDistance )</li>
+
+            <li class="li">Distance(firstDistance  ,secondDistance )</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section" id="_Distance_r__fieldsSummary"><h2 class="title sectiontitle">Fields Summary</h2>
+         
+         <dl class="dl table">
+            
+               <dt class="dthd"><strong>Field</strong></dt>
+
+               <dd class="ddhd"><strong>Description</strong></dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_Distance_r___firstDistance_field_description">firstDistance</a>
+               </dt>
+
+               <dd class="dd">Length of extrusion</dd>
+
+            
+            
+               <dt class="dt dlterm">
+                  <a class="xref" href="#_Distance_r___secondDistance_field_description">secondDistance</a>
+               </dt>
+
+               <dd class="dd">Offset of origin plane (0 if empty)</dd>
+
+            
+         </dl>
+
+      </section>
+
+      <section class="section" id="_Distance_r__methodsSummary"><h2 class="title sectiontitle">Methods Summary</h2>
+         
+         <p class="p">no methods</p>
+
+      </section>
+
+      <section class="section" id="_Distance_r__fieldsDetails"><h2 class="title sectiontitle">Fields Details</h2>
+         
+         <dl class="dl">
+            
+               <dt class="dt dlterm" id="_Distance_r___firstDistance_field_description">firstDistance</dt>
+
+               <dd class="dd">firstDistance : Length of extrusion - [1..1] Geometric Formula &lt;String&gt;</dd>
+
+            
+            
+               <dt class="dt dlterm" id="_Distance_r___secondDistance_field_description">secondDistance</dt>
+
+               <dd class="dd">secondDistance : Offset of origin plane (0 if empty) - [0..1] Geometric Formula &lt;String&gt;</dd>
+
+            
+         </dl>
+
+      </section>
+
+      <section class="section" id="_Distance_r__methodsDetails"><h2 class="title sectiontitle">Method Details</h2>
+         
+         <p class="p">no methods</p>
+
+      </section>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

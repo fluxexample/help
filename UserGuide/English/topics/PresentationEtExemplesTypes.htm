@@ -1,0 +1,626 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Presentation The Flux PEEC software (Inductance Calculation) is a numerical tool for the computation of parameters characterizing the parasitic couplings within complex structures in Electrical ..." /><meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Presentation and typical examples" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/CeQuePeutModeliserInCa3D.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/CeQuePeutModeliserInCa3D.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/PresentationDesTutoriauxEtCahiersTechniques.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="topicID1" /><title>Presentation and typical examples</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="topicID1-d46e12734" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="topicID1" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Principes.htm">Principles</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ModelisationAvecInCa3D.htm">Modeling with Flux PEEC</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/CeQuePeutModeliserInCa3D.htm">What Flux PEEC models</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PresentationEtExemplesTypes.htm">Presentation and typical examples</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/CeQuePeutModeliserInCa3D.htm" title="What Flux PEEC models"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/PresentationDesTutoriauxEtCahiersTechniques.htm" title="Presentation of tutorials and technical documentation"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="topicID1-d46e12542" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Principes.htm">Principles</a></span></span><ul class="nav nav-list">
+               <li><span data-tocid="topicID1-d46e12550" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/MethodePEECAspectsTheoriques.htm">PEEC method: theoretical aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e12718" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModelisationAvecInCa3D.htm">Modeling with Flux PEEC</a></span></span><ul class="nav nav-list">
+                     <li><span data-tocid="topicID1-d46e12726" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CeQuePeutModeliserInCa3D.htm">What Flux PEEC models</a></span></span><ul class="nav nav-list">
+                           <li class="active"><span data-tocid="topicID1-d46e12734" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PresentationEtExemplesTypes.htm">Presentation and typical examples</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e12742" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PresentationDesTutoriauxEtCahiersTechniques.htm">Presentation of tutorials and technical documentation</a></span></span></li>
+                        </ul>
+                     </li>
+                     <li><span data-tocid="topicID1-d46e12750" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PrincipeDeDescriptionAvecInCa3D.htm">Description principle with Flux PEEC</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e12830" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/AnalyseDesResultats_PEEC.htm">Results analysis</a></span></span></li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li><span data-tocid="topicID1-d46e12854" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/DescriptionGeometriqueEtPhysique.htm">Geometry construction</a></span></span></li>
+         <li><span data-tocid="topicID1-d46e13590" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/RealiserUneSimulation.htm">Performing a simulation</a></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Principes.htm">Principles</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ModelisationAvecInCa3D.htm">Modeling with Flux PEEC</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/CeQuePeutModeliserInCa3D.htm">What Flux PEEC models</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PresentationEtExemplesTypes.htm">Presentation and typical examples</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/CeQuePeutModeliserInCa3D.htm" title="What Flux PEEC models"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/PresentationDesTutoriauxEtCahiersTechniques.htm" title="Presentation of tutorials and technical documentation"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Presentation and typical examples</h1>
+
+   <div class="body">
+      <section class="section"><h2 class="title sectiontitle">Presentation</h2>
+         
+         <p class="p">The Flux PEEC software (Inductance Calculation) is a numerical tool for the computation
+            of parameters characterizing the parasitic couplings within complex structures in
+            Electrical Engineering and/or Power Electronics.</p>
+
+         <p class="p">It allows the evaluation of the electric circuit
+parameters (R, L, M) associated to the conductors of more or less
+complex geometry, placed in the air.</p>
+
+         <p class="p">* This method is in the quasi-stationary
+approximation; the capacitive effect is neglected.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Current applications</h2>
+         
+         <p class="p">The most current applications of Flux PEEC are
+related to the design of electric connections between components of
+different structures, such as:</p>
+
+         <ul class="ul">
+            <li class="li">electrical power supply</li>
+
+            <li class="li">bus bars
+in power electronics</li>
+
+            <li class="li">power
+modules of electric converters</li>
+
+            <li class="li">electrical connections</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Computation with Flux PEEC</h2>
+         
+         <p class="p">Flux PEEC proposes a harmonic calculation (for
+various frequencies) of the electric connections. Two types of
+computation* are proposed; which provides the user with two
+complementary approaches of the structure to model.</p>
+
+         <p class="p">* In the software, these two modes of calculation
+correspond to two applications (called Supplied conductors, and
+Conductors impedance).</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Application “Supplied conductors”</h2>
+         
+         <p class="p">In the first type of computation, known as “ Supplied conductors ”, the user analyzes
+            the structure in its electric environment, i.e. including the supply circuit (current or
+            voltage supply sources and passive electric components of resistance, inductance or
+            capacitance type).</p>
+
+         <p class="p">The main result is the electric current flowing in
+the conductors.</p>
+
+         <p class="p">Starting from the current, other electromagnetic
+quantities can be computed such as:</p>
+
+         <ul class="ul">
+            <li class="li">the magnetic flux density B in the area surrounding the conductors</li>
+
+            <li class="li">the
+electrodynamic force between conductors (Laplace force)</li>
+
+            <li class="li">the
+power losses in conductors (losses by Joule effect)</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Application “Conductors impedance”</h2>
+         
+         <p class="p">In the second type of computation, known as
+“Conductors impedance”, the user deduces some
+equivalent parameters of the studied structure from the PEEC
+computation. These values are then used as input data for an
+electric circuits simulation software, such as SPICE, SABER,
+MODELICA, PORTUNUS,…</p>
+
+         <p class="p">The main result is the impedance of portions of
+the circuit defined by the user.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Possibilities</h2>
+         
+         <p class="p">It is possible to model with Flux PEEC two types
+of conductors: the uni- and bidirectional conductors as
+ presented in the table below.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cell-norowborder" colspan="2" id="d536377e126">An unidirectional conductor is a …</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry row-nocellborder" headers="d536377e126 ">
+                        <ul class="ul">
+                           <li class="li">1D
+conductor (with tubular shape)</li>
+
+                           <li class="li">with a
+privileged direction of the current: direction of the tube ⊥
+to its section</li>
+
+                        </ul>
+
+                        <p class="p">Note that the path of 1D conductor can contain
+bends and the changes in direction are not necessarily of right
+angle.</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d536377e126 ">
+                        <img class="image" src="Images/image69077232.jpg" height="90" width="175" />
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cell-norowborder" colspan="2" id="d536377e171">A bidirectional conductor is a …</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry row-nocellborder" headers="d536377e171 ">
+                        <ul class="ul">
+                           <li class="li">2D
+conductor (in the shape of plate)</li>
+
+                           <li class="li">with a
+current circulating in the plan of the plate (without privileged
+direction)</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d536377e171 ">
+                        <img class="image" src="Images/image1622831284.jpg" height="82" width="184" />
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Limitations</h2>
+         
+         <p class="p">The limitations are the following:</p>
+
+         <ul class="ul">
+            <li class="li">the conductors are uni- or bidirectional<p class="p">(Tridirectional conductors cannot be
+                  taken into consideration)</p>
+</li>
+
+            <li class="li">for 1D
+conductors, the size and shape of the cross-section must remain
+constant throughout each conductor portion between two bends</li>
+
+            <li class="li">the
+cross-section of 1D conductors and the shape of 2D conductors must
+be defined as a sequence of segments, that is to say that the parts
+in arc of a circle or ellipsis are forbidden</li>
+
+            <li class="li">only the 1D conductors of tube type and whose section is:<ul class="ul" id="topicID1__ul_ivg_dts_pjb">
+                  <li class="li">either rectangular</li>
+
+                  <li class="li">or irregular and hollow</li>
+
+               </ul>
+<p class="p">can be composed of a material with magnetic properties.</p>
+<p class="p">For more
+                  details on these definitions, the user can refer to § <a class="xref" href="DemarcheGeneraleConducteurTubeEtConducteurParAssimilation.htm">General approach; tube conductor and
+                     assimilation conductor</a>.</p>
+</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Example 1</h2>
+         
+         <p class="p">Study of a power module made up of three diodes
+and three IGBTs in parallel (MGE UPS Systems).</p>
+
+         <p class="p">
+            <img class="image" src="Images/image929941899.jpg" height="218" width="415" />
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Example 2</h2>
+         
+         <div class="p">Study of the distribution of current in sets of bars of distribution (Schneider Electric
+            - LEG). The operating conditions are as follows: 400 V / 50 Hz / 630 - 1600 A.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="topicID1__table_cwh_5ts_pjb" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><tbody class="tbody">
+                     <tr>
+                        <td class="entry nocellnorowborder" style="text-align:center;vertical-align:middle;"><img class="image" id="topicID1__image_y2p_5ts_pjb" src="Images/image1567694779.jpg" height="156" width="152" /></td>
+
+                        <td class="entry nocellnorowborder" style="text-align:center;vertical-align:middle;"><img class="image" id="topicID1__image_tkv_5ts_pjb" src="Images/image158781614.jpg" height="162" width="112" /></td>
+
+                        <td class="entry nocellnorowborder" style="text-align:center;vertical-align:middle;"><img class="image" id="topicID1__image_txz_5ts_pjb" src="Images/image1885622122.jpg" height="159" width="156" /></td>
+
+                     </tr>
+
+                  </tbody>
+</table>
+</div>
+</div>
+
+         <p class="p"> </p>
+
+      </section>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

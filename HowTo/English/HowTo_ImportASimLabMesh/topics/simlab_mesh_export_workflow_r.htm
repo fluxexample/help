@@ -1,0 +1,738 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+      <meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="SimLab mesh export workflow" /><meta name="abstract" content="" /><meta name="description" content="Introduction This section presents the steps to follow in SimLab 2017 to export the mesh in a Nastran file. Preliminary Before detailing the workflow to follow, here are some useful information for a ..." /><meta name="DC.Relation" scheme="URI" content="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/HowTo_ImportASimLabMesh_Contents.htm" /><meta name="DC.Relation" scheme="URI" content="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/mesh_import_r.htm" /><meta name="DC.Relation" scheme="URI" content="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/flux_mesh_import_workflow_r.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="simlab_mesh_export_workflow_r" /><title>SimLab mesh export workflow</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../../" /><meta name="wh-toc-id" content="simlab_mesh_export_workflow_r-d46e892" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../../oxygen-webhelp/app/topic-page.js" src="../../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="simlab_mesh_export_workflow_r" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../../index.htm" class=" wh_logo "><img src="../../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="sans_titre1"><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/HowTo_ImportASimLabMesh_Contents.htm">How to import a SimLab mesh?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="simlab_mesh_export_workflow_r"><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/simlab_mesh_export_workflow_r.htm">SimLab mesh export workflow</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/mesh_import_r.htm" title="Mesh import"></a></span>  
+<span class="navnext"><a class="link" href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/flux_mesh_import_workflow_r.htm" title="Flux mesh import workflow"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="configurethememoryinflux_r-d46e732" class="topicref" data-id="configurethememoryinflux_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ConfigureTheMemoryInFlux/topics/configurethememoryinflux_r.htm">How to Configure the Memory in Flux?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e742" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_DriveFluxWithCompose/topics/HowToDriveFluxWithCompose_Contents.htm">How to Drive Flux with Compose?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="experimentwithnumpy_r-d46e782" class="topicref" data-id="experimentwithnumpy_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ExperimentWithNumPyInFlux/topics/experimentwithnumpyinflux_r.htm">How to Experiment with NumPy in Flux?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="getstepsscenario_r-d46e792" class="topicref" data-id="getstepsscenario_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_GetTheStepsOfAScenario/topics/getthestepsofascenario_r.htm">How to Get the Steps of a Scenario?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e802" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportAHyperMeshMesh/topics/HowTo_ImportAHyperMeshMesh_Contents.htm">How to import a HyperMesh mesh?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e862" class="topicref" data-id="sans_titre1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/HowTo_ImportASimLabMesh_Contents.htm">How to import a SimLab mesh?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span><ul class="nav nav-list">
+               <li><span data-tocid="introduction-d46e872" class="topicref" data-id="introduction" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/introduction_r.htm">Introduction</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li><span data-tocid="mesh_importation_r-d46e882" class="topicref" data-id="mesh_importation_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/mesh_import_r.htm">Mesh import</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li class="active"><span data-tocid="simlab_mesh_export_workflow_r-d46e892" class="topicref" data-id="simlab_mesh_export_workflow_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/simlab_mesh_export_workflow_r.htm">SimLab mesh export workflow</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li><span data-tocid="flux_mesh_import_workflow_r-d46e902" class="topicref" data-id="flux_mesh_import_workflow_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/flux_mesh_import_workflow_r.htm">Flux mesh import workflow</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li><span data-tocid="limitations_and_remarks_r-d46e912" class="topicref" data-id="limitations_and_remarks_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/limitations_and_remarks_r.htm">Limitations and remarks</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+            </ul>
+         </li>
+         <li><span data-tocid="launch_flux_via_command_line_r-d46e922" class="topicref" data-id="launch_flux_via_command_line_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_LaunchFluxViaCommandLine/topics/launchfluxviacommandline_r.htm">How to Launch Flux via Command Line?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre2-d46e932" class="topicref" data-id="sans_titre2" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_SetFluxForBatchSchedulers/topics/HowTo_SetFluxForBatchSchedulers_Contents.htm">How to set Flux for batch schedulers?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="reference_ogs_xy4_sgb-d46e1022" class="topicref" data-id="reference_ogs_xy4_sgb" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_UseExternalJythonClassesInFlux/topics/useexternaljythonclassesinflux_r.htm">How to Use External Jython Classes in Flux?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre5-d46e1032" class="topicref" data-id="sans_titre5" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_UseFluxWithPBSViaComputeManager/topics/HowTo_UseFluxWithPBSViaComputeManager_Contents.htm">How to use Flux with PBS via Compute Manager?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="usefluxwithpbsviadisplaymanager_r-d46e1083" class="topicref" data-id="usefluxwithpbsviadisplaymanager_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_UseFluxWithPBSViaDisplayManager/topics/HowtoUseFluxWithPBSviaDisplayManager.htm">How to Use Flux with PBS via Display Manager?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="usefluxwithpbsviadisplaymanager_r-d46e1093" class="topicref" data-id="usefluxwithpbsviadisplaymanager_r" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_AcuSolve_Flux_ImportExportContext/topics/HowToUseFlux_AcuSolve_Flux_ImportExportContext_Contents.htm">How to use the Flux-AcuSolve coupling with the Import/Export context?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre8-d46e1133" class="topicref" data-id="sans_titre8" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/HowToUseFlux_OptiStruct_Flux_ImportExportContext_contents.htm">How to use the Flux-OptiStruct coupling with the Import/Export context?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e1183" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_MeshSkinEffect/topics/HowTo_MeshSkinEffect_Contents.htm">How to mesh skin effect?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../../index.htm" class=" wh_logo "><img src="../../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="sans_titre1"><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/HowTo_ImportASimLabMesh_Contents.htm">How to import a SimLab mesh?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="simlab_mesh_export_workflow_r"><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/simlab_mesh_export_workflow_r.htm">SimLab mesh export workflow</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/mesh_import_r.htm" title="Mesh import"></a></span>  
+<span class="navnext"><a class="link" href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/flux_mesh_import_workflow_r.htm" title="Flux mesh import workflow"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">SimLab mesh export workflow</h1>
+
+    
+    <div class="body refbody"><p class="shortdesc"></p>
+
+        <section class="section" id="simlab_mesh_export_workflow_r__section_plj_f53_tgb"><h2 class="title sectiontitle">Introduction</h2>
+            
+            <p class="p">This section presents the steps to follow in SimLab 2017 to export the mesh in a
+                Nastran file.</p>
+
+        </section>
+
+        <section class="section" id="simlab_mesh_export_workflow_r__section_xbb_h53_tgb"><h2 class="title sectiontitle">Preliminary</h2>
+            
+            <div class="p">Before detailing the workflow to follow, here are some useful information for a first
+                SimLab using:<ul class="ul" id="simlab_mesh_export_workflow_r__ul_akk_k53_tgb">
+                    <li class="li">In SimLab, contrary to HyperMesh, all the operations (geometry, verifying …)
+                        are applied to the mesh and not to the geometry. The CAD import allows only
+                        to visualize the geometry. So, the first step is to mesh in surface. The
+                        volume mesh is done at the end.</li>
+
+                    <li class="li">To open the help, press the key <span class="ph uicontrol">F1</span>. The help will be
+                        opened on the page concerning the active command.</li>
+
+                </ul>
+</div>
+
+        </section>
+
+        <section class="section" id="simlab_mesh_export_workflow_r__section_fcd_s53_tgb"><h2 class="title sectiontitle">Workflow</h2>
+            
+            <div class="p">In the following table, the steps to follow in SimLab for a nominal scenario are
+                presented (geometry imported from CAD file, air box creation, etc.):<ol class="ol" id="simlab_mesh_export_workflow_r__ol_jdg_23j_1hb">
+                    <li class="li">Open <span class="ph uicontrol">SimLab</span></li>
+
+                    <li class="li">Import the geometry CAD<p class="p">Two CAD imports exist:</p>
+<ul class="ul" id="simlab_mesh_export_workflow_r__ul_syg_lgj_tgb">
+                            <li class="li">
+                                <p class="p"><span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol"> Import</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">CAD</span></span>: </p>
+
+                                <p class="p">It allows using the native format (Parasolid, Step, CATIA,
+                                    ProE…). But the associated software must be installed</p>
+
+                            </li>
+
+                            <li class="li">
+                                <p class="p"><span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Import</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">CAD: Through Translation</span></span>:</p>
+
+                                <div class="p">It converts and imports the native formats in Step or
+                                        Parasolid<div class="note attention"><span class="attentiontitle">Attention:</span> The conversion can generate
+                                        geometrical errors.</div>
+</div>
+
+                            </li>
+
+                        </ul>
+<div class="p"> For this import, it is truly advised to choose the conversion in <strong class="ph b">Parasolid</strong>:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_ryz_x5q_tgb" src="../images/MeshImportSimlab_2.png" height="350" width="516" /></div><br /></div>
+<div class="p">It gives access to automatic assembly option <span class="ph uicontrol">Imprint solid bodies</span> which
+                            has to be checked at the import:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_j1s_y5q_tgb" src="../images/MeshImportSimlab_3.png" height="355" width="156" /></div><br /></div>
+<div class="p">After the import, the components are visible in the data tree. If each component faces define a
+                            volume, then the following icon appears:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_ys1_y3j_tgb" src="../images/MeshImportSimlab_4.png" /></div><br /></div>
+<div class="p">If faces don’t form a volume, the following icon appears:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_bh3_1jj_tgb" src="../images/MeshImportSimlab_5.png" /></div><br /></div>
+</li>
+
+                    <li class="li">Mesh the geometry faces:<div class="p"><span class="ph menucascade"><span class="ph uicontrol">Mesh</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Mesh </span></span> (in <span class="ph uicontrol">2D Create</span>)<ul class="ul" id="simlab_mesh_export_workflow_r__ul_myy_zjj_tgb">
+                                <li class="li">Select in the data tree the components to mesh</li>
+
+                                <li class="li">Choose the mesh order (<span class="ph uicontrol">Tri3</span> for the first
+                                    order and <span class="ph uicontrol">Tri6</span> for the 2nd order)</li>
+
+                                <li class="li">Choose the mean element size. The value will be applied to all
+                                    the entities without "mesh controls"<div class="note attention"><span class="attentiontitle">Attention:</span> If
+                                        the value is too high, the geometry can be
+                                        misrepresented.</div>
+</li>
+
+                                <li class="li">In <span class="ph uicontrol">Advanced Options</span> check the option
+                                        <span class="ph uicontrol">Imprint meshing</span> allowing the
+                                    management of mesh conformity:<div class="simpletable-container"><table cellpadding="4" cellspacing="0" summary="" id="simlab_mesh_export_workflow_r__simpletable_wvb_jjj_1hb" border="0" class="simpletable"><col style="width:50%" /><col style="width:50%" /><thead></thead><tbody><tr class="strow">
+                                            <td style="vertical-align:top;" class="stentry"><img class="image" id="simlab_mesh_export_workflow_r__image_e3m_1lj_tgb" src="../images/MeshImportSimlab_6.png" height="329" width="283" /></td>
+
+                                            <td style="vertical-align:top;" class="stentry"><img class="image" id="simlab_mesh_export_workflow_r__image_rts_3kj_1hb" src="../images/MeshImportSimlab_7.png" height="308" width="207" /></td>
+
+                                        </tr>
+</tbody></table>
+</div></li>
+
+                                <li class="li">Click on <span class="ph uicontrol">OK</span> to mesh</li>
+
+                            </ul>
+</div>
+<div class="p">The old geometrical components are made invisible, and new components of mesh type are created
+                            and visible in the data tree:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_fds_xkj_tgb" src="../images/MeshImportSimlab_8.png" /></div><br /></div>
+<p class="p">All the operations
+                            will be applied on those mesh components</p>
+</li>
+
+                    <li class="li">Most of the components which have a contact face will be assembled to obtain
+                        a conform mesh, thanks to the option presented before.<p class="p">If there are
+                            components which are not assembled, it is possible to do it
+                            manually.</p>
+<ul class="ul" id="simlab_mesh_export_workflow_r__ul_slw_jlj_tgb">
+                            <li class="li">
+                                <p class="p">Use the command <span class="ph uicontrol">Join</span>: </p>
+
+                                <p class="p"><span class="ph menucascade"><span class="ph uicontrol">Assembly</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Join</span></span> (in <span class="ph uicontrol">Connect</span>)</p>
+
+                            </li>
+
+                            <li class="li">Check the option <span class="ph uicontrol">General faces</span> to join all
+                                type of faces:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_szx_qmj_tgb" src="../images/MeshImportSimlab_9.png" height="260" width="233" /></div><br /></li>
+
+                            <li class="li">Click on <span class="ph uicontrol">Show</span> to visualize the faces to join,
+                                and then <span class="ph uicontrol">Join</span></li>
+
+                            <li class="li">
+                                <p class="p">Make a re-mesh of all the components to re-mesh correctly the
+                                    contact area (with the same mesh data as the first mesh):</p>
+
+                                <p class="p"><span class="ph menucascade"><span class="ph uicontrol">Mesh</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Re-mesh</span></span> (in <span class="ph uicontrol">2D Create</span>)</p>
+
+                            </li>
+
+                        </ul>
+<div class="p">
+                            <div class="note note"><span class="notetitle">Note:</span> In the case of a component inside another one, use the command
+                                    <span class="ph uicontrol">Boolean</span>:<p class="p"><span class="ph menucascade"><span class="ph uicontrol">Assembly</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Boolean</span></span> (in <span class="ph uicontrol">Connect</span>)</p>
+
+                            </div>
+
+                        </div>
+</li>
+
+                    <li class="li">Check the mesh:<ul class="ul" id="simlab_mesh_export_workflow_r__ul_hmv_zmj_tgb">
+                            <li class="li"><span class="ph menucascade"><span class="ph uicontrol">Mesh</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Edges</span></span> (in <span class="ph uicontrol">Verify</span>)<p class="p">This command
+                                    allows verifying if the mesh contains free edges (a free edge is
+                                    an edge belonging to only one surface element) or non-manifold
+                                    edges (belonging to more than 3 surface elements. This is
+                                    authorized only in case of internal/shared faces).</p>
+<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_rzj_wnj_tgb" src="../images/MeshImportSimlab_10.png" height="129" width="207" /></div><br /></li>
+
+                            <li class="li"><span class="ph menucascade"><span class="ph uicontrol">Mesh</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Intersection</span></span> (in <span class="ph uicontrol">Verify</span>)<p class="p">This command
+                                    allows verifying the intersections between elements</p>
+</li>
+
+                        </ul>
+<div class="p">In case of defaults, several tools can be used to correct:<ul class="ul" id="simlab_mesh_export_workflow_r__ul_s4v_lnj_tgb">
+                                <li class="li"><span class="ph menucascade"><span class="ph uicontrol">Mesh</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Fill</span></span> (in <span class="ph uicontrol">Modify</span>) to fill holes
+                                    or cracks</li>
+
+                                <li class="li"><span class="ph menucascade"><span class="ph uicontrol">Mesh</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Create</span></span> (in <span class="ph uicontrol">Modify</span>) to create
+                                    missing surface elements</li>
+
+                                <li class="li">Etc.</li>
+
+                            </ul>
+</div>
+</li>
+
+                    <li class="li">It is possible to create the air box in SimLab or in Flux.<p class="p">If you want to
+                            create the air box in SimLab:</p>
+<span class="ph menucascade"><span class="ph uicontrol">Geometry</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Create (in Body)</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Bounding Body</span></span><ul class="ul" id="simlab_mesh_export_workflow_r__ul_adh_v4j_tgb">
+                            <li class="li">
+                                <p class="p">Choose the bounding box shape (<span class="ph uicontrol">Box</span> or
+                                        <span class="ph uicontrol">Sphere</span> or
+                                        <span class="ph uicontrol">Cylinder</span>)</p>
+
+                                <p class="p">Here we choose <span class="ph uicontrol">Box</span> shape</p>
+
+                            </li>
+
+                            <li class="li">Click on <span class="ph menucascade"><span class="ph uicontrol">Define</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Modify box</span></span>:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_zxn_vmj_1hb" src="../images/MeshImportSimlab_11.png" height="370" width="225" /></div><br /></li>
+
+                            <li class="li">Check <span class="ph uicontrol">Bodies</span>:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_zt5_wmj_1hb" src="../images/MeshImportSimlab_12.png" height="346" width="292" /></div><br /><p class="p">Then select all the
+                                    components (<span class="ph uicontrol">left click</span>). The box appears:
+                                    it is possible to move a face directly on the graphic (to extend
+                                    or reduce the box size)</p>
+</li>
+
+                            <li class="li">Validate</li>
+
+                            <li class="li">
+                                <div class="p">Define element size <span class="ph uicontrol">Mesh size</span> or elements
+                                    number <span class="ph uicontrol">Number of elements</span> of the bounding
+                                    box <div class="note attention"><span class="attentiontitle">Attention:</span> Choose a value close to the value
+                                        entered for the device (to allow the mesher connecting the
+                                        elements).</div>
+</div>
+
+                            </li>
+
+                            <li class="li">Validate</li>
+
+                        </ul>
+<div class="p"> A new mesh component <span class="ph uicontrol">Bounding_Box1</span> is
+                                created:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_lnj_zqj_tgb" src="../images/MeshImportSimlab_13.png" /></div><br /></div>
+</li>
+
+                    <li class="li">Prepare the project for volume meshing:<ul class="ul" id="simlab_mesh_export_workflow_r__ul_zqm_2rj_tgb">
+                            <li class="li">
+                                <p class="p">Verify in the preferences that the option which allows meshing
+                                    the holes inside a volume is activated:</p>
+
+                                <p class="p"><span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Preferences button</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Mesh</span></span>: </p>
+
+                                <p class="p">check <span class="ph uicontrol">Fill hollow space in solids when volume
+                                        meshing</span>:</p>
+
+                                <br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_ofz_fsj_tgb" src="../images/MeshImportSimlab_14.png" height="463" width="453" /></div><br />
+                            </li>
+
+                            <li class="li">If the bounding box "Bounding_Box1" is not in the same node (in data
+                                tree) as the device component, make a
+                                    <span class="ph uicontrol">drag&amp;drop</span> to the same node</li>
+
+                            <li class="li">
+                                <p class="p">To have a conform mesh, make a <span class="ph uicontrol">Merge+</span> of
+                                    all the components (including bounding box):</p>
+
+                                <p class="p"><span class="ph menucascade"><span class="ph uicontrol">Geometry</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Merge+</span></span> (in <span class="ph uicontrol">Body</span>)</p>
+
+                            </li>
+
+                        </ul>
+<div class="p">Only one component exists in the data tree:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_ndr_2sj_tgb" src="../images/MeshImportSimlab_15.png" /></div><br /></div>
+</li>
+
+                    <li class="li">Mesh the component in volume:<p class="p"><span class="ph menucascade"><span class="ph uicontrol">Mesh</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Volume Mesh</span></span> (in <span class="ph uicontrol">3D Create</span>)</p>
+<ul class="ul" id="simlab_mesh_export_workflow_r__ul_ugg_4sj_tgb">
+                            <li class="li">Select the mesh order (<span class="ph uicontrol">TET4</span> for first order
+                                and <span class="ph uicontrol">TET10</span> for second order)</li>
+
+                            <li class="li">Define the mean element size</li>
+
+                            <li class="li">Choose the volume mesh <span class="ph uicontrol">Internal grading</span>
+                                coefficient (1.2 corresponds to a low grading, 2 to a high
+                                grading)</li>
+
+                            <li class="li">Choose the <span class="ph uicontrol">Quality</span> criteria
+                                    (<span class="ph uicontrol">Stretch</span> or <span class="ph uicontrol">Aspect
+                                    ratio</span> or …)<div class="p">
+                                    <br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_nvh_hvj_tgb" src="../images/MeshImportSimlab_16.png" height="364" width="281" /></div><br />
+                                </div>
+</li>
+
+                            <li class="li">Validate the volume mesh</li>
+
+                            <li class="li">
+                                <p class="p">Make a <span class="ph uicontrol">Merge–</span> on the component:</p>
+
+                                <p class="p"><span class="ph menucascade"><span class="ph uicontrol">Geometry</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Merge-</span></span> (in <span class="ph uicontrol">Body</span>)</p>
+
+                            </li>
+
+                        </ul>
+<div class="p">The initial components appear:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_d4b_gvj_tgb" src="../images/MeshImportSimlab_17.png" /></div><br /></div>
+</li>
+
+                    <li class="li">Export the mesh:<p class="p"><span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Export</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Solver Input File</span></span></p>
+<ul class="ul" id="simlab_mesh_export_workflow_r__ul_fbk_rvj_tgb">
+                            <li class="li">Select the components</li>
+
+                            <li class="li">Choose the <span class="ph uicontrol">Nastran</span> solver:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_mnh_t4j_1hb" src="../images/MeshImportSimlab_18.png" height="291" width="314" /></div><br /></li>
+
+                            <li class="li">A message asking if you want to create and assign properties to
+                                components appears: click on <span class="ph uicontrol">Yes</span>:<br /><div class="imagecenter"><img class="image imagecenter" id="simlab_mesh_export_workflow_r__image_wty_54j_1hb" src="../images/MeshImportSimlab_19.png" height="90" width="232" /></div><br /><p class="p">That allows
+                                    distinguishing the volumes in Flux</p>
+</li>
+
+                            <li class="li">Choose the name of the <span class="ph filepath">.bdf</span> file to export</li>
+
+                        </ul>
+<div class="p">
+                            <div class="note note"><span class="notetitle">Note:</span> The option <span class="ph uicontrol">Renumber</span> can be checked if the
+                                file would contain high elements numbers (for example if it is a
+                                little part of a large size device).</div>
+
+                        </div>
+</li>
+
+                </ol>
+</div>
+
+        </section>
+
+    </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

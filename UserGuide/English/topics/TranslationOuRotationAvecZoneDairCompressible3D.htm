@@ -1,0 +1,697 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Introduction This paragraph deals with rotation or translation motion of a moving part in a compressible air area. Example: presentation The example presented in this paragraph represents a simple ..." /><meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Translation or rotation with compressible air area" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/PrincipeDeDescriptionDansFlux.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/EnsemblesMecaniques.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/TranslationOuRotationAvecSurfaceDeGlissement3D.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="topicID1" /><title>Translation or rotation with compressible air area</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="topicID1-d46e10500" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="topicID1" data-spy="scroll" data-target="#toc">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Couplages.htm">Circuit and Kinematic Couplings</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is coupled to a circuit context allowing to model the sources of the devices.Flux       also allow to model the movement
+                  via a kinematic coupling.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/CouplageCinematique1.htm">Kinematic coupling: principles</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PrincipeDeDescriptionDansFlux.htm">Problem description with Flux</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/TranslationOuRotationAvecZoneDairCompressible3D.htm">Translation or rotation with compressible air area</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/EnsemblesMecaniques.htm" title="Mechanical sets"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/TranslationOuRotationAvecSurfaceDeGlissement3D.htm" title="Translation or rotation with sliding surface"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="topicID1-d46e1391" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/OutilsGeneraux.htm">General operation</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Here is a presentation of the Flux environment; the project management, the data       management, the command language, the
+                        formulas and mathematical functions.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e2010" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                        with the possibility to import a CAD file, a mesh,       materials...
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e6824" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ApplicationsPhysiques.htm">Physical applications</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux allows to model different physical phenomena, and includes various applications       (magnetic, electrical, thermal
+                        and thermal coupled).
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e9744" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Couplages.htm">Circuit and Kinematic Couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is coupled to a circuit context allowing to model the sources of the devices.Flux       also allow to model the movement
+                        via a kinematic coupling.
+                        
+                     </p>
+                     </span></span></span><ul class="nav nav-list">
+               <li><span data-tocid="topicID1-d46e9755" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplagesCircuit.htm">Circuit coupling: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e9979" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplageCircuitAspectsLogiciel.htm">Circuit coupling: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e10388" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplageCinematique1.htm">Kinematic coupling: principles</a></span></span><ul class="nav nav-list">
+                     <li><span data-tocid="topicID1-d46e10396" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CeQuePeutModeliserFluxTypeDeMouvementmodelesCinematiques.htm">What Flux models (motion type / kinematic models)</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e10444" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EquationsTechniquesDeRemaillage.htm">Equations / re-meshing techniques</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e10484" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PrincipeDeDescriptionDansFlux.htm">Problem description with Flux</a></span></span><ul class="nav nav-list">
+                           <li><span data-tocid="topicID1-d46e10492" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EnsemblesMecaniques.htm">Mechanical sets</a></span></span></li>
+                           <li class="active"><span data-tocid="topicID1-d46e10500" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/TranslationOuRotationAvecZoneDairCompressible3D.htm">Translation or rotation with compressible air area</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e10508" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/TranslationOuRotationAvecSurfaceDeGlissement3D.htm">Translation or rotation with sliding surface</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e10516" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CaracteristiquesCinematiques.htm">Kinematic characteristics</a></span></span></li>
+                        </ul>
+                     </li>
+                     <li><span data-tocid="topicID1-d46e10524" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PilotageDeLaResolutionEtAnalyseDesResultats.htm">Solving control and results post-processing</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e10556" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Nouveaute103MouvementLibre.htm">The called " free" motion</a></span></span></li>
+                  </ul>
+               </li>
+               <li><span data-tocid="topicID1-d46e10588" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplageCinematiqueAspectsLogiciel.htm">Kinematic coupling: software aspects</a></span></span></li>
+            </ul>
+         </li>
+         <li><span data-tocid="topicID1-d46e10620" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Co-simulation.htm">Co-simulation between Flux and another software</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is able to couple with several softwares allowing to model mutliphysics       phenomena.</p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11126" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplagesMetier.htm">Dedicated couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Several dedicated couplings are implemented in Flux to, carry out vibro-acoustic       studies, magneto-thermal studies and
+                        more.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11778" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ContexteMetier3D.htm">3D Overlay</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has predefined models for rotating machines via Overlays allowing to describe a       geometry, a mesh and a physics
+                        adapted to the wished machine.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e11805" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxAPI.htm">Flux API</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Couplages.htm">Circuit and Kinematic Couplings</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is coupled to a circuit context allowing to model the sources of the devices.Flux       also allow to model the movement
+                  via a kinematic coupling.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/CouplageCinematique1.htm">Kinematic coupling: principles</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PrincipeDeDescriptionDansFlux.htm">Problem description with Flux</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/TranslationOuRotationAvecZoneDairCompressible3D.htm">Translation or rotation with compressible air area</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/EnsemblesMecaniques.htm" title="Mechanical sets"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/TranslationOuRotationAvecSurfaceDeGlissement3D.htm" title="Translation or rotation with sliding surface"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Translation or rotation with compressible air area</h1>
+
+   <div class="body">
+      <section class="section"><h2 class="title sectiontitle">Introduction</h2>
+         
+         <p class="p">This paragraph deals with rotation or translation
+motion of a moving part in a compressible air area.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Example: presentation</h2>
+         
+         <p class="p">The example presented in this paragraph represents
+a simple model of a switch that has two operation modes:
+translating motion along an axis and rotating motion around an
+axis.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Assignment of regions</h2>
+         
+         <p class="p">The assignment of regions in mechanical sets is
+done in the following way:</p>
+
+         <ul class="ul">
+            <li class="li"><span class="ph uicontrol">moving</span> mechanical set: the upper magnetic core</li>
+
+         </ul>
+
+         <ul class="ul">
+            <li class="li"><span class="ph uicontrol">fixed</span> mechanical set:<ul class="ul" id="topicID1__ul_fgj_cns_mjb">
+                  <li class="li">the lower magnetic core</li>
+
+                  <li class="li">the two coils</li>
+
+                  <li class="li">the “external” area of air (not affected by the displacement)</li>
+
+               </ul>
+</li>
+
+         </ul>
+
+         <ul class="ul">
+            <li class="li">
+               <span class="ph uicontrol">compressible</span> mechanical set: the area of air surrounding the
+               device (affected by the displacement)</li>
+
+         </ul>
+
+         <p class="p">
+            <img class="image" id="topicID1__image_msg_ytn_pnb" src="Images/image1315504309.svg" />
+            <img class="image" id="topicID1__image_mgq_g5n_pnb" src="Images/image338674632.svg" /><img class="image" id="topicID1__image_nxx_h5n_pnb" src="Images/image1645927309.svg" /></p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Compressible mechanical set</h2>
+         
+         <p class="p">Different methods of defining the compressible
+area are presented in the table below. The first case corresponds
+to the most common one.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d631814e105"> </th>
+
+                     <th class="entry nocellnorowborder" id="d631814e107">1<sup class="ph sup">st</sup> case</th>
+
+                     <th class="entry cell-norowborder" id="d631814e113">2<sup class="ph sup">nd</sup> case</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e105 ">Geometry scheme</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e107 ">
+                        <img class="image" id="topicID1__image_c5l_45n_pnb" src="Images/image1814722284.svg" /></td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d631814e113 ">
+                        <img class="image" id="topicID1__image_pbq_s5n_pnb" src="Images/image630376611.svg" /></td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e105 ">Compressible mechanical set</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e107 ">Maximum area, corresponding to the air region</td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d631814e113 ">Minimum area, in which the moving part moves</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e105 ">Advantage</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e107 ">No need to create a specific region</td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d631814e113 ">
+                        <p class="p">Reduced area to remesh</p>
+
+                        <p class="p">
+                           <img class="image" src="Images/image1349679923.jpg" height="14" width="18" /> reduced
+                           requirements for mesh storage</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d631814e105 ">Disadvantage</td>
+
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d631814e107 ">
+                        <p class="p">Larger area to remesh</p>
+
+                        <p class="p">
+                           <img class="image" src="Images/image1349679923.jpg" height="14" width="18" /> larger
+                           requirements for mesh storage</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="vertical-align:middle;" headers="d631814e113 ">Requires creation of a specific region</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Restriction</h2>
+         
+         <p class="p">Any contact between the moving part (the upper core) and the fixed part (the magnetic
+            circuit) is not allowed.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Mechanical stops</h2>
+         
+         <p class="p">For translating motion the user must make sure
+that contact between the fixed and moving parts will not occur.</p>
+
+         <p class="p">To overcome the problem of contact, it is possible
+to define mechanical stops in order to prevent motion within
+certain areas.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Rules to be respected (in 3D only)</h2>
+         
+         <p class="p">In the “automatic formulations” mode,
+the formulations for different regions are automatically chosen by
+Flux 3D. However, some rules must be respected.</p>
+
+         <p class="p">The rules to be respected are the followings:</p>
+
+         <ul class="ul">
+            <li class="li">
+Conducting materials in contact with the dissociation surface are
+not authorized.</li>
+
+            <li class="li">For
+regions with conductive materials, the user must comply with some
+additional rules detailed in the table below.</li>
+
+         </ul>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" rowspan="2" style="vertical-align:middle;" id="d631814e249">Conductive region inside a …</th>
+
+                     <th class="entry cell-norowborder" colspan="2" style="vertical-align:middle;" id="d631814e252">with</th>
+
+                  </tr>
+
+                  <tr>
+                     <th class="entry nocellnorowborder" style="vertical-align:middle;" id="d631814e258">translating motion</th>
+
+                     <th class="entry cell-norowborder" style="vertical-align:middle;" id="d631814e261">rotating motion</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e249 d631814e258 ">
+                        <p class="p">mobile</p>
+
+                        <p class="p"> mechanical set</p>
+
+                     </td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d631814e252 d631814e261 ">There are no additional constraints for choosing the
+                        formulations</td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d631814e252 ">Choose only advanced formulations (edge
+                        formulations)</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d631814e249 d631814e258 ">
+                        <p class="p">fixed</p>
+
+                        <p class="p"> mechanical set</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" colspan="2" style="vertical-align:middle;" headers="d631814e252 d631814e261 ">There are no additional
+                        constraints for choosing the formulations</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p">* A reminder about field formulations:
+formulations available for regions with conducting materials are
+the following:</p>
+
+         <ul class="ul">
+            <li class="li">nodal formulations (normal): <span class="ph uicontrol">Mx3TOM</span>,
+                  <span class="ph uicontrol">Mx3TSCRHJ</span></li>
+
+            <li class="li">edge formulations (advanced): <span class="ph uicontrol">Mx3TWOM</span>,
+                  <span class="ph uicontrol">Mx3TWSCRHJ</span></li>
+
+         </ul>
+
+         <p class="p">where:</p>
+
+         <ul class="ul">
+            <li class="li"><span class="ph uicontrol">x = T</span>, for Transient Magnetic application</li>
+
+            <li class="li"><span class="ph uicontrol">x = D</span>, for Steady State AC Magnetic application</li>
+
+         </ul>
+
+      </section>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

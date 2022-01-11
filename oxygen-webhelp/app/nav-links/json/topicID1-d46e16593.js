@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Quick Start CDE","shortdesc":"\n            <p class=\"shortdesc\"></p>\n         ","href":"QuickStart-CDE\/english\/topics\/cde_quick_start_Contents.htm","attributes": {"data-id":"cde_quick_qtart_Contents",},"menu": {"hasChildren":true,},"tocID":"cde_quick_qtart_Contents-d46e16604","next":"cde_quick_qtart_Contents-d46e16604",}]});

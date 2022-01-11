@@ -1,0 +1,565 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Issues Short description of the source problem resolved in this version Documentation FX-16358 The document &#34;How to mesh with skin effect&#34; has been updated in Flux 2021 by integrating Meshgem hybrid ..." /><meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="Improvements" /><meta name="DC.Relation" scheme="URI" content="../../../ReleaseNote/ReleaseNote_Flux2021/topics/ReleaseNotes2021.htm" /><meta name="DC.Relation" scheme="URI" content="../../../ReleaseNote/ReleaseNote_Flux2021/topics/Flux2021NewFeature_RBE3ExportOptistruct.htm" /><meta name="DC.Relation" scheme="URI" content="../../../ReleaseNote/ReleaseNote_Flux2021/topics/release_notes_Fixed_Defects_Flux_r.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="online_release_notes_Improvements_2021" /><title>Improvements</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="online_release_notes_Improvements_2021-d46e493" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="online_release_notes_Improvements_2021" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="essential_information_r"><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/ReleaseNotes2021.htm">Release Notes: <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">Altair Flux</span>™ <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">2021</span></a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"><span class="keyword">Flux</span>         <span class="keyword">2021</span> is available with new features, corrections and         improvements. <span class="keyword">Flux</span>         <span class="keyword">2021</span> is a major release.
+                  
+               </p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="online_release_notes_Improvements_2021"><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/release_notes_Improvements_Flux_r.htm">Improvements</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/Flux2021NewFeature_RBE3ExportOptistruct.htm" title="New approach for exporting global forces to OptiStruct"></a></span>  
+<span class="navnext"><a class="link" href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/release_notes_Fixed_Defects_Flux_r.htm" title="Fixed Defects"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="essential_information_r-d46e341" class="topicref" data-id="essential_information_r" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/ReleaseNotes2021.htm">Release Notes: <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">Altair Flux</span>™ <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">2021</span></a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"><span class="keyword">Flux</span>         <span class="keyword">2021</span> is available with new features, corrections and         improvements. <span class="keyword">Flux</span>         <span class="keyword">2021</span> is a major release.
+                        
+                     </p>
+                     </span></span></span><ul class="nav nav-list">
+               <li><span data-tocid="essential_information_r-d46e368" class="topicref" data-id="essential_information_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/essential_information_Flux2021_r.htm">Essential Information about <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">Flux</span>  <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">2021</span></a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li><span data-tocid="sans_titre1-d46e383" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/NewFeaturesFlux2021_r.htm">New features of <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">Flux</span>  <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">2021</span></a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"> </p>
+                           </span></span></span></li>
+               <li class="active"><span data-tocid="online_release_notes_Improvements_2021-d46e493" class="topicref" data-id="online_release_notes_Improvements_2021" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/release_notes_Improvements_Flux_r.htm">Improvements</a></span></span></li>
+               <li><span data-tocid="online_release_notes_Fixed_Defects_2021-d46e501" class="topicref" data-id="online_release_notes_Fixed_Defects_2021" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/release_notes_Fixed_Defects_Flux_r.htm">Fixed Defects</a></span></span></li>
+               <li><span data-tocid="sans_titre1-d46e509" class="topicref" data-id="sans_titre1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/externalSoftwareSupported.htm">About external software – supported version</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Supported versions of software whose coupling is possible with Flux</p>
+                           </span></span></span></li>
+               <li><span data-tocid="sans_titre2-d46e520" class="topicref" data-id="sans_titre2" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/ProtectionInstallation2021.htm">About protection and installation</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="essential_information_r"><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/ReleaseNotes2021.htm">Release Notes: <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">Altair Flux</span>™ <span xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="keyword">2021</span></a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"><span class="keyword">Flux</span>         <span class="keyword">2021</span> is available with new features, corrections and         improvements. <span class="keyword">Flux</span>         <span class="keyword">2021</span> is a major release.
+                  
+               </p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="online_release_notes_Improvements_2021"><span class="title"><a href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/release_notes_Improvements_Flux_r.htm">Improvements</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/Flux2021NewFeature_RBE3ExportOptistruct.htm" title="New approach for exporting global forces to OptiStruct"></a></span>  
+<span class="navnext"><a class="link" href="../../../ReleaseNote/ReleaseNote_Flux2021/topics/release_notes_Fixed_Defects_Flux_r.htm" title="Fixed Defects"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Improvements</h1>
+
+   <div class="body refbody">
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="online_release_notes_Improvements_2021__Improvements" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:17.647058823529413%" /><col style="width:11.76470588235294%" /><col style="width:70.58823529411765%" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr>
+                  <th class="entry cellrowborder" colspan="2" style="text-align:center;" id="d73827e29">Issues</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;" id="d73827e32">Short description of the source problem resolved in this
+											version</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Documentation</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-16358</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">The document "How to mesh with skin effect"
+                     has been updated in Flux 2021 by integrating Meshgem hybrid method.<p class="p"></p>
+</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Environment</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-13014</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">The background of Flux has been updated with a
+                     lighter grey, for the coherence with other software of Altair. The different
+                     contexts are updated (Sketcher - Modeler - standard geometric view, Circuit
+                     View ...). <p class="p">This update has forced to change the default colors of the points
+                        and lines to distinguish them clearly on the new background. The points and
+                        lines are now grey (a darker grey than the background).</p>
+<p class="p"></p>
+</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Environment</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-12915</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">The Flux auto-documention is the documentation
+                     displayed directly next to a dialog box and accessible by clicking on the
+                     "Picture" button of the dialog box. The Flux auto-documentation has been
+                     improved. The default width is now 400 pixels to display a clear
+                     auto-documentation. By default, the height is always equal to the height of the
+                     dialog box depending on the number of fields in this dialog box. <p class="p">But now, if
+                        the default height is not enough to see the full autodocumentation, the user
+                        has the possibility to : </p>
+<p class="p">- enlarge the height-width dialog box to
+                        display a larger area of the auto-documentation (It didn't work in the
+                        previous version Flux 2020.1) </p>
+<p class="p">- use the scrollbars in height/width to
+                        move the display area of the auto-documentation (It didn't work in the
+                        previous version Flux 2020.1)</p>
+<p class="p"></p>
+</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Environment</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-15869</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">The Escape button didn't work for Flux "About
+                     Flux" box on RedHat7.2. <p class="p">Flux 2021 is no longer qualified on RedHat 7, but on
+                        RedHat 8. </p>
+<p class="p">Some more tests are done with RedHat 8.2 (Gnome) and this
+                        defect no longer appears, the escape button of the "About Flux" box works
+                        correctly.</p>
+<p class="p"></p>
+</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Macros</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-14044</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">Rename the macro with a more explicit name :
+                     "ComputeIncrementalMatrixInductanceForNonMeshedCoilsMagnetoStatic <p class="p">.PFM"
+                        instead of "ComputeInductance.PFM". </p>
+<p class="p">Integration of the related
+                        documentation.</p>
+</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Parallel Computing</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-17604</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">
+                     <p class="p"> In previous versions, to get the "Appdef" of Flux for PBS Professional one
+                        would need to contact support to get it. Today, the appdef is stored
+                        directly in the installation of Flux. You can find the appdef of Flux for
+                        the Compute Manager at %INSTALLFLUX%/Api/PBS/Flux and the appdef for the
+                        Display Manager at %INSTALLFLUX%/Api/PBS/Flux-GUI, where %INSTALLFLUX% is
+                        the installation directory. By default, it should be "C:\Program
+                        Files\Altair\2021\flux\Flux" in Windows or "/opt/altair/flux/Flux/" in
+                        Linux.</p>
+
+                  </td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Parallel Computing</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-16163</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">The appdef of Flux for PBS Professional has
+                     been improved based on clients' feedback. Here are the improvements that were
+                     implemented: <p class="p">- A new field named "Walltime" is now available to limit the
+                        running time of a job; </p>
+<p class="p">- If a python script is in the input zip file,
+                        all jobs created will extract every files in the zip file; </p>
+<p class="p">- A few
+                        visual improvements with fields re-arrangement.</p>
+</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Physics</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-17435</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">The Excel-based modified Bertotti model identification tool provided in Flux (in path "...\flux\Flux\DocExamples\Tools\BertottiLossesCoefficients") has been improved.
+<p class="p">The identification of coefficients and exponents for a Bertotti model required for iron loss computations may now be easily performed using measurements acquired at several frequencies. This upgrade improves the accuracy of the model in the case of multi-frequency user applications.
+</p>
+<p class="p">Moreover, its user guide was also updated and now is no longer delivered as a standalone document, but is fully integrated in the Altair Flux documentation (both in English and in French).</p>
+</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Solving</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-16814</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">Flux uses MUMPS as the default direct solver. The update to the last version of MUMPS has been done in this version, with the latest improvements in terms of computation time and memory management.</td>
+
+               </tr>
+
+               <tr>
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">Wording</td>
+
+                  <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d73827e29 ">FX-16540</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:middle;" headers="d73827e32 ">An error message is now displayed when the user tries to run a Flux-Activate cosimulation in a protected folder (for exemple: C:/Program Files/XXX).</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

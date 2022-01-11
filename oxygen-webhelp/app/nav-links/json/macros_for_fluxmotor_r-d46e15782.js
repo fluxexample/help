@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"BasicSectorExtractor.PFM","shortdesc":"\n                  <p class=\"shortdesc\"></p>\n               ","href":"Macros\/english\/topics\/basicsectorextractor_r.htm","attributes": {"data-id":"basicsectorextractor_r",},"menu": {"hasChildren":false,},"tocID":"basicsectorextractor_r-d46e15792","topics":[]}]});

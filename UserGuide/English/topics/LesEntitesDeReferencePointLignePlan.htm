@@ -1,0 +1,820 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Introduction A reference entity provides some support to the construction of the geometry without being taken into consideration during the mesh and solving operations. These entities are of « ..." /><meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Reference entities: point, line, plane" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/ModeleurDeFluxAPropos.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/LeParametrageDansLeModeleur.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/SupprimerDesEntitesFluxLiesADesEntitesACIS.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="topicID1" /><title>Reference entities: point, line, plane</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="topicID1-d46e3038" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="topicID1" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                  with the possibility to import a CAD file, a mesh,       materials...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GeometrieModeler3D.htm">Geometry : Modeler (3D)</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxAPropos.htm">Flux Modeler: about</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/LesEntitesDeReferencePointLignePlan.htm">Reference entities: point, line, plane</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/LeParametrageDansLeModeleur.htm" title="Use parameters in the Modeler"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/SupprimerDesEntitesFluxLiesADesEntitesACIS.htm" title="Delete Flux entities linked with ACIS entities"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="topicID1-d46e1391" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/OutilsGeneraux.htm">General operation</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Here is a presentation of the Flux environment; the project management, the data       management, the command language, the
+                        formulas and mathematical functions.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e2010" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                        with the possibility to import a CAD file, a mesh,       materials...
+                        
+                     </p>
+                     </span></span></span><ul class="nav nav-list">
+               <li><span data-tocid="topicID1-d46e2021" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Geometrie1.htm">Geometry: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e2197" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GeometrieAspectsLogiciel.htm">Geometry: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e2686" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GeometrieSketcher2D.htm">Geometry: Sketcher (2D)</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e2974" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GeometrieModeler3D.htm">Geometry : Modeler (3D)</a></span></span><ul class="nav nav-list">
+                     <li><span data-tocid="topicID1-d46e2982" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxAPropos.htm">Flux Modeler: about</a></span></span><ul class="nav nav-list">
+                           <li><span data-tocid="topicID1-d46e2990" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuestCeQueLeModeleurDeFlux.htm">What is the Flux Modeler?</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e2998" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/LesFonctionnalitesDuModeleur.htm">Modeler functionalities</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e3006" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/NotionVolumeObjetEtOperationGeometrique.htm">Notion of volume / object and geometric operation</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e3014" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ContexteModeleurDedieIntegreAFlux.htm">Dedicated Modeler context integrated in Flux</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e3022" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CompatibiliteDesAnciensProjets3DEt2DAvecLeModeleur.htm">Compatibility of old 3D and 2D projects with the modeler</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e3030" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/LeParametrageDansLeModeleur.htm">Use parameters in the Modeler</a></span></span></li>
+                           <li class="active"><span data-tocid="topicID1-d46e3038" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/LesEntitesDeReferencePointLignePlan.htm">Reference entities: point, line, plane</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e3046" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/SupprimerDesEntitesFluxLiesADesEntitesACIS.htm">Delete Flux entities linked with ACIS entities</a></span></span></li>
+                        </ul>
+                     </li>
+                     <li><span data-tocid="topicID1-d46e3054" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxLesPrimitives.htm">Flux Modeler: Primitives</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e3094" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxLesOperationsBooleennes.htm">Flux Modeler: Boolean operations</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e3142" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxCongeChanfrein.htm">Flux modeler: Fillet / Chamfer</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e3182" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxSymetrieEtRepetition.htm">Flux Modeler: Symmetry and Repetition</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e3222" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxLesOperationsDeDeplacement.htm">Flux modeler: Operations of move</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e3246" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxConstruction3DAPartirDunProfil2D.htm">Flux Modeler: 3D building from to a 2D profile</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e3310" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxDecoupeEtNettoyageDobjets.htm">Flux Modeler: Cutting and Defeaturing of objects</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e3350" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxImportExportCorrectionEtSimplification.htm">Flux Modeler: Import / Export, Healing and Simplification</a></span></span></li>
+                  </ul>
+               </li>
+               <li><span data-tocid="topicID1-d46e3422" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Maillage.htm">Mesh: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e3654" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/MaillageAspectsLogiciel.htm">Mesh: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e4019" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Import.htm">Geometry / mesh import: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e4171" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ImportDeGeometrieMaillageAspectsLogiciel.htm">Geometry / mesh importation: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e4492" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Materiaux.htm">Materials: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5149" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/MateriauxAspectsLogiciel.htm">Materials: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Resolution.htm">Solving process: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5683" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ResolutionAspectsLogiciel.htm">Solving process: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5845" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Postprocesseur.htm">Results post-processing: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5965" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ExploitationDesResultatsAspectsLogiciel.htm">Results post-processing: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e6736" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/AnalyseParametrique.htm">Parametric analysis: principles</a></span></span></li>
+            </ul>
+         </li>
+         <li><span data-tocid="topicID1-d46e6824" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ApplicationsPhysiques.htm">Physical applications</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux allows to model different physical phenomena, and includes various applications       (magnetic, electrical, thermal
+                        and thermal coupled).
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e9744" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Couplages.htm">Circuit and Kinematic Couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is coupled to a circuit context allowing to model the sources of the devices.Flux       also allow to model the movement
+                        via a kinematic coupling.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e10620" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Co-simulation.htm">Co-simulation between Flux and another software</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is able to couple with several softwares allowing to model mutliphysics       phenomena.</p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11126" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplagesMetier.htm">Dedicated couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Several dedicated couplings are implemented in Flux to, carry out vibro-acoustic       studies, magneto-thermal studies and
+                        more.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11778" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ContexteMetier3D.htm">3D Overlay</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has predefined models for rotating machines via Overlays allowing to describe a       geometry, a mesh and a physics
+                        adapted to the wished machine.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e11805" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxAPI.htm">Flux API</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                  with the possibility to import a CAD file, a mesh,       materials...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GeometrieModeler3D.htm">Geometry : Modeler (3D)</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ModeleurDeFluxAPropos.htm">Flux Modeler: about</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/LesEntitesDeReferencePointLignePlan.htm">Reference entities: point, line, plane</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/LeParametrageDansLeModeleur.htm" title="Use parameters in the Modeler"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/SupprimerDesEntitesFluxLiesADesEntitesACIS.htm" title="Delete Flux entities linked with ACIS entities"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Reference entities: point, line, plane</h1>
+
+   <div class="body">
+      <section class="section"><h2 class="title sectiontitle">Introduction</h2>
+         
+         <p class="p">A reference entity provides some support to the construction of the geometry without
+            being taken into consideration during the mesh and solving operations. These entities
+            are of « <span class="ph uicontrol">NO_EXIST</span> » type.</p>
+
+         <p class="p">It exists several “Reference”
+entities:</p>
+
+         <ul class="ul">
+            <li class="li">
+Reference point</li>
+
+            <li class="li">
+Reference line defined between two points</li>
+
+            <li class="li">
+Reference plane</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">When use it?</h2>
+         
+         <p class="p">The table below presents when reference entities
+can be used.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:16.666666666666664%" /><col style="width:83.33333333333334%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d411475e62">Reference Entities</th>
+
+                     <th class="entry cell-norowborder" id="d411475e65">When to use it ?</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e62 "><span class="ph uicontrol">Reference point</span></td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d411475e65 ">
+                        <ul class="ul">
+                           <li class="li">Symmetry of objects in relation to a reference point</li>
+
+                           <li class="li">Creation of a reference line in relation to two reference points</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e62 "><span class="ph uicontrol">Reference line</span></td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d411475e65 ">
+                        <ul class="ul">
+                           <li class="li">Symmetry of objects in relation to a reference line</li>
+
+                           <li class="li">Circular repetition of objects around a reference line</li>
+
+                           <li class="li">Rotation of objects around a reference line</li>
+
+                           <li class="li"> Extrusion by revolution of faces around a reference line</li>
+
+                           <li class="li"> Helicoïdal extrusion of faces around a round a reference line</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d411475e62 "><span class="ph uicontrol">Reference plane</span></td>
+
+                     <td class="entry cellrowborder" style="vertical-align:middle;" headers="d411475e65 ">
+                        <ul class="ul">
+                           <li class="li">Symmetry of objects in relation to a reference plane</li>
+
+                           <li class="li">Cutting of objects in intersection with a reference plane</li>
+
+                           <li class="li">Creation of a sketch on a reference plane</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">How to create it?</h2>
+         
+         <p class="p">The table below presents how the reference
+entities can be created.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:16.666666666666664%" /><col style="width:83.33333333333334%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d411475e165">Reference Entities</th>
+
+                     <th class="entry cell-norowborder" id="d411475e168">How to create it?</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" headers="d411475e165 "><span class="ph uicontrol">Reference point</span></td>
+
+                     <td class="entry cell-norowborder" headers="d411475e168 ">
+                        <p class="p">The creation of a reference point is identical to
+the creation of a standard point of Flux. It is necessary to define
+the coordinate system of creation and coordinates of the point ((X
+Y Z). To create a reference point:</p>
+
+                        <ul class="ul">
+                           <li class="li">By menu: <span class="ph menucascade"><span class="ph uicontrol">Construction</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Reference</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Reference point</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">New</span></span></li>
+
+                           <li class="li">By icon:
+<img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img001.png" height="21" width="19" />
+                           </li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" headers="d411475e165 "><span class="ph uicontrol">Reference line</span></td>
+
+                     <td class="entry cell-norowborder" headers="d411475e168 ">
+                        <p class="p">The creation of a reference line is identical to
+the creation of a standard line of Flux of segment type. It is
+necessary to define two points of the segment. These points can be
+standard points of objects or reference points previously
+created.</p>
+
+                        <ul class="ul">
+                           <li class="li">By menu: <span class="ph menucascade"><span class="ph uicontrol">Construction</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Reference</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Reference line</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">New</span></span></li>
+
+                           <li class="li">By icon:
+<img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img002.png" height="23" width="22" />
+                           </li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" headers="d411475e165 "><span class="ph uicontrol">Reference plane</span></td>
+
+                     <td class="entry cellrowborder" headers="d411475e168 ">
+                        <p class="p">The creation of a reference plane contains several
+type of definition (see below)</p>
+
+                        <ul class="ul">
+                           <li class="li">By menu: <span class="ph menucascade"><span class="ph uicontrol">Construction</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Reference</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Reference plane</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">New</span></span></li>
+
+                           <li class="li">By icon:
+<img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img003.png" height="24" width="22" />
+                           </li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Type of reference plane</h2>
+         
+         <p class="p">The table below shows different types of creation
+of a reference plane</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:50%" /><col style="width:25%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d411475e315">Type</th>
+
+                     <th class="entry nocellnorowborder" id="d411475e318">Description</th>
+
+                     <th class="entry cell-norowborder" id="d411475e321">Illustration</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">Defined by a face (flat)</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned on the plane of the
+                        face which must be flat</td>
+
+                     <td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d411475e321 ">
+                        <img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img004.png" height="130" width="172" />
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">Defined by a point and a line</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned on the plane describe
+                        by the selected point and both points of the selected line (the line must be
+                        a segment type)</td>
+
+                     <td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d411475e321 ">
+                        <img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img005.png" height="97" width="167" />
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">Defined by 3 points</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned on the plane describe
+                        by 3 selected points</td>
+
+                     <td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d411475e321 ">
+                        <img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img006.png" height="57" width="160" />
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">Defined by a point and a line perpendicular</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned on the plane describe
+                        by the orthogonal projection on the trajectory of the selected line</td>
+
+                     <td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d411475e321 ">
+                        <img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img007.png" height="109" width="168" />
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">XY plane with offset</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned parallel to the XY
+                        plane with an offset</td>
+
+                     <td class="entry cell-norowborder" rowspan="4" style="text-align:center;vertical-align:middle;" headers="d411475e321 ">
+                        <img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img008.png" height="168" width="165" />
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">XZ plane with offset</td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned parallel to the XZ
+                        plane with an offset</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">YZ plane with offset</td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned parallel to the YZ
+                        plane with an offset</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">Plane parallel to a plane</td>
+
+                     <td class="entry cell-norowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned parallel to the
+                        selected reference plane with an offset</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e315 ">Defined by equation</td>
+
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned on the plane describe
+                        by the equation Ax + Bx + Cx = D. The user must choose coefficients A, B, C
+                        and D</td>
+
+                     <td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d411475e321 "> </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d411475e315 ">Defined by angle between two planes</td>
+
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d411475e318 ">The reference plane is positioned with an angle in
+                        relation to the selected reference plane around an axis (the selected
+                        line)</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d411475e321 ">
+                        <img class="image" src="Images/LesEntitesDeReferencePointLignePlan_img009.png" height="110" width="155" />
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Predefined reference planes</h2>
+         
+         <p class="p">Here is the list of predefined reference plane available at the opening of the
+            modeler:</p>
+
+         <ul class="ul">
+            <li class="li">XY
+plane</li>
+
+            <li class="li">XZ
+plane</li>
+
+            <li class="li">YZ
+plane</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Corresponding coordinate system</h2>
+         
+         <p class="p">For each creation of reference plane (<span class="ph uicontrol">REFERENCEPLANE_1</span>) a
+            corresponding coordinate system (<span class="ph uicontrol">COORDSYS_REFERENCEPLANE_1</span>) is
+            created.</p>
+
+      </section>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="219px"
+	 height="159px" viewBox="0 0 219 159" enable-background="new 0 0 219 159" xml:space="preserve">
+<g id="Shapes">
+	<g id="Wrench_tool_x28_s_x29_">
+	</g>
+	<g id="user2">
+	</g>
+	<g id="user2_1_">
+	</g>
+	<g id="user2_4_">
+	</g>
+	<g id="user2_3_">
+	</g>
+	<g id="user2_2_">
+	</g>
+	<g id="Internet_2">
+	</g>
+	<g id="Enterprise">
+	</g>
+	<g id="Tunnel__x28_stackable_x29_">
+	</g>
+	<g id="New_Symbol">
+	</g>
+	<g id="New_Symbol_1">
+	</g>
+	<g id="Files">
+	</g>
+	<g id="BlobBlock">
+	</g>
+	<g id="E_x5F_Enterprise">
+	</g>
+	<g id="E_x5F_AD_FS">
+	</g>
+	<g id="C_x5F_Azure_Active_Directory">
+	</g>
+	<g id="Layer_22">
+	</g>
+	<g>
+		<rect x="0.5" y="0.5" fill="#FFFFFF" width="218" height="158"/>
+		<rect x="0.5" y="0.5" opacity="0.2" fill="#E5E5E5" width="218" height="158"/>
+		<rect x="0.5" y="0.5" opacity="0.1" fill="none" stroke="#231F20" stroke-miterlimit="10" width="218" height="158"/>
+	</g>
+</g>
+<g id="arrows">
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" x1="110.53" y1="150.8" x2="110.53" y2="20.66"/>
+			<g>
+				<polygon points="113.44,22.64 110.53,11.8 107.63,22.64 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" x1="13.42" y1="81.55" x2="199.29" y2="81.55"/>
+			<g>
+				<polygon points="197.3,84.46 208.14,81.55 197.3,78.65 				"/>
+			</g>
+		</g>
+	</g>
+	<path fill="none" stroke="#2E5291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M47.91,137.63c10.45-1.2,20.88-2.6,31.28-4.19c6.3-0.96,12.71-2.04,18.37-4.97c10.81-5.59,17.33-17.18,20.54-28.91
+		c3.21-11.74,3.72-24.03,5.96-36c2.24-11.96,6.58-24.15,15.71-32.21c10.54-9.31,25.59-11.5,39.65-11.16"/>
+	<path fill="none" stroke="#2E5291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M70.67,134.7c7.68-0.61,11.78-3.16,15.16-8.05s4.83-10.81,6.22-16.59c4.28-17.9,8.56-35.81,11.66-53.95
+		c0.92-5.36,1.8-10.93,4.81-15.47c3.93-5.94,10.84-9.13,17.56-11.47c13.79-4.79,28.39-8.77,42.99-8.71"/>
+	<path fill="none" stroke="#D83B01" stroke-width="1.25" stroke-linecap="round" stroke-miterlimit="10" d="M48.88,137.52
+		c12.69-2.24,27.29-1.4,39.36-7.32c10.14-4.98,13.99-17.31,17.26-28.13c1.91-6.32,2.94-13.18,4.25-19.64
+		c1.75-8.64,3.3-16.94,5.32-25.52s5.58-17.11,12.06-23.1c6.13-5.66,14.28-8.54,22.32-10.75c9.51-2.62,18.12-2.89,29.02-2.89"/>
+</g>
+<g id="Text">
+	<g id="Windows_Server_New">
+	</g>
+	<g>
+		<path fill="#1E1E1E" d="M93.32,22.71v-0.25h0.35c0.39,0,0.67-0.13,0.83-0.38c0.1-0.15,0.15-0.49,0.15-1.01v-5.99
+			c0-0.58-0.06-0.94-0.19-1.09c-0.18-0.2-0.44-0.3-0.79-0.3h-0.35v-0.25h3.77c1.39,0,2.44,0.16,3.16,0.47s1.3,0.84,1.74,1.57
+			s0.66,1.58,0.66,2.54c0,1.29-0.39,2.37-1.18,3.23c-0.88,0.97-2.22,1.45-4.02,1.45H93.32z M95.96,22.04
+			c0.58,0.13,1.06,0.19,1.46,0.19c1.06,0,1.93-0.37,2.63-1.11s1.05-1.75,1.05-3.02c0-1.28-0.35-2.29-1.05-3.03s-1.59-1.11-2.69-1.11
+			c-0.41,0-0.88,0.07-1.4,0.2V22.04z"/>
+	</g>
+	<g>
+		<path fill="#1E1E1E" d="M201.3,93.01v3.66h2.04c0.53,0,0.88-0.08,1.06-0.24c0.24-0.21,0.37-0.58,0.4-1.11h0.25v3.23h-0.25
+			c-0.06-0.45-0.13-0.74-0.19-0.87c-0.08-0.16-0.22-0.28-0.4-0.38s-0.47-0.14-0.86-0.14h-2.04v3.06c0,0.41,0.02,0.66,0.05,0.75
+			s0.1,0.16,0.19,0.21s0.26,0.08,0.52,0.08h1.57c0.52,0,0.9-0.04,1.14-0.11s0.46-0.22,0.68-0.43c0.28-0.28,0.57-0.71,0.87-1.28h0.27
+			l-0.8,2.32h-7.14v-0.25h0.33c0.22,0,0.43-0.05,0.62-0.16c0.15-0.07,0.25-0.18,0.3-0.33s0.08-0.44,0.08-0.9v-6.02
+			c0-0.59-0.06-0.95-0.18-1.09c-0.16-0.18-0.44-0.27-0.82-0.27h-0.33V92.5h7.14l0.1,2.03h-0.27c-0.1-0.49-0.2-0.82-0.32-1
+			s-0.29-0.32-0.52-0.42c-0.18-0.07-0.5-0.1-0.96-0.1H201.3z"/>
+	</g>
+</g>
+<g id="writer_source" display="none">
+	
+		<image display="inline" overflow="visible" width="187" height="152" xlink:href="data:image/png;base64,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
+SUVORK5CYII=" transform="matrix(1.0321 0 0 1.0321 303.3748 -23.6487)">
+	</image>
+</g>
+</svg>

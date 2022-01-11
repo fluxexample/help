@@ -1,0 +1,750 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Adjusting parameters Newton-Raphson parameters and strategies are set automatically to ensure robustness and fast non-linear solving. It is nevertheless possible for the user to adjust these ..." /><meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Adjusting parameters in the Newton-Raphson method" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/PriseEnCompteDesNon-linearitesLaMethodeDeNewtonRaphson.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/LesProblemesDeConvergence.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/PriseEnCompteDesRegimesVariablesTransitoiresLaMethodeDEuler.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="topicID1" /><title>Adjusting parameters in the Newton-Raphson method</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="topicID1-d46e5326" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="topicID1" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                  with the possibility to import a CAD file, a mesh,       materials...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Resolution.htm">Solving process: principles</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PriseEnCompteDesNon-linearitesLaMethodeDeNewtonRaphson.htm">Taking into account the nonlinearity: Newton-Raphson method</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/LesParametresDeReglageDeLaMethodeDeNR.htm">Adjusting parameters in the Newton-Raphson method</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/LesProblemesDeConvergence.htm" title="Convergence problems"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/PriseEnCompteDesRegimesVariablesTransitoiresLaMethodeDEuler.htm" title="Taking into account of time dependent / transient problems: Euler method"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="topicID1-d46e1391" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/OutilsGeneraux.htm">General operation</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Here is a presentation of the Flux environment; the project management, the data       management, the command language, the
+                        formulas and mathematical functions.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e2010" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                        with the possibility to import a CAD file, a mesh,       materials...
+                        
+                     </p>
+                     </span></span></span><ul class="nav nav-list">
+               <li><span data-tocid="topicID1-d46e2021" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Geometrie1.htm">Geometry: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e2197" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GeometrieAspectsLogiciel.htm">Geometry: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e2686" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GeometrieSketcher2D.htm">Geometry: Sketcher (2D)</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e2974" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GeometrieModeler3D.htm">Geometry : Modeler (3D)</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e3422" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Maillage.htm">Mesh: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e3654" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/MaillageAspectsLogiciel.htm">Mesh: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e4019" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Import.htm">Geometry / mesh import: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e4171" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ImportDeGeometrieMaillageAspectsLogiciel.htm">Geometry / mesh importation: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e4492" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Materiaux.htm">Materials: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5149" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/MateriauxAspectsLogiciel.htm">Materials: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5254" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Resolution.htm">Solving process: principles</a></span></span><ul class="nav nav-list">
+                     <li><span data-tocid="solving_a_linear_system-d46e5262" class="topicref" data-id="solving_a_linear_system" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/solving_a_linear_system.htm">Solving a linear system: Flux solvers</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e5286" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PriseEnCompteDesNon-linearitesLaMethodeDeNewtonRaphson.htm">Taking into account the nonlinearity: Newton-Raphson method</a></span></span><ul class="nav nav-list">
+                           <li><span data-tocid="topicID1-d46e5294" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/IntroductionExemples.htm">Introduction / examples</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e5302" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ResolutionDunSystemeNonLineaireMethodeDeNewtonRaphson.htm">Solving a nonlinear system: Newton-Raphson method</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e5310" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/LesDonneesPhysiquesNecessaires.htm">Physical input data</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e5318" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/LesProblemesDeConvergence.htm">Convergence problems</a></span></span></li>
+                           <li class="active"><span data-tocid="topicID1-d46e5326" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/LesParametresDeReglageDeLaMethodeDeNR.htm">Adjusting parameters in the Newton-Raphson method</a></span></span></li>
+                        </ul>
+                     </li>
+                     <li><span data-tocid="topicID1-d46e5334" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PriseEnCompteDesRegimesVariablesTransitoiresLaMethodeDEuler.htm">Taking into account of time dependent / transient problems: Euler method</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e5374" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CalculParallele-Multi-coeurs.htm">Parallel Computing</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e5406" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CritereDerreur-CarteDerreur.htm">Error criterion - error map</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e5438" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CedratDistributionEngine.htm">Distributed computing via CDE</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e5619" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxViaPBSComputeManager.htm">Flux via PBS Compute Manager</a></span></span></li>
+                     <li><span data-tocid="topicID1-d46e5627" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ResolutionAdaptative.htm">Adaptive solver</a></span></span></li>
+                  </ul>
+               </li>
+               <li><span data-tocid="topicID1-d46e5683" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ResolutionAspectsLogiciel.htm">Solving process: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5845" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Postprocesseur.htm">Results post-processing: principles</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e5965" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ExploitationDesResultatsAspectsLogiciel.htm">Results post-processing: software aspects</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e6736" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/AnalyseParametrique.htm">Parametric analysis: principles</a></span></span></li>
+            </ul>
+         </li>
+         <li><span data-tocid="topicID1-d46e6824" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ApplicationsPhysiques.htm">Physical applications</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux allows to model different physical phenomena, and includes various applications       (magnetic, electrical, thermal
+                        and thermal coupled).
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e9744" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Couplages.htm">Circuit and Kinematic Couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is coupled to a circuit context allowing to model the sources of the devices.Flux       also allow to model the movement
+                        via a kinematic coupling.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e10620" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Co-simulation.htm">Co-simulation between Flux and another software</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is able to couple with several softwares allowing to model mutliphysics       phenomena.</p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11126" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplagesMetier.htm">Dedicated couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Several dedicated couplings are implemented in Flux to, carry out vibro-acoustic       studies, magneto-thermal studies and
+                        more.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11778" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ContexteMetier3D.htm">3D Overlay</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has predefined models for rotating machines via Overlays allowing to describe a       geometry, a mesh and a physics
+                        adapted to the wished machine.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e11805" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxAPI.htm">Flux API</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                  with the possibility to import a CAD file, a mesh,       materials...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Resolution.htm">Solving process: principles</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PriseEnCompteDesNon-linearitesLaMethodeDeNewtonRaphson.htm">Taking into account the nonlinearity: Newton-Raphson method</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/LesParametresDeReglageDeLaMethodeDeNR.htm">Adjusting parameters in the Newton-Raphson method</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/LesProblemesDeConvergence.htm" title="Convergence problems"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/PriseEnCompteDesRegimesVariablesTransitoiresLaMethodeDEuler.htm" title="Taking into account of time dependent / transient problems: Euler method"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Adjusting parameters in the Newton-Raphson method</h1>
+
+   <div class="body">
+      <section class="section"><h2 class="title sectiontitle">Adjusting parameters</h2>
+         
+         <p class="p">Newton-Raphson parameters and strategies are set automatically to ensure robustness and
+            fast non-linear solving. It is nevertheless possible for the user to adjust these
+            parameters, using the Nonlinear system solvers tab of the Solving process options box.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Adjusting of Newton-Raphson method</h2><p class="p"></p>
+The user can adjust the
+         following Newton-Raphson parameters :<div class="p">
+            <br /><div class="imagecenter"><img class="image imagecenter" id="topicID1__image_sy2_ryq_1mb" src="Images/optionNoLinearSolverFull.PNG" height="350" /></div><br />
+         </div>
+<div class="p">
+            <ul class="ul" id="topicID1__ul_ngn_kcg_bmb">
+               <li class="li">Type of accuracy threshold : Global based or variable based convergence. Except
+                  for 2D-hysteresis, for the optimal with stabilization stage relaxation method and
+                  with 2D initialization for Skew, in which we observed better performances and
+                  robustness with global convergence, variable based convergence is set
+                  automatically. It ensures that all the variables of the system satisfy the
+                  required precision, where global convergence relies on the variable with the most
+                  difficult convergence.</li>
+
+               <li class="li">The threshold: Relative epsilon value below which Newton-Raphson non-linear solver
+                  stops. Depending on the activation of looseness and/or strengthening, this
+                  threshold is fixed or is the starting point of the adaptive criteria strategy.
+                  Default value is 10e<sup class="ph sup">-4</sup>.</li>
+
+               <li class="li">Maximum number of Newton-Raphson iterations. The default value is 100.</li>
+
+            </ul>
+
+            <ul class="ul">
+               <li class="li">Adaptive criteria strategy relies on hard or easy convergence detection<div class="p">
+                  <figure class="fig fignone" id="topicID1__fig_cmn_21j_bmb">
+                     
+                     <br /><div class="imagecenter"><img class="image imagecenter" id="topicID1__image_dmn_21j_bmb" src="Images/easy_hard_cv.svg" /></div><br />
+                  <span class="figcap"><span class="fig--title-label">Figure 1. </span> Easy (yellow), normal (green) and hard (red) convergence illustration </span></figure>
+
+               </div>
+</li>
+
+               <li class="li">Losseness of the threshold : This adaptive criteria strategy is meant to ease
+                  hard convergence. The adaptation is based on the residual decrease between two
+                  consecutive Newton-Raphson iterations.<p class="p"></p>
+If the decrease between these two
+                  residuals is less than a percentage P (default is 10%), we consider a hard
+                  convergence situation (Red region on <a class="xref" href="#topicID1__fig_cmn_21j_bmb">Figure 1</a>). If we have a hard convergence situation, the
+                  threshold is multiplied by a factor F (default is 1.78) to ease the
+                     convergence.<p class="p">Percentage P and factor F can be modified in advanced mode:
+                     </p>
+<br /><div class="imagecenter"><img class="image imagecenter" id="topicID1__image_mbk_qwk_1mb" src="Images/loosenessOfThresHold.png" /></div><br />This strategy is activated by default,
+                  except for 2D hysteresis project, for the optimal with stabilization stage
+                  relaxation method for non-linear project and 2D initialization strategy for Skew.
+                  <p class="p"></p>
+</li>
+
+               <li class="li">Strengthening of the threshold : This adaptive criteria strategy is meant to
+                  harden easy convergence. The adaptation is based on the residual decrease between
+                  two consecutive Newton-Raphson iterations.<p class="p"></p>
+If the decrease between these two
+                  residuals is more than a percentage P (default is 99%), we consider a too easy
+                  convergence situation (Yellow region on <a class="xref" href="#topicID1__fig_cmn_21j_bmb">Figure 1</a>). If we have too easy convergence situation, the
+                  threshold is divided by a factor F (default is 3.16) to harden the
+                     convergence.<p class="p">Percentage P and factor F can be modified in advanced mode:
+                     </p>
+<br /><div class="imagecenter"><img class="image imagecenter" id="topicID1__image_drp_wwk_1mb" src="Images/strenghteningOfThresHold.png" /></div><br /> This strategy is activated by default,
+                  except for 2D hysteresis project, for the optimal with stabilization stage
+                  relaxation method for non-linear project and 2D initialization strategy for
+                  Skew.</li>
+
+            </ul>
+
+         </div>
+</section>
+
+      <section class="section"><h2 class="title sectiontitle">Under-relaxation method (3D)</h2>
+         
+         <p class="p">There are five methods for defining the relaxation
+            coefficient a of the Newton-Raphson method:</p>
+
+         <ul class="ul">
+            <li class="li">the
+               stairs method, where the coefficient is determined at each
+               Newton-Raphson iteration, according to a simple law that depends on
+               the obtained accuracy by the Newton-Raphson algorithm,</li>
+
+            <li class="li">the
+               fixed method, where the user inserts the coefficient value which is
+               thus constant throughout the solving process,</li>
+
+            <li class="li">the
+               optimal method, where the coefficient is determined at each
+               Newton-Raphson iteration by minimizing the residual of the
+               nonlinear system to be solved,</li>
+
+            <li class="li">the
+               automatic method, where the program automatically determines,
+               depending on the formulation, which method is used, the "stairs" or
+               the "optimal" one.</li>
+
+            <li class="li">The maximal factor method, which computes at each
+               Newton-Raphson iteration the largest coefficient such that the
+               residual of the non-linear system to be solved decreases.</li>
+
+         </ul>
+
+         <p class="p">The automatic method is the method chosen by
+            default. These four methods are detailed in the following
+            paragraph.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Stairs method</h2>
+         
+         <p class="p">The relaxation coefficient is determined at each Newton-Raphson iteration, function of
+            the value of the precision ε<sup class="ph sup">i-1</sup> obtained at the previous iteration, following
+            the variation law given below:</p>
+
+         <ul class="ul">
+            <li class="li">
+               <p class="p">at the
+                  first iteration:</p>
+
+               <p class="p">α = 0,5</p>
+
+            </li>
+
+            <li class="li">at the next iterations:<ul class="ul" id="topicID1__ul_ld2_njd_fjb">
+               <li class="li">si ε<sup class="ph sup">i-1</sup> ∈ [0,1 ; +∞[ : α = 0,5</li>
+
+               <li class="li">si ε<sup class="ph sup">i-1</sup> ∈ [0,01 ; 0,1[ : α = 0,75</li>
+
+               <li class="li">si ε<sup class="ph sup">i-1</sup> ∈ [0 ; 0,01[ : α = 1</li>
+
+            </ul>
+</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Fixed method</h2>
+         
+         <p class="p">The value of the relaxation coefficient is inserted by the user in the interval ]0 ; 1].
+            The value of this coefficient is thus constant throughout the solving process.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Optimal method</h2><p class="p">The relaxation coefficient is determined at each
+            iteration. The principle of the method consists of computing this coefficient so that
+            the following objective function is minimum: </p>
+<span class="eqn-inline ">
+               <math xmlns="http://www.w3.org/1998/Math/MathML">
+                  <msup>
+                     <mrow>
+                        <mi>W</mi>
+                     </mrow>
+                     <mrow>
+                        <mi>i</mi>
+                     </mrow>
+                  </msup>
+                  <mo>=</mo>
+                  <mrow>
+                     <munderover>
+                        <mo stretchy="false">∑</mo>
+                        <mrow>
+                           <mi>j</mi>
+                           <mo>=</mo>
+                           <mn>1</mn>
+                        </mrow>
+                        <mrow>
+                           <mi>n</mi>
+                        </mrow>
+                     </munderover>
+                     <mrow>
+                        <msup>
+                           <mrow>
+                              <mfenced separators="|">
+                                 <mrow>
+                                    <msubsup>
+                                       <mrow>
+                                          <mi>R</mi>
+                                       </mrow>
+                                       <mrow>
+                                          <mi>j</mi>
+                                       </mrow>
+                                       <mrow>
+                                          <mi>i</mi>
+                                       </mrow>
+                                    </msubsup>
+                                 </mrow>
+                              </mfenced>
+                           </mrow>
+                           <mrow>
+                              <mn>2</mn>
+                           </mrow>
+                        </msup>
+                     </mrow>
+                  </mrow>
+               </math>
+            </span><p class="p">where <span class="eqn-inline ">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML">
+                     <msubsup>
+                        <mrow>
+                           <mi>R</mi>
+                        </mrow>
+                        <mrow>
+                           <mi>j</mi>
+                        </mrow>
+                        <mrow>
+                           <mi>i</mi>
+                        </mrow>
+                     </msubsup>
+                  </math>
+               </span> is the j-th component of the residual R(X<sup class="ph sup">i</sup>) at
+            the i-th current Newton-Raphson iteration (R(X<sup class="ph sup">i</sup>) is a vector with n
+            elements). n is the number of unknowns of the system.</p>
+<p class="p">The search of the objective
+            function minimum is carried out using an iterative method, due to the fact that W cannot
+            be explicitly expressed function of α. The search is performed by computing the values
+            of W<sup class="ph sup">i</sup> for the values of</p>
+<p class="p">α = α<sub class="ph sub">k</sub> = 1/2<sup class="ph sup">k-1</sup> (α = 1
+            then 1/2, 1/4, 1/8...), and it is stopped when W<sup class="ph sup">i</sup><sub class="ph sub">k+1</sub> at the
+            iteration k+1 is greater than W<sup class="ph sup">i</sup><sub class="ph sub">k</sub> at the previous iteration k.
+            Indeed, during the iterations, α = α<sub class="ph sub">k</sub> = 1/2<sup class="ph sup">k-1</sup> decreases and
+               W<sup class="ph sup">i</sup><sub class="ph sub">k</sub> decreases up to a certain iteration and then it
+            increases.</p>
+</section>
+
+      <section class="section"><h2 class="title sectiontitle">Automatic method</h2>
+         
+         <p class="p">Flux 3D automatically determines function of the
+            formulations used for the regions, which is the best relaxation
+            method.</p>
+
+         <p class="p">Flux 3D automatically chooses the stairs
+            relaxation method, except for the regions that use a non-surface
+            impedance formulation in magnetic scalar potential (reduced or
+            total), for which the optimal method will be used. The automatic
+            method is the default method.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Maximal factor method</h2>
+         
+         <p class="p">The relaxation coefficient (α) is computed at
+            each Newton-Raphson iteration. This method consists in searching
+            the largest coefficient satisfying a decrease of the residual of
+            the non-linear system. To do that, the residual is computed with
+            different values of α, by first trying to increase this
+            coefficient (maximum to 1) before decrease it only if the residual
+            of the non-linear system did not decrease with respect to the
+            previous Newton-Raphson iteration.</p>
+
+         <p class="p">More in details, the strategy is the following: at the i<sup class="ph sup">th</sup> Newton-Raphson
+            iteration, the algorithm starts with the relaxation coefficient α of the previous
+            Newton-Raphson iteration (α=1 at the first iteration). Then it first increases that
+            coefficient (α = min(αφ,1), with φ the golden ratio) and computes the new residual of
+            the non-linear system.</p>
+
+         <ul class="ul">
+            <li class="li">If that residual is less than the residual of the previous Newton-Raphson iteration,
+               the algorithm continues to increase that coefficient with the same rule, until it
+               reaches α = 1 or obtains a residual greater than the one of the previous
+               Newton-Raphson iteration. It will then keep the last α (the largest) which decreases
+               the residual.</li>
+
+            <li class="li">If this residual is greater than the residual of the previous Newton-Raphson
+               iteration, the algorithm decreases that coefficient (α = max(α/φ,β), with β the
+               minimum relaxation coefficient, depending on the project and defined by Flux). If the
+               residual becomes less than the one of the previous Newton-Raphson iteration then the
+               algorithm keeps that coefficient, else it continues to decrease the coefficient,
+               following the same rule.</li>
+
+         </ul>
+
+      </section>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

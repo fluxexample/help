@@ -1,0 +1,693 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+      <meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="reference" /><meta name="DC.Title" content="NVH analysis in OptiStruct with data setting in HyperMesh" /><meta name="abstract" content="" /><meta name="description" content="Introduction This section explains the following points: How to make the physical data setting in HyperMesh How to run a frequency response analysis in OptiStruct How to make the post-processing in ..." /><meta name="DC.Relation" scheme="URI" content="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/HowToUseFlux_OptiStruct_Flux_ImportExportContext_contents.htm" /><meta name="DC.Relation" scheme="URI" content="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/magnetic_forces_computation_and_export_in_flux.htm" /><meta name="DC.Relation" scheme="URI" content="../../../../HowTo/English/HowTo_MeshSkinEffect/topics/HowTo_MeshSkinEffect_Contents.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh" /><title>NVH analysis in OptiStruct with data setting in HyperMesh</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../../" /><meta name="wh-toc-id" content="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh-d46e1173" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../../oxygen-webhelp/app/topic-page.js" src="../../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh" data-spy="scroll" data-target="#toc">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../../index.htm" class=" wh_logo "><img src="../../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="sans_titre8"><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/HowToUseFlux_OptiStruct_Flux_ImportExportContext_contents.htm">How to use the Flux-OptiStruct coupling with the Import/Export context?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh"><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/nvh_analysis_in_optistruct_with_data_setting_in_hypermesh.htm">NVH analysis in OptiStruct with data setting in HyperMesh</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/magnetic_forces_computation_and_export_in_flux.htm" title="Magnetic forces computation and export in Flux"></a></span>  
+<span class="navnext"><a class="link" href="../../../../HowTo/English/HowTo_MeshSkinEffect/topics/HowTo_MeshSkinEffect_Contents.htm" title="How to mesh skin effect?"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="configurethememoryinflux_r-d46e732" class="topicref" data-id="configurethememoryinflux_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ConfigureTheMemoryInFlux/topics/configurethememoryinflux_r.htm">How to Configure the Memory in Flux?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e742" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_DriveFluxWithCompose/topics/HowToDriveFluxWithCompose_Contents.htm">How to Drive Flux with Compose?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="experimentwithnumpy_r-d46e782" class="topicref" data-id="experimentwithnumpy_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ExperimentWithNumPyInFlux/topics/experimentwithnumpyinflux_r.htm">How to Experiment with NumPy in Flux?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="getstepsscenario_r-d46e792" class="topicref" data-id="getstepsscenario_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_GetTheStepsOfAScenario/topics/getthestepsofascenario_r.htm">How to Get the Steps of a Scenario?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e802" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportAHyperMeshMesh/topics/HowTo_ImportAHyperMeshMesh_Contents.htm">How to import a HyperMesh mesh?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e862" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_ImportASimLabMesh/topics/HowTo_ImportASimLabMesh_Contents.htm">How to import a SimLab mesh?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="launch_flux_via_command_line_r-d46e922" class="topicref" data-id="launch_flux_via_command_line_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_LaunchFluxViaCommandLine/topics/launchfluxviacommandline_r.htm">How to Launch Flux via Command Line?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre2-d46e932" class="topicref" data-id="sans_titre2" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_SetFluxForBatchSchedulers/topics/HowTo_SetFluxForBatchSchedulers_Contents.htm">How to set Flux for batch schedulers?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="reference_ogs_xy4_sgb-d46e1022" class="topicref" data-id="reference_ogs_xy4_sgb" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_UseExternalJythonClassesInFlux/topics/useexternaljythonclassesinflux_r.htm">How to Use External Jython Classes in Flux?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre5-d46e1032" class="topicref" data-id="sans_titre5" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_UseFluxWithPBSViaComputeManager/topics/HowTo_UseFluxWithPBSViaComputeManager_Contents.htm">How to use Flux with PBS via Compute Manager?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="usefluxwithpbsviadisplaymanager_r-d46e1083" class="topicref" data-id="usefluxwithpbsviadisplaymanager_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_UseFluxWithPBSViaDisplayManager/topics/HowtoUseFluxWithPBSviaDisplayManager.htm">How to Use Flux with PBS via Display Manager?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="usefluxwithpbsviadisplaymanager_r-d46e1093" class="topicref" data-id="usefluxwithpbsviadisplaymanager_r" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_AcuSolve_Flux_ImportExportContext/topics/HowToUseFlux_AcuSolve_Flux_ImportExportContext_Contents.htm">How to use the Flux-AcuSolve coupling with the Import/Export context?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre8-d46e1133" class="topicref" data-id="sans_titre8" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/HowToUseFlux_OptiStruct_Flux_ImportExportContext_contents.htm">How to use the Flux-OptiStruct coupling with the Import/Export context?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span><ul class="nav nav-list">
+               <li><span data-tocid="introduction_r-d46e1143" class="topicref" data-id="introduction_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/introduction_r.htm">Introduction</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li><span data-tocid="creation_of_the_mechanical_mesh_in_hypermesh_r-d46e1153" class="topicref" data-id="creation_of_the_mechanical_mesh_in_hypermesh_r" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/creation_of_the_mechanical_mesh_in_hypermesh_r.htm">Creation of the mechanical mesh in HyperMesh</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li><span data-tocid="magnetic_forces_computation_and_export_in_flux-d46e1163" class="topicref" data-id="magnetic_forces_computation_and_export_in_flux" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/magnetic_forces_computation_and_export_in_flux.htm">Magnetic forces computation and export in Flux</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+               <li class="active"><span data-tocid="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh-d46e1173" class="topicref" data-id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/nvh_analysis_in_optistruct_with_data_setting_in_hypermesh.htm">NVH analysis in OptiStruct with data setting in HyperMesh</a><span class="wh-tooltip">
+                           
+                           <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                           </span></span></span></li>
+            </ul>
+         </li>
+         <li><span data-tocid="sans_titre1-d46e1183" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../HowTo/English/HowTo_MeshSkinEffect/topics/HowTo_MeshSkinEffect_Contents.htm">How to mesh skin effect?</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../../index.htm" class=" wh_logo "><img src="../../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="sans_titre8"><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/HowToUseFlux_OptiStruct_Flux_ImportExportContext_contents.htm">How to use the Flux-OptiStruct coupling with the Import/Export context?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh"><span class="title"><a href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/nvh_analysis_in_optistruct_with_data_setting_in_hypermesh.htm">NVH analysis in OptiStruct with data setting in HyperMesh</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext/topics/magnetic_forces_computation_and_export_in_flux.htm" title="Magnetic forces computation and export in Flux"></a></span>  
+<span class="navnext"><a class="link" href="../../../../HowTo/English/HowTo_MeshSkinEffect/topics/HowTo_MeshSkinEffect_Contents.htm" title="How to mesh skin effect?"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">NVH analysis in OptiStruct with data setting in HyperMesh</h1>
+
+    
+    <div class="body refbody"><p class="shortdesc"></p>
+
+        <section class="section" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__section_icg_jdt_phb"><h2 class="title sectiontitle">Introduction</h2>
+            
+            <div class="p">This section explains the following points:<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_bb4_52t_phb">
+                    <li class="li">How to make the physical data setting in HyperMesh</li>
+
+                    <li class="li">How to run a frequency response analysis in OptiStruct</li>
+
+                    <li class="li">How to make the post-processing in HyperView</li>
+
+                </ul>
+</div>
+
+        </section>
+
+        <section class="section" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__section_rhp_w2t_phb"><h2 class="title sectiontitle">Data setting in HyperMesh for OptiStruct
+                analysis</h2><div class="p">There are two possibilities to define the simulation data and
+                    settings:<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_oz2_y2t_phb">
+                    <li class="li">By manually modifying the files (mesh file, forces file) to import it
+                        directly into OptiStruct by using the <span class="ph uicontrol">include</span>
+                        technology, without using HyperMesh</li>
+
+                    <li class="li">By doing the data setting in HyperMesh</li>
+
+                </ul>
+</div>
+<p class="p">In this document, the following parts describe the second way which is
+                more dedicated for beginner users.</p>
+<p class="p">The OptiStruct analysis which is done here
+                is a frequency response analysis.</p>
+ At the end, the post-processing in HyperView
+            is presented.<ol class="ol" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ol_n4s_dft_phb">
+                <li class="li">Rename the component <span class="ph uicontrol">faces</span> to
+                        <span class="ph uicontrol">^faces</span> and turn it to hidden mode (to ignore it in
+                    the following steps). <div class="p">Make <span class="ph uicontrol">stator</span> component
+                            visible.<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_wvp_gft_phb" src="../images/Capture_59.png" /></div><br /></div>
+</li>
+
+                <li class="li">Create the associated material to stator component. <div class="p">Here
+                            <span class="ph uicontrol">steel</span> material is created:<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_tqh_jft_phb">
+                            <li class="li">On the model area: right click on the blank space / <span class="ph menucascade"><span class="ph uicontrol">Create</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Material</span></span><br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_qvg_4ft_phb" src="../images/Capture_60.png" height="312" width="369" /></div><br /></li>
+
+                            <li class="li">The following 3 mechanical properties are defined for isotropic
+                                material (E=Young modulus, Nu=Poisson Ratio, Rho=density):<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_mk5_rft_phb" src="../images/Capture_61.png" /></div><br /></li>
+
+                        </ul>
+</div>
+</li>
+
+                <li class="li">Create a property to support 3D elements with a <span class="ph uicontrol">PSOLID</span>
+                    card image and define the material as steel. Assign it to the component:<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_cjs_sft_phb">
+                        <li class="li">As for the material: right click in the model area / <span class="ph menucascade"><span class="ph uicontrol">Create</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Property</span></span>.</li>
+
+                        <li class="li">Choose the following data:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_mbv_1gt_phb" src="../images/Capture_62.png" /></div><br /></li>
+
+                        <li class="li">Assign the property to the <span class="ph uicontrol">stator</span> component:
+                            click on <span class="ph uicontrol">stator</span> and choose <span class="ph uicontrol">property
+                                1</span> in the window at the bottom</li>
+
+                    </ul>
+</li>
+
+                <li class="li">Import forces file:<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_jw4_dgt_phb">
+                        <li class="li">Import <span class="ph uicontrol">solver deck</span>:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_ixn_kgt_phb" src="../images/Capture_63.png" /></div><br /><div class="p">Verify the two following options to avoid
+                                the IDs re-numbering:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_brv_pgt_phb" src="../images/Capture_64.png" /></div><br /></div>
+<p class="p">All loads created in Flux are
+                                imported in HyperMesh</p>
+</li>
+
+                    </ul>
+</li>
+
+                <li class="li">Create the Load step which defines the OptiStruct analysis parameters:<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_pjv_sgt_phb">
+                        <li class="li">As for material and property, right click on Model area / <span class="ph menucascade"><span class="ph uicontrol">Create</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Load step</span></span></li>
+
+                        <li class="li">Rename the load step to <span class="ph uicontrol">Freq_resp</span> for
+                                example<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_uwt_pht_phb" src="../images/Capture_65.png" /></div><br /></li>
+
+                        <li class="li">Choose <span class="ph uicontrol">Analysis type</span>: <span class="ph uicontrol">Freq. resp
+                                (modal)</span></li>
+
+                        <li class="li">Choose <span class="ph uicontrol">DLOAD</span> (the selection window opening can
+                            take a while):<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_fjp_xht_phb">
+                                <li class="li"><span class="ph uicontrol">Global dynamic load case</span> or
+                                        <span class="ph uicontrol">First component dynamic load case</span> or
+                                        <span class="ph uicontrol">Second component dynaminc load
+                                    case</span></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class="li">Create a new <span class="ph uicontrol">METHOD(STRUCT)</span> by right click /
+                                <span class="ph uicontrol">Create</span> on the corresponding field<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_lrf_33t_phb" src="../images/Capture_66.png" /></div><br /><ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_z11_j3t_phb">
+                                <li class="li">Choose the <span class="ph uicontrol">Card Image</span>:
+                                        <span class="ph uicontrol">EIGRA</span> which allows performing
+                                    eigenvalue analysis</li>
+
+                                <li class="li">Choose <span class="ph uicontrol">V2</span> value which corresponds to the
+                                    maximum frequency to study. In general, the chosen value is 1.5
+                                    times the maximum frequency exported from Flux<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_edn_p3t_phb" src="../images/Capture_67.png" /></div><br /></li>
+
+                            </ul>
+</li>
+
+                        <li class="li">Choose <span class="ph uicontrol">FREQ</span> (the selection window opening can
+                            take a while):<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_bd5_q3t_phb">
+                                <li class="li">Choose <span class="ph uicontrol">List of frequencies</span></li>
+
+                            </ul>
+</li>
+
+                        <li class="li">It is advised to modify <span class="ph uicontrol">RESVEC</span> parameter to
+                                <span class="ph uicontrol">No</span> in order to limit the used memory and the
+                            solving time:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_lvq_w3t_phb" src="../images/Capture_68.png" /></div><br /><div class="note note"><span class="notetitle">Note:</span> keeping the option to
+                                    <span class="ph uicontrol">YES</span> is more accurate but the computation
+                                time becomes non-industrial. Please refer to the residual vectors
+                                computation help section for more information</div>
+</li>
+
+                        <li class="li">Choose the <span class="ph uicontrol">output</span> to display after solving. For
+                            example: the <span class="ph uicontrol">DISPLACEMENT</span>, the
+                                <span class="ph uicontrol">STRESS</span>, the imported forces which corresponds
+                            to <span class="ph uicontrol">OLOAD</span> keyword, etc.</li>
+
+                    </ul>
+</li>
+
+                <li class="li">Damping Creation:<p class="p">If you want to introduce global damping you can use the
+                            <span class="ph uicontrol">PARAM</span>,<span class="ph uicontrol">G</span>
+                        parameter:</p>
+<p class="p">The <span class="ph uicontrol">PARAM</span> card can be access by the
+                        menu: </p>
+<span class="ph menucascade"><span class="ph uicontrol">Tools</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Create cards</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">p</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Param</span></span><div class="p"><span class="ph uicontrol">PARAM</span> card appears in the model
+                            datatree:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_gd3_mjt_phb" src="../images/Capture_69.png" /></div><br /><ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_tr2_njt_phb">
+                            <li class="li">Choose <span class="ph uicontrol">G</span> which corresponds to the critical
+                                damping ration multiplied by 2. Here we choose G=0.04</li>
+
+                        </ul>
+</div>
+</li>
+
+                <li class="li">Solve the OptiStruct problem:<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_rps_pjt_phb">
+                        <li class="li">Open the <span class="ph uicontrol">Analysis</span> panel below the graphic and
+                            click on <span class="ph uicontrol">OptiStruct</span><br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_ekj_5jt_phb" src="../images/Capture_70.png" height="90" width="548" /></div><br /><div class="p">The following window is
+                                    opened:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_ow3_xjt_phb" src="../images/Capture_71.png" height="94" width="563" /></div><br /></div>
+</li>
+
+                        <li class="li">
+                            <div class="note note"><span class="notetitle">Note:</span> All the set-up model will be saved in the file
+                                    <span class="ph uicontrol">.fem</span> specified in the <span class="ph uicontrol">input
+                                    file</span></div>
+
+                        </li>
+
+                        <li class="li">The <span class="ph uicontrol">export options</span> must be set to
+                                <span class="ph uicontrol">all</span></li>
+
+                        <li class="li">The <span class="ph uicontrol">run option</span> must be set to
+                                <span class="ph uicontrol">analysis</span></li>
+
+                        <li class="li">In the <span class="ph uicontrol">options</span>, enter <span class="ph uicontrol">–out –core in
+                                –nt 4</span> (the spaces must be respected).<p class="p">Please refer to
+                                help section for solver options definition</p>
+</li>
+
+                        <li class="li">Click on OptiStruct to solve the problem<p class="p">A window is opened after a
+                                short time. It displays the solving steps and the error messages if
+                                the problem can’t be solved. When the solving finishes, at the end
+                                the window displays <span class="ph uicontrol">Job completed</span>. As a
+                                remark, to stop the solving, click on
+                                <span class="ph uicontrol">abort</span>.</p>
+</li>
+
+                    </ul>
+</li>
+
+                <li class="li">Open HyperView to post-process.<div class="p">In HyperMesh Desktop, choose the following
+                        icon: <br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_rch_wmt_phb" src="../images/Capture_72.png" /></div><br /></div>
+<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_rw2_xmt_phb">
+                        <li class="li">Load the .h3d file which was automatically generated during the solving
+                            and included all the data results and click on
+                                <span class="ph uicontrol">Apply</span><br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_xdp_1nt_phb" src="../images/Capture_73.png" height="107" width="597" /></div><br /></li>
+
+                    </ul>
+</li>
+
+                <li class="li">To post-process in HyperView, use the following bar below the graphic:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_zw3_dnt_phb" src="../images/Capture_74.png" height="12" width="747" /></div><br /><div class="p">The subcase and the studied frequency
+                        can be chosen on the following fields on left side above the model
+                            tree:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_tng_lnt_phb" src="../images/Capture_75.png" /></div><br /></div>
+<ul class="ul" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__ul_lqz_lnt_phb">
+                        <li class="li">The icon <img class="image" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_zbv_nnt_phb" src="../images/Capture_76.png" />allows the user to review the contours requested:</li>
+
+                        <li class="li">Select Displacement/ Magnitude to review the displacements:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_w1v_k4t_phb" src="../images/Capture_77.png" height="109" width="556" /></div><br /><p class="p">Select Stress VonMises to
+                                review the stresses computed using the invariant VonMises approach.
+                                </p>
+<p class="p">Please note that the stresses you are postprocessing are
+                                phase dependent. </p>
+<div class="p">To get the maximum VonMises stress over the
+                                phase you can use the derived results <img class="image" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_b5p_q4t_phb" src="../images/Capture_78.png" /> tool
+                                with the operator <span class="ph uicontrol">scalarextract</span><br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_hbj_t4t_phb" src="../images/Capture_79.png" height="454" width="386" /></div><br /></div>
+<p class="p">The R1.T1 corresponds
+                                to the Stresses tensor. </p>
+<div class="p">To review the contour of these
+                                VonMises stress over phase please make sure to turn the complex
+                                filter to <span class="ph uicontrol">mag</span>:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_g4y_cqt_phb" src="../images/Capture_80.png" height="140" width="633" /></div><br /></div>
+</li>
+
+                        <li class="li">Control of animation<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_ulg_fqt_phb" src="../images/Capture_81.png" /></div><br /><p class="p">The second sliding bar allows you to slow
+                                down the animation. </p>
+<div class="p">The wheel icon on the right allows you to
+                                manage the animation steps thanks to the angular increment:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_myn_hqt_phb" src="../images/Capture_82.png" height="139" width="864" /></div><br /></div>
+</li>
+
+                        <li class="li">You can also review the applied loads on 1 particular node: <div class="p">To do
+                                that, select the <span class="ph uicontrol">Applied Loads</span> in the contour
+                                    tool:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_tbk_lqt_phb" src="../images/Capture_83.png" height="140" width="627" /></div><br /></div>
+<p class="p">Set the
+                                angular increment to 5 degrees. </p>
+<p class="p">Launch the animation over at
+                                least 1 phase. </p>
+<div class="p">Open the <span class="ph uicontrol">Measures</span>
+                                    tool<img class="image" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_rhx_1rt_phb" src="../images/Capture_84.png" /><br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_qrx_brt_phb" src="../images/Capture_85.png" height="121" width="694" /></div><br /></div>
+<p class="p">Add a measure with the
+                                    <span class="ph uicontrol">Add</span> button and select the
+                                    <span class="ph uicontrol">nodal Contour</span> in the pulldown menu.
+                                </p>
+<div class="p">Select the node of interest and click on <span class="ph uicontrol">Create
+                                    Curves</span>:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_r3z_frt_phb" src="../images/Capture_86.png" height="203" width="345" /></div><br /></div>
+<p class="p">Click
+                                    <span class="ph uicontrol">OK</span> in this new popup window</p>
+ A new
+                            window appears with the force vs phase graph:<br /><div class="imagecenter"><img class="image imagecenter" id="nvh_analysis_in_optistruct_with_data_setting_in_hypermesh__image_obq_3rt_phb" src="../images/Capture_87.png" height="453" width="622" /></div><br /></li>
+
+                    </ul>
+</li>
+
+            </ol>
+</section>
+
+    </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

@@ -1,0 +1,225 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" lang="en" dir="ltr">
+
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="wh-path2root" content="" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script>
+            /**
+             * If an old URL is given, redirect to the corresponding topic from the WebHelp Responsive
+             */
+            var actualLocation = window.location.href;
+            var newLocation;
+            if (actualLocation.indexOf('/#')!=-1) {
+                newLocation = actualLocation.replace(/\/#/g, "/");
+                window.location.replace(newLocation);
+            }
+            if (actualLocation.match(/\/index\.(.*)#/gi)!=null) {
+                newLocation = actualLocation.replace(/\/index\.(.*)#/gi, "/");
+                window.location.replace(newLocation);
+            }
+            
+            function debug(msg, object){
+                console.log(msg, object);
+            }
+            function executeQuery(){
+                $('#searchForm').submit();
+                return true;
+            }
+        </script>        
+
+        <link rel="stylesheet" href="oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+        
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/app/main-page.css?buildId=2018042310" />
+
+        
+        <script type="text/javascript" src="oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="oxygen-webhelp/app/main-page.js" src="oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="altair-resources/css/altair.css" /><link rel="stylesheet" type="text/css" href="altair-resources/css/hyperworks_homepage.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="hw_custom.js"></script>
+    <link rel="stylesheet" href="hw_custom.css" />    
+</div>
+    <title>PyFlux Documentation (Beta version)</title></head>
+    <body class="wh_main_page">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="index.htm" class=" wh_logo "><img src="logo_Flux_color_hw.svg" alt="PyFlux Documentation (Beta version)" /></a>
+                    <div class=" wh_publication_title "><a href="index.htm"><span xmlns="" class="title">PyFlux Documentation (Beta version)</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <whc:webhelp_breadcrumb></whc:webhelp_breadcrumb>
+            <whc:webhelp_navigation_links></whc:webhelp_navigation_links>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li class="has-children"><span data-tocid="concept_zmq_mfy_k2b-d46e283" data-state="not-ready" class=" topicref " data-id="concept_zmq_mfy_k2b"><span class="title"><a href="topics/PyFlux/flux2d.htm">Flux 2D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_fjl_sjx_f2b-d46e7841" data-state="not-ready" class=" topicref " data-id="concept_fjl_sjx_f2b"><span class="title"><a href="topics/PyFlux/flux3d.htm">Flux 3D PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_ckq_5fy_k2b-d46e16409" data-state="not-ready" class=" topicref " data-id="concept_ckq_5fy_k2b"><span class="title"><a href="topics/PyFlux/fluxskew.htm">Flux SKEW PyFlux Documentation</a></span></span></li>
+   <li class="has-children"><span data-tocid="concept_a1k_sfy_k2b-d46e23845" data-state="not-ready" class=" topicref " data-id="concept_a1k_sfy_k2b"><span class="title"><a href="topics/PyFlux/fluxpeec.htm">Flux PEEC PyFlux Documentation</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    <whc:webhelp_toggle_highlight></whc:webhelp_toggle_highlight>
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <!-- Search form -->
+        <div class=" wh_search_input navbar-form wh_main_page_search " role="form">
+          
+          <div class="wh_welcome"></div>          
+          <form id="searchForm" method="get" action="search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form>
+          
+        </div>
+        <div class="wh_content_area ">
+            
+            <!-- This is the placeholder for the main page tiles. -->
+            <div class="container wh_content_flex_container">
+                <!-- This is the placeholder for the main page tiles. -->
+                <div class=" wh_tiles "><div class=" wh_tile  " data-id="concept_zmq_mfy_k2b">
+                        <div>
+                            
+                            <div class=" wh_tile_image "><img src="images/PyFlux2D.png" alt="Flux 2D PyFlux Documentation" /></div>
+
+                            <div class="wh_tile_text">
+                                
+                                <div class=" wh_tile_title "><span class="topicref"><a href="topics/PyFlux/flux2d.htm" data-id="concept_zmq_mfy_k2b">Flux 2D PyFlux Documentation</a></span></div>
+
+                                
+                                <div class=" wh_tile_shortdesc ">
+         All Flux 2D functions and entities
+      </div>
+                            </div>
+                        </div>
+                    </div><div class=" wh_tile  " data-id="concept_fjl_sjx_f2b">
+                        <div>
+                            
+                            <div class=" wh_tile_image "><img src="images/PyFlux3D.png" alt="Flux 3D PyFlux Documentation" /></div>
+
+                            <div class="wh_tile_text">
+                                
+                                <div class=" wh_tile_title "><span class="topicref"><a href="topics/PyFlux/flux3d.htm" data-id="concept_fjl_sjx_f2b">Flux 3D PyFlux Documentation</a></span></div>
+
+                                
+                                <div class=" wh_tile_shortdesc ">
+         All Flux 3D functions and entities
+      </div>
+                            </div>
+                        </div>
+                    </div><div class=" wh_tile  " data-id="concept_ckq_5fy_k2b">
+                        <div>
+                            
+                            <div class=" wh_tile_image "><img src="images/PyFluxSkew.png" alt="Flux SKEW PyFlux Documentation" /></div>
+
+                            <div class="wh_tile_text">
+                                
+                                <div class=" wh_tile_title "><span class="topicref"><a href="topics/PyFlux/fluxskew.htm" data-id="concept_ckq_5fy_k2b">Flux SKEW PyFlux Documentation</a></span></div>
+
+                                
+                                <div class=" wh_tile_shortdesc ">
+         All Flux Skew functions and entities
+      </div>
+                            </div>
+                        </div>
+                    </div><div class=" wh_tile  " data-id="concept_a1k_sfy_k2b">
+                        <div>
+                            
+                            <div class=" wh_tile_image "><img src="images/PyFluxPEEC.png" alt="Flux PEEC PyFlux Documentation" /></div>
+
+                            <div class="wh_tile_text">
+                                
+                                <div class=" wh_tile_title "><span class="topicref"><a href="topics/PyFlux/fluxpeec.htm" data-id="concept_a1k_sfy_k2b">Flux PEEC PyFlux Documentation</a></span></div>
+
+                                
+                                <div class=" wh_tile_shortdesc ">
+         All Flux PEEC functions and entities
+      </div>
+                            </div>
+                        </div>
+                    </div></div>
+                <div></div>
+                <!--
+                    This is the placeholder for the main page entries
+                    presented in a tree-like fashion.
+                -->
+                
+                
+            </div>
+        </div>
+        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="altair-resources/js/splash.js"></script><script type="text/javascript" src="altair-resources/js/homepage.js"></script><script type="text/javascript" src="altair-resources/js/topics.js"></script><script type="text/javascript" src="altair-resources/js/googleAnalytics.js"></script>
+        
+    </body>
+</html>

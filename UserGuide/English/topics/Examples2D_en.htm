@@ -1,0 +1,844 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+      <meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="2D Examples" /><meta name="abstract" content="" /><meta name="description" content="Basic examples Example Documents Illustration Brushless IPM motor : Summary : Overview : Project and python files Technical tutorials Example Documents Illustration Magneto Static application - Sensor ..." /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/Examples.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/Examples.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/Examples3D_en.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="topicID" /><title>2D Examples</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="topicID-d46e14479" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="topicID" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples2D_en.htm">2D Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/Examples.htm" title="Examples"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/Examples3D_en.htm" title="3D Examples"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span><ul class="nav nav-list">
+         <li class="active"><span data-tocid="topicID-d46e14479" class="topicref" data-id="topicID" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples2D_en.htm">2D Examples</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID-d46e14489" class="topicref" data-id="topicID" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples3D_en.htm">3D Examples</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID-d46e14499" class="topicref" data-id="topicID" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ExamplesSkew_en.htm">Skew Examples</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID-d46e14509" class="topicref" data-id="topicID" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ExamplesPEEC_en.htm">PEEC Examples</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples2D_en.htm">2D Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+               </span></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/Examples.htm" title="Examples"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/Examples3D_en.htm" title="3D Examples"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">2D Examples</h1>
+<div class="body"><p class="shortdesc"></p>
+<section class="section"><h2 class="title sectiontitle">Basic examples</h2></section>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry nocellnorowborder" id="d286140e23">Example</th>
+<th class="entry nocellnorowborder" id="d286140e25">Documents</th>
+<th class="entry cell-norowborder" id="d286140e27">Illustration</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e23 ">Brushless IPM motor</td>
+<td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e25 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Basic_Examples/BrushlessIPMmotorBasic/F2D_BEX_BrushlessIPMmotorBasic_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Basic_Examples/BrushlessIPMmotorBasic/F2D_BEX_BrushlessIPMmotorBasic_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Overview</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Basic_Examples/BrushlessIPMmotorBasic/BrushlessIPMmotorBasic.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d286140e27 "><a class="xref" href="../../../../../DocExamples/Examples2D/Basic_Examples/BrushlessIPMmotorBasic/BrushlessIPMmotorBasic.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Basic_Examples/BrushlessIPMmotorBasic/BrushlessIPMmotorBasic.jpg" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="section"><h2 class="title sectiontitle">Technical tutorials</h2></section>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry nocellnorowborder" id="d286140e63">Example</th>
+<th class="entry nocellnorowborder" id="d286140e65">Documents</th>
+<th class="entry cell-norowborder" id="d286140e67">Illustration</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Magneto Static application - Sensor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/MagnetoStaticApplicationSensor/F2D_TechTuto_MagnetoStaticApplicationSensor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/MagnetoStaticApplicationSensor/F2D_TechTuto_MagnetoStaticApplicationSensor_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/MagnetoStaticApplicationSensor/F2D_TechTuto_MagnetoStaticApplicationSensor_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Overview</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/MagnetoStaticApplicationSensor/MagnetoStaticApplicationSensor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/MagnetoStaticApplicationSensor/MagnetoStaticApplicationSensor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/MagnetoStaticApplicationSensor/MagnetoStaticApplicationSensor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Translating motion</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/TranslatingMotion/F2D_TechTuto_TranslatingMotion_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/TranslatingMotion/F2D_TechTuto_TranslatingMotion_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/TranslatingMotion/F2D_TechTuto_TranslatingMotion_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Overview</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/TranslatingMotion/TranslatingMotion.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/TranslatingMotion/TranslatingMotion.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/TranslatingMotion/TranslatingMotion.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Brushless IPM motor (embedded magnets)</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotor/F2D_TechTuto_BrushlessIPMMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotor/F2D_TechTuto_BrushlessIPMMotor_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotor/F2D_TechTuto_BrushlessIPMMotor_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Overview</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotor/BrushlessIPMMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotor/BrushlessIPMMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotor/BrushlessIPMMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Brushless IPM motor - thermal analysis</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotorThermalAnalysis/F2D_TechTuto_BrushlessIPMMotorThermalAnalysis_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotorThermalAnalysis/F2D_TechTuto_BrushlessIPMMotorThermalAnalysis_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotorThermalAnalysis/BrushlessIPMMotorThermalAnalysis.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotorThermalAnalysis/BrushlessIPMMotorThermalAnalysis.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessIPMMotorThermalAnalysis/BrushlessIPMMotorThermalAnalysis.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Brushless SPM motor (surface magnets)</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessSPMMotor/F2D_TechTuto_BrushlessSPMMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessSPMMotor/F2D_TechTuto_BrushlessSPMMotor_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessSPMMotor/F2D_TechTuto_BrushlessSPMMotor_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Overview</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessSPMMotor/BrushlessSPMMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessSPMMotor/BrushlessSPMMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/BrushlessSPMMotor/BrushlessSPMMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Synchronous motor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/SynchronousMotor/F2D_TechTuto_SynchronousMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/SynchronousMotor/F2D_TechTuto_SynchronousMotor_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/SynchronousMotor/SynchronousMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/SynchronousMotor/SynchronousMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/SynchronousMotor/SynchronousMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Induction motor with Overlay</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionMotorWithOverlay/F2D_TechTuto_InductionMotorWithOverlay_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionMotorWithOverlay/F2D_TechTuto_InductionMotorWithOverlay_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionMotorWithOverlay/InductionMotorWithOverlay.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionMotorWithOverlay/InductionMotorWithOverlay.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionMotorWithOverlay/InductionMotorWithOverlay.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Induction heating</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeating/F2D_TechTuto_InductionHeating_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeating/F2D_TechTuto_InductionHeating_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeating/F2D_TechTuto_InductionHeating_stepbystepcase5.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step case 5</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeating/InductionHeating.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeating/InductionHeating.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeating/InductionHeating.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Induction heating with multiphysics coupling</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeatingMultiphysics/F2D_TechTuto_InductionHeatingMultiphysics_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeatingMultiphysics/F2D_TechTuto_InductionHeatingMultiphysics_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeatingMultiphysics/InductionHeatingMultiphysics.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeatingMultiphysics/InductionHeatingMultiphysics.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/InductionHeatingMultiphysics/InductionHeatingMultiphysics.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e63 ">Thermal application - Thyristor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ThermalApplicationThyristor/F2D_TechTuto_ThermalApplicationThyristor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ThermalApplicationThyristor/F2D_TechTuto_ThermalApplicationThyristor_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ThermalApplicationThyristor/ThermalApplicationThyristor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ThermalApplicationThyristor/ThermalApplicationThyristor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/ThermalApplicationThyristor/ThermalApplicationThyristor.jpg" /></a></td>
+</tr>
+<tr><td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e63 ">Electro static application - Cell</td>
+<td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e65 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ElectroStaticApplicationCell/F2D_TechTuto_ElectroStaticApplicationCell_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ElectroStaticApplicationCell/F2D_TechTuto_ElectroStaticApplicationCell_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ElectroStaticApplicationCell/ElectroStaticApplicationCell.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d286140e67 "><a class="xref" href="../../../../../DocExamples/Examples2D/Tutorial_Technical/ElectroStaticApplicationCell/ElectroStaticApplicationCell.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Tutorial_Technical/ElectroStaticApplicationCell/ElectroStaticApplicationCell.jpg" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="section"><h2 class="title sectiontitle">Application notes</h2></section>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry nocellnorowborder" id="d286140e358">Example</th>
+<th class="entry nocellnorowborder" id="d286140e360">Documents</th>
+<th class="entry cell-norowborder" id="d286140e362">Illustration</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">PMSM efficiency map with FeMT</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/EfficiencyMapPMSMwithFeMT/F2D_AN_EfficiencyMapPMSMwithFeMT_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/EfficiencyMapPMSMwithFeMT/F2D_AN_EfficiencyMapPMSMwithFeMT_Workflow.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Workflow</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/EfficiencyMapPMSMwithFeMT/EfficiencyMapPMSMwithFeMT.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/EfficiencyMapPMSMwithFeMT/EfficiencyMapPMSMwithFeMT.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/EfficiencyMapPMSMwithFeMT/EfficiencyMapPMSMwithFeMT.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">IkerMAQ Inset PMSM magnetic and thermal study</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IkerMAQInsetPMSMMagnetoThermalStudy/F2D_AN_IkerMAQInsetPMSMMagneticAndThermalStudy_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IkerMAQInsetPMSMMagnetoThermalStudy/F2D_AN_IkerMAQInsetPMSMMagneticAndThermalStudy_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IkerMAQInsetPMSMMagnetoThermalStudy/IkerMAQInsetPMSMMagnetoThermalStudy.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IkerMAQInsetPMSMMagnetoThermalStudy/IkerMAQInsetPMSMMagnetoThermalStudy.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/IkerMAQInsetPMSMMagnetoThermalStudy/IkerMAQInsetPMSMMagnetoThermalStudy.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Brushless multilayers IPM motor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/BrushlessMultilayersIPMMotor/F2D_AN_BrushlessMultilayersIPMMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/BrushlessMultilayersIPMMotor/F2D_AN_BrushlessMultilayersIPMMotor_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/BrushlessMultilayersIPMMotor/BrushlessMultilayersIPMMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/BrushlessMultilayersIPMMotor/BrushlessMultilayersIPMMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/BrushlessMultilayersIPMMotor/BrushlessMultilayersIPMMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">SRM Switched reluctance motor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SRMMotor/F2D_AN_SRMMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SRMMotor/F2D_AN_SRMMotor_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SRMMotor/SRMMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SRMMotor/SRMMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/SRMMotor/SRMMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Flux switching motor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/FluxSwitchingMotor/F2D_AN_FluxSwitchingMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/FluxSwitchingMotor/F2D_AN_FluxSwitchingMotor_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/FluxSwitchingMotor/FluxSwitchingMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/FluxSwitchingMotor/FluxSwitchingMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/FluxSwitchingMotor/FluxSwitchingMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Synchronous motor with flux barriers</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SynchronousMotorWithFluxBarriers/F2D_AN_SynchronousMotorWithFluxBarriers_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SynchronousMotorWithFluxBarriers/F2D_AN_SynchronousMotorWithFluxBarriers_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SynchronousMotorWithFluxBarriers/SynchronousMotorWithFluxBarriers.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SynchronousMotorWithFluxBarriers/SynchronousMotorWithFluxBarriers.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/SynchronousMotorWithFluxBarriers/SynchronousMotorWithFluxBarriers.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">DC motor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/DCMotor/F2D_AN_DCMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/DCMotor/F2D_AN_DCMotor_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/DCMotor/DCMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/DCMotor/DCMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/DCMotor/DCMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Line start PM machine</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/LineStartPMMachine/F2D_AN_LineStartPMMachine_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/LineStartPMMachine/F2D_AN_LineStartPMMachine_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/LineStartPMMachine/LineStartPMMachine.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/LineStartPMMachine/LineStartPMMachine.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/LineStartPMMachine/LineStartPMMachine.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Induction motor without Overlay</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductionMotorWithoutOverlay/F2D_AN_InductionMotorWithoutOverlay_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductionMotorWithoutOverlay/F2D_AN_InductionMotorWithoutOverlay_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductionMotorWithoutOverlay/InductionMotorWithoutOverlay.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductionMotorWithoutOverlay/InductionMotorWithoutOverlay.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/InductionMotorWithoutOverlay/InductionMotorWithoutOverlay.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Induction motor - thermal analysis</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IMmotorThermalAnalysis/F2D_AN_IMmotorThermalAnalysis_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IMmotorThermalAnalysis/F2D_AN_IMmotorThermalAnalysis_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Overview</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IMmotorThermalAnalysis/IMmotorThermalAnalysis.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/IMmotorThermalAnalysis/IMmotorThermalAnalysis.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/IMmotorThermalAnalysis/IMmotorThermalAnalysis.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Single phase induction machine</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SinglePhaseIM/F2D_AN_SinglePhaseIM_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SinglePhaseIM/F2D_AN_SinglePhaseIM_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SinglePhaseIM/SinglePhaseIM.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/SinglePhaseIM/SinglePhaseIM.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/SinglePhaseIM/SinglePhaseIM.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Magnetic gear</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/MagneticGear/F2D_AN_MagneticGear_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/MagneticGear/F2D_AN_MagneticGear_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Overview</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/MagneticGear/MagneticGear.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/MagneticGear/MagneticGear.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/MagneticGear/MagneticGear.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Thomson Actuator</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/ThomsonActuator/F2D_AN_ThomsonActuator_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/ThomsonActuator/F2D_AN_ThomsonActuator_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/ThomsonActuator/ThomsonActuator.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/ThomsonActuator/ThomsonActuator.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/ThomsonActuator/ThomsonActuator.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Inductive proximity sensor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductiveProximitySensor/F2D_AN_InductiveProximitySensor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductiveProximitySensor/LossesCalculationInWindingsInSteadyStateACMagnetic_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Losses calculation in windings in Steady State AC magnetic</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductiveProximitySensor/InductiveProximitySensor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/InductiveProximitySensor/InductiveProximitySensor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/InductiveProximitySensor/InductiveProximitySensor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e358 ">Buried 3-phase cable</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/Buried3PhaseCable/F2D_AN_Buried3PhaseCable_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/Buried3PhaseCable/F2D_AN_Buried3PhaseCable_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/Buried3PhaseCable/Buried3PhaseCable.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/Buried3PhaseCable/Buried3PhaseCable.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/Buried3PhaseCable/Buried3PhaseCable.jpg" /></a></td>
+</tr>
+<tr><td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e358 ">Coaxial tubes thermal radiation</td>
+<td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e360 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/CoaxialTubesThermalRadiation/F2D_AN_CoaxialTubesThermalRadiation_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/CoaxialTubesThermalRadiation/F2D_AN_CoaxialTubesThermalRadiation_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/CoaxialTubesThermalRadiation/CoaxialTubesThermalRadiation.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d286140e362 "><a class="xref" href="../../../../../DocExamples/Examples2D/Application_Note/CoaxialTubesThermalRadiation/CoaxialTubesThermalRadiation.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Application_Note/CoaxialTubesThermalRadiation/CoaxialTubesThermalRadiation.jpg" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="section"><h2 class="title sectiontitle">Co-simulation</h2></section>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry nocellnorowborder" id="d286140e744">Example</th>
+<th class="entry nocellnorowborder" id="d286140e746">Documents</th>
+<th class="entry cell-norowborder" id="d286140e748">Illustration</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Multidisciplinary design optimization platform for electric motors</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/F2D_COSIM_MDOeMotor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_00_Starting_Guide.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Starting guide</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_01_General_Presentation.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: General presentation</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_02_FluxMotor.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Electric motor design and pre-analysis in FluxMotor</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_03A_Flux_MagneticAnalysis.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Flux magnetic analysis</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_03B_Flux_ThermalAnalysis.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Flux thermal analysis</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_04_HyperMesh_OptiStruct.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Structural analysis with HyperMesh and OptiStruct</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_05A_HyperStudy_Initiation.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Set up in HyperStudy</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/Tutorials/F2D_COSIM_MDOeMotor_05B_HyperStudy_Optimisation.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Optimization in HyperStudy</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/MDOeMotor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/MDOeMotor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotor/MDOeMotor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Multidisciplinary design optimization platform for electric motors (with morphing method)</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/F2D_COSIM_MDOeMotorWithMorphing_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_00_General_Presentation.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 0 General presentation</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_01_Morphing.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 1 Geometry morphing method</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_01_bis_create_bat_file.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 1a How to create a “.bat” file</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_01_bis_create_Excel_file.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 1b How to create an “Excel” file</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_02_FluxMotor.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 2 Electric motor design and pre-analysis in FluxMotor</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_03A_Flux_MagneticAnalysis.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 3a Flux magnetic analysis</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_03B_Flux_Thermal.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 3b Flux thermal analysis</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_04A_HyperStudy_Initiation.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 4a Set up in HyperStudy</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/Tutorials/newMDO_EMotor_04B_HyperStudy_Optimisation_Workflow_2.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: 4b Optimization in HyperStudy</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/MDOeMotorWithMorphing.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/MDOeMotorWithMorphing.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/MDOeMotorWithMorphing/MDOeMotorWithMorphing.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-HyperStudy: Contactor geometry optimization</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperStudyContactorGeoOptimization/F2D_COSIM_FluxHyperStudyContactorGeoOptimization_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperStudyContactorGeoOptimization/F2D_COSIM_FluxHyperStudyContactorGeoOptimization_readme.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Readme</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperStudyContactorGeoOptimization/FluxHyperStudyContactorGeoOptimization.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperStudyContactorGeoOptimization/FluxHyperStudyContactorGeoOptimization.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperStudyContactorGeoOptimization/FluxHyperStudyContactorGeoOptimization.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-SimLab-OptiStruct: Electric motor NVH analysis</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVH/F2D_COSIM_FluxSimLabOSEMotorNVH_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVH/F2D_COSIM_FluxSimLabOSEMotorNVH_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVH/SimLab_ExportMechanicalMesh.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: SimLab: mesh export</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVH/SimLab_OptiStruct_DataSetting_Simulation.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: SimLab: Data setting and simulation</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVH/FluxSimLabOSEMotorNVH.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVH/FluxSimLabOSEMotorNVH.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVH/FluxSimLabOSEMotorNVH.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-SimLab: Electric motor NVH analysis</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabEMotorNVH/F2D_COSIM_FluxSimLabEMotorNVH_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabEMotorNVH/F2D_COSIM_FluxSimLabEMotorNVH_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabEMotorNVH/FluxSimLabEMotorNVH.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabEMotorNVH/FluxSimLabEMotorNVH.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabEMotorNVH/FluxSimLabEMotorNVH.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-HyperMesh-OptiStruct: Electric motor NVH analysis</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperMeshOSEMotorNVH/F2D_COSIM_FluxHyperMeshOSEMotorNVH_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperMeshOSEMotorNVH/Create_Stator_3D_Geometry_For_OptiStruct.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Create stator 3D geometry</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperMeshOSEMotorNVH/F2D_COSIM_FluxHyperMeshOptiStructEMotorNVHanalysis_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperMeshOSEMotorNVH/./../../../HowTo/English/HowToUseFlux_OptiStruct_Flux_ImportExportContext.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: HowTo Flux-HyperMesh-OptiStruct</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperMeshOSEMotorNVH/FluxHyperMeshOSEMotorNVH.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperMeshOSEMotorNVH/FluxHyperMeshOSEMotorNVH.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxHyperMeshOSEMotorNVH/FluxHyperMeshOSEMotorNVH.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-SimLab-Activate: SRM motor NVH analysis</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabActivateSRMmotorNVH/F2D_COSIM_FluxSimLabActivateSRMmotorNVH_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabActivateSRMmotorNVH/F2D_COSIM_FluxSimLabActivateSRMmotorNVH_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabActivateSRMmotorNVH/FluxSimLabActivateSRMmotorNVH.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabActivateSRMmotorNVH/FluxSimLabActivateSRMmotorNVH.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabActivateSRMmotorNVH/FluxSimLabActivateSRMmotorNVH.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-FluxMotor-SimLab: multi-speed NVH analysis</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVHMultiSpeed/F2D_COSIM_FluxSimLabOSEMotorNVHMultiSpeed_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVHMultiSpeed/F2D_COSIM_FluxSimLabOSEMotorNVHMultiSpeed_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVHMultiSpeed/FluxSimLabOSEMotorNVHMultiSpeed.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVHMultiSpeed/F2D_COSIM_FluxSimLabOSEMotorNVHMultiSpeed.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxSimLabOSEMotorNVHMultiSpeed/F2D_COSIM_FluxSimLabOSEMotorNVHMultiSpeed.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-Activate: IPM motor speed control</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorSpeedControl/F2D_COSIM_FluxActivateIPMmotorSpeedControl_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorSpeedControl/F2D_COSIM_FluxActivateIPMmotorSpeedControl_workflow.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Workflow</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorSpeedControl/Create_Lookup_Table_Case3.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Case 3 - Create Look-up Table</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorSpeedControl/FluxActivateIPMmotorSpeedControl.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorSpeedControl/FluxActivateIPMmotorSpeedControl.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorSpeedControl/FluxActivateIPMmotorSpeedControl.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-Activate: IPM motor multiphysic position</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorMultiphysicPosition/F2D_COSIM_FluxActivateIPMmotorMultiphysicPosition_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorMultiphysicPosition/F2D_COSIM_FluxActivateIPMmotorMultiphysicPosition_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorMultiphysicPosition/FluxActivateIPMmotorMultiphysicPosition.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorMultiphysicPosition/FluxActivateIPMmotorMultiphysicPosition.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateIPMmotorMultiphysicPosition/FluxActivateIPMmotorMultiphysicPosition.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-Activate: Induction motor scalar control</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateInductionMotorScalarControl/F2D_COSIM_FluxActivateInductionMotorScalarControl_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateInductionMotorScalarControl/F2D_COSIM_FluxActivateInductionMotorScalarControl_workflow.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Workflow</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateInductionMotorScalarControl/FluxActivateInductionMotorScalarControl.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateInductionMotorScalarControl/FluxActivateInductionMotorScalarControl.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateInductionMotorScalarControl/FluxActivateInductionMotorScalarControl.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-Activate: SPM motor with regulation</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateSPMmotorRegulation/F2D_COSIM_FluxActivateSPMmotorRegulation_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateSPMmotorRegulation/F2D_COSIM_FluxActivateSPMmotorRegulation_workflow.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Workflow</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateSPMmotorRegulation/FluxActivateSPMmotorRegulation.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateSPMmotorRegulation/FluxActivateSPMmotorRegulation.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateSPMmotorRegulation/FluxActivateSPMmotorRegulation.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-Activate: Linear actuator</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateLinearActuator/F2D_COSIM_FluxActivateLinearActuator_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateLinearActuator/F2D_COSIM_FluxActivateLinearActuator_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateLinearActuator/FluxActivateLinearActuator.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateLinearActuator/FluxActivateLinearActuator.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxActivateLinearActuator/FluxActivateLinearActuator.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-Compose: Induction machine</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxComposeInductionMachine/F2D_COSIM_FluxComposeInductionMachine_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxComposeInductionMachine/F2D_COSIM_FluxComposeInductionMachine_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxComposeInductionMachine/FluxComposeInductionMachine.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxComposeInductionMachine/FluxComposeInductionMachine.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxComposeInductionMachine/FluxComposeInductionMachine.jpg" /></a></td>
+</tr>
+<tr><td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e744 ">Flux-Flux: Fuse electro thermal analysis</td>
+<td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e746 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxFluxFuseElectroThermalAnalysis/F2D_COSIM_FluxFluxFuseElectroThermalAnalysis_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxFluxFuseElectroThermalAnalysis/F2D_COSIM_FluxFluxFuseElectroThermalAnalysis_overview.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxFluxFuseElectroThermalAnalysis/FluxFluxFuseElectroThermalAnalysis.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d286140e748 "><a class="xref" href="../../../../../DocExamples/Examples2D/Cosimulation/FluxFluxFuseElectroThermalAnalysis/FluxFluxFuseElectroThermalAnalysis.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Cosimulation/FluxFluxFuseElectroThermalAnalysis/FluxFluxFuseElectroThermalAnalysis.jpg" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="section"><h2 class="title sectiontitle">Textbook cases</h2></section>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;"><tr><th class="entry nocellnorowborder" id="d286140e1207">Example</th>
+<th class="entry nocellnorowborder" id="d286140e1209">Documents</th>
+<th class="entry cell-norowborder" id="d286140e1211">Illustration</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Infinite conductor</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/InfiniteConductor/F2D_TextBook_InfiniteConductor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/InfiniteConductor/InfiniteConductor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/InfiniteConductor/InfiniteConductor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/InfiniteConductor/InfiniteConductor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Spire</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Spire/F2D_TextBook_Spire_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Spire/spire.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Spire/Spire.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/Spire/Spire.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">HelmholtzCoil</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/HelmholtzCoil/F2D_TextBook_HelmholtzCoil_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/HelmholtzCoil/F2D_TextBook_HelmholtzCoil_stepbystep.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Step by step</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/HelmholtzCoil/HelmholtzCoil.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/HelmholtzCoil/HelmholtzCoil.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/HelmholtzCoil/HelmholtzCoil.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Solenoid</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Solenoid/F2D_TextBook_Solenoid_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Solenoid/Solenoid.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Solenoid/Solenoid.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/Solenoid/Solenoid.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Wound torus - Static study</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/TorusMS/F2D_TextBook_TorusMS_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/TorusMS/TorusMS.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/TorusMS/TorusMS.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/TorusMS/TorusMS.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Wound torus - Steady state AC study</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/TorusMH/F2D_TextBook_TorusMH_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/TorusMH/TorusMH.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/TorusMH/TorusMH.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/TorusMH/TorusMH.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Three-phase cable</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/3PhaseCable/F2D_TextBook_3PhaseCable_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/3PhaseCable/3PhaseCable.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/3PhaseCable/3PhaseCable.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/3PhaseCable/3PhaseCable.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Compass</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Compass/F2D_TextBook_Compass_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Compass/Compass.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/Compass/Compass.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/Compass/Compass.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Oersted experiment</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/OerstedExperiment/F2D_TextBook_OerstedExperiment_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/OerstedExperiment/OerstedExperiment.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/OerstedExperiment/OerstedExperiment.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/OerstedExperiment/OerstedExperiment.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Thyristor and radiator</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/ThyristorAndRadiator/F2D_TextBook_ThyristorAndRadiator_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/ThyristorAndRadiator/ThyristorAndRadiator.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/ThyristorAndRadiator/ThyristorAndRadiator.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/ThyristorAndRadiator/ThyristorAndRadiator.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Planar capacitor </td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/PlanarCapacitor/F2D_TextBook_PlanarCapacitor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/PlanarCapacitor/PlanarCapacitor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/PlanarCapacitor/PlanarCapacitor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/PlanarCapacitor/PlanarCapacitor.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Sphere and point electric charge</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/SphereAndPointElectricCharge/F2D_TextBook_SphereAndPointElectricCharge_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/SphereAndPointElectricCharge/SphereAndPointElectricCharge.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/SphereAndPointElectricCharge/SphereAndPointElectricCharge.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/SphereAndPointElectricCharge/SphereAndPointElectricCharge.jpg" /></a></td>
+</tr>
+<tr><td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1207 ">Non Destructive Testing: Crack</td>
+<td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/NonDestructiveTestingCrack/F2D_TextBook_NonDestructiveTestingCrack_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/NonDestructiveTestingCrack/NonDestructiveTestingCrack.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cell-norowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/NonDestructiveTestingCrack/NonDestructiveTestingCrack.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/NonDestructiveTestingCrack/NonDestructiveTestingCrack.jpg" /></a></td>
+</tr>
+<tr><td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e1207 ">Conical conductor</td>
+<td class="entry row-nocellborder" style="vertical-align:middle;" headers="d286140e1209 "><p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/ConicalConductor/F2D_TextBook_ConicalConductor_Summary_en.pdf" target="_blank"><img class="image" src="Images/icon_PDF.png" />: Summary</a></p>
+<p class="p"><a class="xref" href="../../../../../DocExamples/Examples2D/Education/ConicalConductor/ConicalConductor.zip" target="_blank"><img class="image" src="Images/icon_ZIP.png" />: Project and python files</a></p>
+</td>
+<td class="entry cellrowborder" style="text-align:center;vertical-align:middle;" headers="d286140e1211 "><a class="xref" href="../../../../../DocExamples/Examples2D/Education/ConicalConductor/ConicalConductor.jpg" target="_blank"><img class="image" src="../../../../../DocExamples/Examples2D/Education/ConicalConductor/ConicalConductor.jpg" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>

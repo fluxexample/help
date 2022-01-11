@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Steady State AC Electric: presentation and typical example","href":"UserGuide\/English\/topics\/ElectroHarmoniquePresentationEtExempleType.htm","attributes": {"data-id":"topicID1",},"menu": {"hasChildren":false,},"tocID":"topicID1-d46e8775","topics":[]}]});

@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Functions","href":"UserGuide\/English\/topics\/LesFonctions.htm","attributes": {"data-id":"topicID1",},"menu": {"hasChildren":false,},"tocID":"topicID1-d46e1906","topics":[]}]});

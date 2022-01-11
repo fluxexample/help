@@ -1,0 +1,1398 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en-us" lang="en-us">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Flux window The general Flux window consists of several zones. These zones are identified in the figure below. Configuration of the window Flux desktop is automatically configured depending on: ..." /><meta name="copyright" content="(C) Copyright 2021" /><meta name="DC.rights.owner" content="(C) Copyright 2021" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Presentation of working environment" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/EnvironnementDeTravailRoleDesDifferentesZones.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/EnvironnementDeTravailRoleDesDifferentesZones.htm" /><meta name="DC.Relation" scheme="URI" content="../../../UserGuide/English/topics/ModificationDeLenvironnement.htm" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="topicID1" /><title>Presentation of working environment</title><!--  Generated with Oxygen version 20.0-SNAPSHOT, build number 2018042310.  --><meta name="wh-path2root" content="../../../" /><meta name="wh-toc-id" content="topicID1-d46e1418" />
+    	<!--ZOOMSTOP-->
+        <link rel="preload" href="../../oxygen-webhelp/template/resources/images/unity_gradient_resized.png" as="image" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4424669-1');
+        </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+
+        <!-- Bootstrap Optional theme -->
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic-page.css?buildId=2018042310" />
+        
+
+        <script type="text/javascript" src="../../../oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+
+        <script data-main="../../../oxygen-webhelp/app/topic-page.js" src="../../../oxygen-webhelp/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
+        <link rel="stylesheet" type="text/css" href="../../../altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="../../../altair-resources/css/altair.css" />
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        
+        <div>
+    <!-- Add three possible locations for MathJax (not a bug, intentional) -->
+    <script type="text/javascript" src="../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../../hw_custom.js"></script>
+    <link rel="stylesheet" href="../../../hw_custom.css" />    
+</div>
+        <!--ZOOMRESTART-->
+    </head>
+
+    <body class="wh_topic_page dita_topic frmBody" id="topicID1" data-target="#toc" data-spy="scroll">
+    	<!--ZOOMSTOP-->
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/OutilsGeneraux.htm">General operation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Here is a presentation of the Flux environment; the project management, the data       management, the command language, the
+                  formulas and mathematical functions.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EnvironnementEtRepresentationGraphique.htm">Environment and graphic representation</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EnvironnementDeTravailRoleDesDifferentesZones.htm">Working environment</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PresentationDeLenvironnementDeTravail.htm">Presentation of working environment</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/EnvironnementDeTravailRoleDesDifferentesZones.htm" title="Working environment"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/ModificationDeLenvironnement.htm" title="Modifying the environment"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+        <div class="container-fluid">
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav role="navigation" id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 navbar hidden-print">
+                            <div class="wh_logo_and_publication_title_container">
+                                <div class="wh_logo_and_publication_title">
+                                    
+                                    <a href="../../../index.htm" class=" wh_logo hidden-xs "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="nav_spacer"></div>
+                            <div class=" wh_publication_toc "><ul>
+   <li><span data-tocid="topicID1-d46e288" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The user guide gives information about principles and how to use <span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span>.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e311" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the release notes of the last and previous versions, with the necessary             information on new features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e716" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of documents to understand how to use certain features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1254" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The Flux supervisor allows to run projects, examples, pythons scripts; to configure       user preferences; to access tools...</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e1380" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span><ul class="nav nav-list">
+         <li><span data-tocid="topicID1-d46e1391" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/OutilsGeneraux.htm">General operation</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Here is a presentation of the Flux environment; the project management, the data       management, the command language, the
+                        formulas and mathematical functions.
+                        
+                     </p>
+                     </span></span></span><ul class="nav nav-list">
+               <li><span data-tocid="topicID1-d46e1402" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EnvironnementEtRepresentationGraphique.htm">Environment and graphic representation</a></span></span><ul class="nav nav-list">
+                     <li><span data-tocid="topicID1-d46e1410" class="topicref" data-id="topicID1" data-state="expanded"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EnvironnementDeTravailRoleDesDifferentesZones.htm">Working environment</a></span></span><ul class="nav nav-list">
+                           <li class="active"><span data-tocid="topicID1-d46e1418" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/PresentationDeLenvironnementDeTravail.htm">Presentation of working environment</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e1426" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ModificationDeLenvironnement.htm">Modifying the environment</a></span></span></li>
+                           <li><span data-tocid="topicID1-d46e1434" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/AffichageDesMessagesDerreurEtWarning.htm">Improvement of the display of error messages</a></span></span></li>
+                        </ul>
+                     </li>
+                     <li><span data-tocid="topicID1-d46e1442" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/RepresentationGraphiqueVueGraphique.htm">Graphic representation</a></span></span></li>
+                  </ul>
+               </li>
+               <li><span data-tocid="topicID1-d46e1482" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionDeProjetEtDobjetFlux.htm">Flux project and Flux object management</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e1546" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FonctionnementGeneralGestionDesDonnees.htm">Data management</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e1690" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/LangagePyFluxFichiersDeCommandeEtMacros.htm">Command language, command files and macros</a></span></span></li>
+               <li><span data-tocid="topicID1-d46e1842" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FormulesEtFonctionsMathematiques.htm">Formulas and mathematical functions</a></span></span></li>
+            </ul>
+         </li>
+         <li><span data-tocid="topicID1-d46e2010" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ConstructionDunProjetFlux.htm">Construction of a Flux project</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">The construction of a Flux project consists of several stages: Geometry → Mesh →       Physics → Resolution → Postprocessing;
+                        with the possibility to import a CAD file, a mesh,       materials...
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e6824" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ApplicationsPhysiques.htm">Physical applications</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux allows to model different physical phenomena, and includes various applications       (magnetic, electrical, thermal
+                        and thermal coupled).
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e9744" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Couplages.htm">Circuit and Kinematic Couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is coupled to a circuit context allowing to model the sources of the devices.Flux       also allow to model the movement
+                        via a kinematic coupling.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e10620" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Co-simulation.htm">Co-simulation between Flux and another software</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is able to couple with several softwares allowing to model mutliphysics       phenomena.</p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11126" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/CouplagesMetier.htm">Dedicated couplings</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Several dedicated couplings are implemented in Flux to, carry out vibro-acoustic       studies, magneto-thermal studies and
+                        more.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="topicID1-d46e11778" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/ContexteMetier3D.htm">3D Overlay</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has predefined models for rotating machines via Overlays allowing to describe a       geometry, a mesh and a physics
+                        adapted to the wished machine.
+                        
+                     </p>
+                     </span></span></span></li>
+         <li><span data-tocid="sans_titre1-d46e11805" class="topicref" data-id="sans_titre1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxAPI.htm">Flux API</a><span class="wh-tooltip">
+                     
+                     <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc"></p>
+                     </span></span></span></li>
+      </ul>
+   </li>
+   <li><span data-tocid="topicID1-d46e12407" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux Skew is a module allowing to facilitate the realization of a quasi 3D or 2 ½ D       study starting from a 2D description.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e12531" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux PEEC is a 3D modeling module dedicated to electrical interconnections of power             electronics devices. It also
+                  provides RLC extraction and generation of SPICE-like             equivalent circuits.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14327" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux has a material manager with its own material base.The user can create his own       material base and import them into
+                  the Flux models to be studied.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID-d46e14468" class="topicref" data-id="topicID" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See the lists of examples 2D, 3D, SKEW and PEEC with all available documents and all       project and python files.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">See a list of Memento documents to understand certain Flux features.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e14532" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux proposes several macros enabling doing actions that are not yet implemented in       Flux.</p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" class="topicref" data-id="topicID1" data-state="leaf"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This documentation deals with the Jython script used in Flux and allows to understand             the various structures of
+                  entities and functions, and use it in user scripts for             example.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16178" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document provides instructions for <span class="keyword">Flux</span> installation on       supported platforms.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span data-tocid="topicID1-d46e16593" class="topicref" data-id="topicID1" data-state="not-ready"><span class="wh-expand-btn"></span><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">This document guides you through using Computing Distribution Engine.</p>
+               </span></span></span></li>
+</ul></div>
+                            <div></div>
+
+                        </nav>
+                    
+                    <div class="contentbody col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="header">
+                            
+<nav class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_logo_and_publication_title_container">
+            <div class="wh_logo_and_publication_title">
+                
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="../../../index.htm" class=" wh_logo "><img src="../../../logo_Flux_color_hw.svg" alt="Altair Flux™ 2021 Documentation" /></a>
+                    <div class=" wh_publication_title "><a href="../../../index.htm"><span class="title"><span class="keyword">Altair Flux</span>™ <span class="keyword">2021</span> Documentation</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="wh_header_flex_container">
+            <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="hidden-print"><li><span class="home"><a href="../../../index.htm"><span>Home</span></a></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Flux is a finite element software for low-frequency electromagnetic and thermal       simulations. Both, 2D and 3D solutions
+                  are available...
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/OutilsGeneraux.htm">General operation</a><span class="wh-tooltip">
+               
+               <p xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="shortdesc">Here is a presentation of the Flux environment; the project management, the data       management, the command language, the
+                  formulas and mathematical functions.
+                  
+               </p>
+               </span></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EnvironnementEtRepresentationGraphique.htm">Environment and graphic representation</a></span></span></li>
+   <li><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EnvironnementDeTravailRoleDesDifferentesZones.htm">Working environment</a></span></span></li>
+   <li class="active"><span class="topicref" data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/PresentationDeLenvironnementDeTravail.htm">Presentation of working environment</a></span></span></li>
+</ol></div>
+            <div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="link" href="../../../UserGuide/English/topics/EnvironnementDeTravailRoleDesDifferentesZones.htm" title="Working environment"></a></span>  
+<span class="navnext"><a class="link" href="../../../UserGuide/English/topics/ModificationDeLenvironnement.htm" title="Modifying the environment"></a></span>  </span></div>
+            <div class=" wh_search_input "><form id="searchForm" method="get" action="../../../search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                <div class=" wh_top_menu "><ul>
+   <li><span data-tocid="topicID1-d46e288" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxGuideDutilisation1.htm">User guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e311" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/WhatsNew.htm">What's new?</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e716" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/HowTo.htm">"How to" Documents</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1254" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/Superviseur.htm">Flux Supervisor</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e1380" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxSoftware.htm">Flux</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12407" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/EncochesInclinees.htm">Flux Skew</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e12531" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/InCa3DGuideDutilisation.htm">Flux PEEC</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14327" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/GestionnaireDeMateriaux.htm">Material Manager</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID-d46e14468" data-state="not-ready" class=" topicref " data-id="topicID"><span class="title"><a href="../../../UserGuide/English/topics/Examples.htm">Examples</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e14520" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMementos.htm">Mementos</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e14532" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxMacros.htm">Macros</a></span></span></li>
+   <li><span data-tocid="topicID1-d46e16166" data-state="leaf" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/JythonDocumentation.htm">PyFlux Documentation (Beta version)</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16178" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/FluxInstallationGuide.htm">Flux installation guide</a></span></span></li>
+   <li class="has-children"><span data-tocid="topicID1-d46e16593" data-state="not-ready" class=" topicref " data-id="topicID1"><span class="title"><a href="../../../UserGuide/English/topics/QuickStartCDE.htm">Quick Start CDE</a></span></span></li>
+</ul></div>
+                
+                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
+                
+            </div>
+        </div>
+        <div class="nav_tools">
+            <nav class="wh_tools hidden-print">
+                <div class="wh_right_tools hidden-sm hidden-xs">  
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+                        </div>
+                        <div class="content_spacer"></div>
+                        <div class="wrapper">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                            <!--ZOOMRESTART-->
+                            <div id="wh_topic_body" class="contentarea col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Presentation of working environment</h1>
+
+   <div class="body">
+      <section class="section"><h2 class="title sectiontitle">Flux window</h2>
+         
+         <p class="p">The general Flux window consists of several zones.
+These zones are identified in the figure below.</p>
+
+         <p class="p">
+            <img class="image" src="Images/image.png" height="268" width="501" />
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Configuration of the window</h2>
+         
+         <p class="p">Flux desktop is automatically configured depending
+on:</p>
+
+         <ul class="ul">
+            <li class="li">
+dimension of the application (2D or 3D)</li>
+
+            <li class="li">the
+physical application defined (no physics defined, magnetostatics,
+electrostatics…)</li>
+
+            <li class="li">the
+context: Geometry / Mesh / Physics / Solver / Post-processing
+(toolbars)</li>
+
+            <li class="li">or sub
+context (healing context for the CAD geometry…)</li>
+
+         </ul>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Role of zones</h2>
+         
+         <p class="p">The zones and their principal roles are briefly
+described below:</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:190pt" /><col style="width:200pt" /><col style="width:220pt" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d531592e75">Element</th>
+
+                     <th class="entry nocellnorowborder" id="d531592e78">GUI</th>
+
+                     <th class="entry cell-norowborder" id="d531592e81">Function</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d531592e75 "><strong class="ph b">Title bar</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_nlp_dqm_l3b" src="Images/image933624415.jpg" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e81 ">
+                        <p class="p">General information:</p>
+
+                        <ul class="ul">
+                           <li class="li">Software name, version number</li>
+
+                           <li class="li"> Application (here, Magneto Static 3D)</li>
+
+                           <li class="li">Project name (CASE1.FLU)</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="3" style="vertical-align:middle;" headers="d531592e75 "><strong class="ph b">Menus bar  </strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_u5l_2qm_l3b" src="Images/image2052268509.jpg" height="18" width="251" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e81 ">Access to the different menus:<p class="p">Project, Application, Geometry, Mesh,
+                           Physics</p>
+</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_h44_2qm_l3b" src="Images/image1074143573.jpg" height="26" width="249" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e81 ">Access to the different menus:<p class="p">Parameter/Quantity, Solving process,
+                           Post-processing</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_ozq_2qm_l3b" src="Images/image671301808.jpg" height="22" width="254" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e81 ">Access to the different menus:<p class="p">Display, View, Select, Tools,
+                           Extensions, Help</p>
+</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="4" style="vertical-align:middle;" headers="d531592e75 "><strong class="ph b">Context icons</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_wjg_fqm_l3b" src="Images/image49514357.jpg" height="47" width="39" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e81 ">
+                        <p class="p">Access to the toolbars corresponding to the context
+                              <span class="ph uicontrol">Geometry</span></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_xjg_fqm_l3b" src="Images/image138820427.jpg" height="47" width="39" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e81 ">
+                        <p class="p">Access to the toolbars corresponding to the context
+                              <span class="ph uicontrol">Mesh</span></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_yjg_fqm_l3b" src="Images/image441604220.jpg" height="47" width="38" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e81 ">
+                        <p class="p">Access to the toolbars corresponding to the context
+                              <span class="ph uicontrol">Physics</span></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="text-align:center;" headers="d531592e78 "><img class="image" id="topicID1__image_zjg_fqm_l3b" src="Images/image555740270.jpg" height="47" width="39" /></td>
+
+                     <td class="entry cellrowborder" headers="d531592e81 ">
+                        <p class="p">Access to the toolbars corresponding to the context
+                              <span class="ph uicontrol">Solving</span></p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:190pt" /><col style="width:200pt" /><col style="width:220pt" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d531592e233">Element</th>
+
+                     <th class="entry nocellnorowborder" id="d531592e236">GUI</th>
+
+                     <th class="entry cell-norowborder" id="d531592e239">Function</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="2" style="vertical-align:middle;" headers="d531592e233 "><strong class="ph b">Project Menus Toolbars  </strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e236 "><img class="image" id="topicID1__image_ehc_rxm_l3b" src="Images/image47082562.jpg" height="26" width="54" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e239 ">Commands of the Project menu:<p class="p">New, Open a project</p>
+</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e236 "><img class="image" id="topicID1__image_hff_rxm_l3b" src="Images/image1530765156.jpg" height="26" width="109" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e239 ">Commands of the Project menu:<p class="p">Execute a command file, Save, Close,
+                           Exit</p>
+</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d531592e233 "><strong class="ph b">Tools Menus Toolbars </strong></td>
+
+                     <td class="entry row-nocellborder" style="text-align:center;" headers="d531592e236 "><img class="image" id="topicID1__image_jkk_rxm_l3b" src="Images/image1744807305.jpg" height="25" width="109" /></td>
+
+                     <td class="entry cellrowborder" headers="d531592e239 ">Commands of the Tools menu:<p class="p">Undo, Close all open dialog
+                        boxes</p>
+</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:190pt" /><col style="width:200pt" /><col style="width:220pt" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d531592e304">Element</th>
+
+                     <th class="entry nocellnorowborder" id="d531592e307">GUI</th>
+
+                     <th class="entry cell-norowborder" id="d531592e310">Function</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="7" style="vertical-align:middle;" headers="d531592e304 "><strong class="ph b">Geometry Context toolbars</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">Commands of the Geometry context:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_gnr_czm_l3b">
+                           <li class="li">Enter on Sketcher context (2D and Skew) or the Modeler context (3D)
+                              to create the geometry</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "><img class="image" id="topicID1__image_nnr_czm_l3b" src="Images/image1311644439.jpg" height="25" width="228" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_onr_czm_l3b">
+                           <li class="li">Create geometric entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "><img class="image" id="topicID1__image_e4r_czm_l3b" src="Images/image1651859864.jpg" height="25" width="196" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_f4r_czm_l3b">
+                           <li class="li"> Propagate / Extrude</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "><img class="image" id="topicID1__image_z4r_czm_l3b" src="Images/image1043376691.jpg" height="25" width="54" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_apr_czm_l3b">
+                           <li class="li">Build faces / volumes</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "><img class="image" id="topicID1__image_ppr_czm_l3b" src="Images/image1772626479.jpg" height="26" width="137" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_qpr_czm_l3b">
+                           <li class="li"> Measure</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "><img class="image" id="topicID1__image_gqr_czm_l3b" src="Images/image958409078.jpg" height="25" width="51" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_hqr_czm_l3b">
+                           <li class="li">Check of the geometry, Healing context of CAD geometry</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="7" style="vertical-align:middle;" headers="d531592e304 "><strong class="ph b">Mesh Context toolbars</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">Commands of the Mesh context:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_bx5_gzm_l3b" src="Images/image986501025.jpg" height="24" width="81" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_cx5_gzm_l3b">
+                           <li class="li">Create mesh entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_r2y_tzm_l3b" src="Images/image1596924405.jpg" height="25" width="138" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_cfy_tzm_l3b">
+                           <li class="li">Mesh domain, lines / faces / volumes, Generate 2 nd order
+                              elements</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_ofy_tzm_l3b" src="Images/image229596532.jpg" height="24" width="25" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_hgy_tzm_l3b">
+                           <li class="li">Delete the mesh</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_ogy_tzm_l3b" src="Images/image367959716.jpg" height="25" width="109" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_zgy_tzm_l3b">
+                           <li class="li">Assign mesh information</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_hhy_tzm_l3b" src="Images/image756207023.jpg" height="25" width="50" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_qhy_tzm_l3b">
+                           <li class="li"> Structure the mesh</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_b3y_tzm_l3b" src="Images/image905706203.jpg" height="25" width="25" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_k3y_tzm_l3b">
+                           <li class="li">Check the mesh</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="5" style="vertical-align:middle;" headers="d531592e304 "><strong class="ph b">Physics context toolbars</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">Commands of Physics context:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_ijy_tzm_l3b" src="Images/image343966994.jpg" height="25" width="225" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_rjy_tzm_l3b">
+                           <li class="li">Create physical entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_aky_tzm_l3b" src="Images/image1389433434.jpg" height="25" width="52" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_iky_tzm_l3b">
+                           <li class="li">Create I/O parameters / spatial quantities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_rky_tzm_l3b" src="Images/image1306198620.jpg" height="25" width="148" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_bly_tzm_l3b">
+                           <li class="li">Import materials, Orient a material, Assign regions, Import a
+                              circuit</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_jly_tzm_l3b" src="Images/image1343890145.jpg" height="24" width="26" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_tly_tzm_l3b">
+                           <li class="li">Check physics</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="5" style="vertical-align:middle;" headers="d531592e304 "><strong class="ph b">Solving process context
+                        toolbars</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">Commands of Solving process context:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_smy_tzm_l3b" src="Images/image674434640.jpg" height="25" width="27" />
+                        <img class="image" id="topicID1__image_tmy_tzm_l3b" src="Images/image674434640.jpg" height="25" width="27" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_eny_tzm_l3b">
+                           <li class="li">
+                              <p class="p">Create a scenario,</p>
+
+                              <p class="p"> Solving process options</p>
+
+                           </li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_mny_tzm_l3b" src="Images/image1607266548.jpg" height="26" width="22" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_wny_tzm_l3b">
+                           <li class="li">Check the project</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_f4y_tzm_l3b" src="Images/image99715161.jpg" height="26" width="24" />
+                        <img class="image" id="topicID1__image_g4y_tzm_l3b" src="Images/image987107778.jpg" height="26" width="25" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_o4y_tzm_l3b">
+                           <li class="li">
+                              <p class="p">Solve a scenario,</p>
+
+                              <p class="p"> Continue the solving process</p>
+
+                           </li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_w4y_tzm_l3b" src="Images/image1750676170.jpg" height="27" width="53" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_dpy_tzm_l3b">
+                           <li class="li">Delete results</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="7" style="vertical-align:middle;" headers="d531592e304 "><strong class="ph b">Post-processing context
+                        toolbars*</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">Commands of Post-processing context:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_eqy_tzm_l3b" src="Images/image1468250508.jpg" height="25" width="109" />
+                        <img class="image" id="topicID1__image_fqy_tzm_l3b" src="Images/image1504417219.jpg" height="25" width="26" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_oqy_tzm_l3b">
+                           <li class="li">Create post-processing entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_uqy_tzm_l3b" src="Images/image1093310233.jpg" height="24" width="51" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_dry_tzm_l3b">
+                           <li class="li"> Curves</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_lry_tzm_l3b" src="Images/image1600245250.jpg" height="26" width="138" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_ury_tzm_l3b">
+                           <li class="li"> Isovalues</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_bsy_tzm_l3b" src="Images/image195615781.jpg" height="25" width="134" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_isy_tzm_l3b">
+                           <li class="li"> Arrows</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_rsy_tzm_l3b" src="Images/image658192713.jpg" height="25" width="164" />
+                     </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_ety_tzm_l3b">
+                           <li class="li">Compute quantities on points / predefined quantities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="text-align:center;" headers="d531592e307 ">
+                        <img class="image" id="topicID1__image_oty_tzm_l3b" src="Images/image875278808.jpg" height="25" width="27" />
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d531592e310 ">
+                        <ul class="ul" id="topicID1__ul_wty_tzm_l3b">
+                           <li class="li">Evaluate sensors</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p">* only for a solved problem</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:190pt" /><col style="width:200pt" /><col style="width:220pt" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d531592e850">Element</th>
+
+                     <th class="entry nocellnorowborder" id="d531592e853">GUI</th>
+
+                     <th class="entry cell-norowborder" id="d531592e856">Function</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="4" style="vertical-align:middle;" headers="d531592e850 "><strong class="ph b">Menus Toolbars for the View</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">Commands of the View menu:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_cmb_bcn_l3b" src="Images/image1220384600.jpg" height="25" width="81" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Refresh view, Zoom all, Zoom region</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_ec2_bcn_l3b" src="Images/image2089536242.jpg" height="25" width="193" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Standard view 1, Standard view 2, X plane view, Y plane view, Z plane
+                              view, Opposite view, Four-view mode</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_zjp_mcn_l3b" src="Images/image1829628399.jpg" height="24" width="82" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">
+                              <p class="p">View direction,</p>
+
+                              <p class="p"> Save / Restore graphics properties</p>
+
+                           </li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="6" style="vertical-align:middle;" headers="d531592e850 "><strong class="ph b">Display</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">Commands of the Display menu:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_shs_mcn_l3b" src="Images/image1801094197.jpg" height="25" width="137" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Display geometric entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_cp5_mcn_l3b" src="Images/image1431069902.jpg" height="25" width="55" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Display point numbers / line numbers</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_kxw_mcn_l3b" src="Images/image1726649440.jpg" height="23" width="100" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Display mesh entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_ec2_ncn_l3b" src="Images/image1163976117.jpg" height="24" width="89" />
+                        <img class="image" id="topicID1__image_fc2_ncn_l3b" src="Images/image1793469581.jpg" height="25" width="81" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Display physical entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_a2j_ncn_l3b" src="Images/image719273734.jpg" height="25" width="109" />
+                        <img class="image" id="topicID1__image_b2j_ncn_l3b" src="Images/image588502819.jpg" height="24" width="53" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Display post-processing entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" rowspan="5" style="vertical-align:middle;" headers="d531592e850 "><strong class="ph b">Selection</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "> </td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">Commands of the Select menu:</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_flm_ncn_l3b" src="Images/image1935306719.jpg" height="25" width="53" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">No selection, Free selection</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_w34_ncn_l3b" src="Images/image2084323045.jpg" height="25" width="112" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Select geometric entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_zgt_ncn_l3b" src="Images/image1964641086.jpg" height="26" width="85" />
+                        <img class="image" id="topicID1__image_aht_ncn_l3b" src="Images/image155628603.jpg" height="24" width="82" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Select physical entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="text-align:center;" headers="d531592e853 "><img class="image" id="topicID1__image_dvx_ncn_l3b" src="Images/image663958999.jpg" height="26" width="110" /></td>
+
+                     <td class="entry cellrowborder" headers="d531592e856 ">
+                        <ul class="ul">
+                           <li class="li">Select solving process entities</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:190pt" /><col style="width:200pt" /><col style="width:220pt" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry nocellnorowborder" id="d531592e1110">Element</th>
+
+                     <th class="entry nocellnorowborder" id="d531592e1113">GUI</th>
+
+                     <th class="entry cell-norowborder" id="d531592e1116">Function</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d531592e1110 "><strong class="ph b">Data tree</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e1113 "><img class="image" id="topicID1__image_scs_12n_l3b" src="Images/image396507966.jpg" height="128" width="141" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e1116 ">Entities tree of the Flux project</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d531592e1110 "><strong class="ph b">Graphic</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e1113 "><img class="image" id="topicID1__image_nyx_12n_l3b" src="Images/PresentationDeLenvironnementDeTravail_img001.jpg" height="96" width="217" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e1116 ">Geometric representation of the studied device and graphic results
+                        (isovalues, curves, arrows…)</td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry nocellnorowborder" style="vertical-align:middle;" headers="d531592e1110 "><strong class="ph b">Output</strong></td>
+
+                     <td class="entry nocellnorowborder" style="text-align:center;" headers="d531592e1113 "><img class="image" id="topicID1__image_qx3_b2n_l3b" src="Images/PresentationDeLenvironnementDeTravail_img002.jpg" height="65" width="219" /></td>
+
+                     <td class="entry cell-norowborder" headers="d531592e1116 ">
+                        <p class="p">Informations concernant les différentes actions en cours (déroulement du
+                           programme) :</p>
+
+                        <ul class="ul">
+                           <li class="li"> restauration de données lors de l'ouverture d'un projet,</li>
+
+                           <li class="li"> commentaires sur les actions en cours,</li>
+
+                           <li class="li"> avancement des calculs lors d'une résolution, etc.</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry row-nocellborder" style="vertical-align:middle;" headers="d531592e1110 "><strong class="ph b">Commande PyFlux</strong></td>
+
+                     <td class="entry row-nocellborder" style="text-align:center;" headers="d531592e1113 "><img class="image" id="topicID1__image_ncr_b2n_l3b" src="Images/PresentationDeLenvironnementDeTravail_img003.png" height="51" width="218" /></td>
+
+                     <td class="entry cellrowborder" headers="d531592e1116 ">Accès au nouvel éditeur python et à la mémoire des actions réalisées
+                        dans le projet</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p">* These zones are masked by default.</p>
+
+         <p class="p">To display these zones, see <a class="xref" href="ModificationDeLenvironnement.htm">Modifying the environment</a>.</p>
+
+      </section>
+
+   </div>
+
+</article></main></div>
+                                
+                                
+                                
+                            </div>
+                            <!--ZOOMSTOP-->
+                            <!--Turning off Oxygen Topic TOC, and using Bootstrap Topic Toc instead -->
+                            <!--<whc:webhelp_topic_toc>
+                                <nav role="navigation"  id="wh_topic_toc" 
+                                    class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navbar hidden-print"> 
+                                    <whc:component_content/>
+                                </nav>
+                            </whc:webhelp_topic_toc> -->
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 max">
+                                <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default wh_footer">
+  <div class=" footer-container text-center ">
+    
+        
+        <div>
+            <p>Copyright (c) 1983-2020. Altair Engineering, Inc. All Rights Reserved. Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.</p>
+            <p><a href="../../../intellectual_property_rights_notice_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="../../../technical_support_hyperworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a></p>   
+        </div>
+    
+  </div>
+</nav>
+
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        <div id="go2top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close glyphicon glyphicon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img" />
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <script src="../../../oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../../altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="../../../altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="../../../altair-resources/js/splash.js"></script><script type="text/javascript" src="../../../altair-resources/js/homepage.js"></script><script type="text/javascript" src="../../../altair-resources/js/topics.js"></script><script type="text/javascript" src="../../../altair-resources/js/googleAnalytics.js"></script>
+        
+        <!--ZOOMRESTART-->
+    </body>
+</html>
